@@ -37,12 +37,23 @@ theme:
     - "images/ethnobotany.jpg"
     - "images/katoko.jpeg"
     - "images/corpus.jpg"
+  hero_stats:
+    - dictionary
+    - encyclopedia
+    - fauna
+    - ethnobotany
+  hero_height: "large"
+  hero_background: "lattice"
+  hero_motif: "lattice"
+  hero_divider: "lattice"
+  page_badge: "lattice"
+  grain_pattern: "lattice"
   colors:
-    primary: "#D4B030"
+    primary: "#B8941A"
     accent: "#A83220"
     accent_muted: "#8B2A1A"
     accent_light: "#FDEAE6"
-    accent_ring: "rgba(212, 176, 48, 0.2)"
+    accent_ring: "rgba(184, 148, 26, 0.25)"
     dark: "#2C1810"
     bg: "#FAF3E8"
     bg_light: "#F5ECD7"
@@ -57,6 +68,3 @@ theme:
     border_light: "#F0E8D8"
     success: "#4A7C59"
     error: "#A83220"
-  hero_background: "lattice"
-  hero_motif: "lattice"
-  hero_divider: "lattice"
