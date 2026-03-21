@@ -27,6 +27,16 @@ module_labels:
 
 theme:
   preset: "terra"
+  logo: "images/logo.svg"
+  favicon: "images/favicon.svg"
+  hero_image: "images/hero.jpeg"
+  hero_images:
+    - "images/dictionary.jpg"
+    - "images/encyclopedia.jpeg"
+    - "images/eyaokwa.jpeg"
+    - "images/ethnobotany.jpg"
+    - "images/katoko.jpeg"
+    - "images/corpus.jpg"
   colors:
     primary: "#C9A030"
     accent: "#A83220"

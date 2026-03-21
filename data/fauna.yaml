@@ -41,31 +41,37 @@
   name_portuguese: veado catingueiro
   scientific_name: Mazama gouazoubira
   classification_indigenous: Xamiali nawe
+  pic_link: images/fauna_007_erinãli.jpg
 - id: 8
   name_indigenous: Erinãli kawera kionere
   name_portuguese: veado mateiro
   scientific_name: Mazama americana
   classification_indigenous: Xamiali nawe
+  pic_link: images/fauna_008_erinãli_kawera_kionere.jpg
 - id: 9
   name_indigenous: Erinãli kakotawerali
   name_portuguese: cervo do pantanal
   scientific_name: Blastocerus dichotomus
   classification_indigenous: Xamiali nawe
+  pic_link: images/fauna_009_erinãli_kakotawerali.jpg
 - id: 10
   name_indigenous: Erinãli olokwalikwali
   name_portuguese: veado campeiro
   scientific_name: Blastocerus campestris
   classification_indigenous: Xamiali nawe
+  pic_link: images/fauna_010_erinãli_olokwalikwali.jpg
 - id: 11
   name_indigenous: Yolina
   name_portuguese: raposa do campo
   scientific_name: Lycalopex vetulus
   classification_indigenous: Exini nawe
+  pic_link: images/fauna_011_yolina.jpg
 - id: 12
   name_indigenous: Detekwalahe
   name_portuguese: lobo guará
   scientific_name: Chrysocyon brachyurus
   classification_indigenous: Exini nawe
+  pic_link: images/fauna_012_detekwalahe.jpg
 - id: 13
   name_indigenous: Hodekwalihe
   name_portuguese: jupará
@@ -76,6 +82,7 @@
   name_portuguese: macaco-prego
   scientific_name: Simia apella
   classification_indigenous: Xokokowako nawe
+  pic_link: images/fauna_014_hota_hotãnaloli.jpg
 - id: 15
   name_indigenous: Xokokowaoko walowaoko
   name_portuguese: bugio preto
@@ -91,6 +98,7 @@
   name_portuguese: tamanduá-bandeira
   scientific_name: Myrmecophaga tridactyla
   classification_indigenous: Maose nawe
+  pic_link: images/fauna_017_atikioli.jpg
 - id: 18
   name_indigenous: Wali
   name_portuguese: gambá-de-orelha-branca
@@ -101,6 +109,7 @@
   name_portuguese: quati
   scientific_name: Nasua nasua
   classification_indigenous: Xokokowaoko nawe
+  pic_link: images/fauna_019_kahe.jpg
 - id: 20
   name_indigenous: Tonotono
   name_portuguese: mão-pelada
@@ -121,6 +130,7 @@
     laka Wadako newa, holidewa kolito tanita wawana. O tamanduá-mirim rouba o milho
     de Anaolinakali (dono do milho) com seu cunhado Hixeona. No canto ele se chama
     Wadako, por isso os Enawene Nawe podem comer milho (graças ao roubo).
+  pic_link: images/fauna_022_anaxowa.jpg
 - id: 23
   name_indigenous: Maose
   name_portuguese: tatu-peba
@@ -141,38 +151,45 @@
   name_portuguese: tatu-galinha
   scientific_name: Dasypus novemcinctus
   classification_indigenous: Maose nawe
+  pic_link: images/fauna_025_malolase.jpg
 - id: 26
   name_indigenous: Hotoxe
   name_portuguese: rato preto
   scientific_name: Rattus rattus
   classification_indigenous: Maose nawe
+  pic_link: images/fauna_026_hotoxe.jpg
 - id: 27
   name_indigenous: Kolohe kodohe
   name_portuguese: lagarto verde
   scientific_name: Ameiva ameiva
   classification_indigenous: Maose nawe
+  pic_link: images/fauna_027_kolohe_kodohe.jpg
 - id: 28
   name_indigenous: Tihowe
   name_portuguese: arara-canindé
   scientific_name: Ara ararauna
   classification_indigenous: Walotali nawe
   info: O nome genérico é Walotali.
+  pic_link: images/fauna_028_tihowe.jpg
 - id: 29
   name_indigenous: Towada
   name_portuguese: araracanga
   scientific_name: Ara macao
   classification_indigenous: Kalo nawe
   info: O nome genérico é Walotali.
+  pic_link: images/fauna_029_towada.jpg
 - id: 30
   name_indigenous: Kakerenali
   name_portuguese: arara-vermelha
   scientific_name: Ara chloropterus
   classification_indigenous: Kalo Nawe
+  pic_link: images/fauna_030_kakerenali.jpg
 - id: 31
   name_indigenous: Olotawa
   name_portuguese: papagaio-verdadeiro
   scientific_name: Amazona aestiva
   classification_indigenous: Olotawa nawe
+  pic_link: images/fauna_031_olotawa.jpg
 - id: 32
   name_indigenous: Xekiola
   name_portuguese: papagaio-do-mangue
@@ -183,11 +200,13 @@
   name_portuguese: mutum cavalo
   scientific_name: Mitu tuberosum
   classification_indigenous: Hawiti nawe
+  pic_link: images/fauna_033_haweti.jpg
 - id: 34
   name_indigenous: Tawekiolo
   name_portuguese: chora-chuva-preto
   scientific_name: Monasa nigrifrons
   classification_indigenous: Kotalase nawe
+  pic_link: images/fauna_034_tawekiolo.jpg
 - id: 35
   name_indigenous: Yolotawa
   name_portuguese: andorinha
@@ -198,11 +217,13 @@
   name_portuguese: tesourina-do-campo
   scientific_name: Tyrannus savana
   classification_indigenous: Kotalase nawe
+  pic_link: images/fauna_036_kotayalihe.jpg
 - id: 37
   name_indigenous: Oloweto
   name_portuguese: rolinha roxa
   scientific_name: Columbina talpacoti
   classification_indigenous: Kotalase nawe
+  pic_link: images/fauna_037_oloweto.jpg
 - id: 38
   name_indigenous: Xewaliwali
   name_portuguese: bem-te-vi
@@ -214,6 +235,7 @@
   scientific_name: Crotophaga ani
   classification_indigenous: Kotalase nawe
   info: No ritual o nome é axokwe.
+  pic_link: images/fauna_039_koñaho.jpg
 - id: 40
   name_indigenous: Tikiali
   name_portuguese: alma-de-gato
@@ -244,6 +266,7 @@
   name_portuguese: bacurau-comum
   scientific_name: Nyctidromus albicollis
   classification_indigenous: Tawado nawe
+  pic_link: images/fauna_045_towayako.jpg
 - id: 46
   name_indigenous: Koweira
   name_portuguese: japu
@@ -254,11 +277,13 @@
   name_portuguese: pomba trocal
   scientific_name: Patagioenas speciosa
   classification_indigenous: Kotalase nawe
+  pic_link: images/fauna_047_totokoli.jpg
 - id: 48
   name_indigenous: Makalo
   name_portuguese: garça vaqueira
   scientific_name: Bubulcus ibis
   classification_indigenous: Makalo nawe
+  pic_link: images/fauna_048_makalo.jpg
 - id: 49
   name_indigenous: Xokwiho
   name_portuguese: garibaldi
@@ -269,6 +294,7 @@
   name_portuguese: papagaio moleiro
   scientific_name: Amazona farinosa
   classification_indigenous: Olotawa nawe
+  pic_link: images/fauna_050_olokwe.jpg
 - id: 51
   name_indigenous: Totokoloya
   name_portuguese: choca barrada
@@ -294,6 +320,7 @@
   name_portuguese: tiriba-de-barriga-vermelha
   scientific_name: Pyrrhura perlata
   classification_indigenous: Xirese nawe
+  pic_link: images/fauna_055_wayalata.jpg
 - id: 56
   name_indigenous: Wawalikwa
   name_portuguese: surucuá-de-barriga-vermelha
@@ -304,26 +331,31 @@
   name_portuguese: maracanã-verdadeiro
   scientific_name: Primolius maracana
   classification_indigenous: Xirese nawe
+  pic_link: images/fauna_057_kakase.jpg
 - id: 58
   name_indigenous: Wakowa
   name_portuguese: acauã
   scientific_name: Herpetotheres cachinnans
   classification_indigenous: Kokotere nawe
+  pic_link: images/fauna_058_wakowa.jpg
 - id: 59
   name_indigenous: Oloho
   name_portuguese: urubu-de-cabeça-vermelha
   scientific_name: Cathartes aura
   classification_indigenous: Oloho nawe
+  pic_link: images/fauna_059_oloho.jpg
 - id: 60
   name_indigenous: Oloho eyowalioli, herenewa xewere
   name_portuguese: urubu-rei
   scientific_name: Sarcoramphus papa
   classification_indigenous: Oloho nawe
+  pic_link: images/fauna_060_oloho_eyowalioli_herenewa_xewere.jpg
 - id: 61
   name_indigenous: Wayalanese
   name_portuguese: urubuzinho
   scientific_name: Chelidoptera tenebrosa
   classification_indigenous: Kotalase nawe
+  pic_link: images/fauna_061_wayalanese.jpg
 - id: 62
   name_indigenous: Madawali
   name_portuguese: uru-corcovado
@@ -335,37 +367,44 @@
   name_portuguese: coruja buraqueira
   scientific_name: Athene cunicularia
   classification_indigenous: Holo nawe
+  pic_link: images/fauna_063_hõse.jpg
 - id: 64
   name_indigenous: Tewatewali
   name_portuguese: macuru-de-barriga-castanha
   scientific_name: Notharchus swainsoni
   classification_indigenous: Kotalase nawe
+  pic_link: images/fauna_064_tewatewali.jpg
 - id: 65
   name_indigenous: Xalala
   name_portuguese: martim-pescador-verde
   scientific_name: Chloroceryle amazona
   classification_indigenous: Kotalase nawe
+  pic_link: images/fauna_065_xalala.jpg
 - id: 66
   name_indigenous: Towehe
   name_portuguese: inhambu chororó
   scientific_name: Crypturellus parvirostris
   classification_indigenous: Haweiti nawe
   info: Añahali. Usado na alimentação.
+  pic_link: images/fauna_066_towehe.jpg
 - id: 67
   name_indigenous: Xirese
   name_portuguese: periquito-de-encontro-amarelo
   scientific_name: Brotogeris chiriri
   classification_indigenous: Xirese nawe
+  pic_link: images/fauna_067_xirese.jpg
 - id: 68
   name_indigenous: Yotikia
   name_portuguese: ariramba-bronzeada
   scientific_name: Galbula leucogastra
   classification_indigenous: Kotlase nawe
+  pic_link: images/fauna_068_yotikia.jpg
 - id: 69
   name_indigenous: Xolaxola
   name_portuguese: inhambu anhangá
   scientific_name: Crypturellus variegatus
   classification_indigenous: Haweiti nawe
+  pic_link: images/fauna_069_xolaxola.jpg
 - id: 70
   name_indigenous: Kolatere
   name_portuguese: sabiá bicolor
@@ -376,11 +415,13 @@
   name_portuguese: socó-boi-baio
   scientific_name: Botaurus pinnatus
   classification_indigenous: Makalo nawe
+  pic_link: images/fauna_071_onoli.jpg
 - id: 72
   name_indigenous: Maña
   name_portuguese: jaó
   scientific_name: Crypturellus undulatus
   classification_indigenous: Haweiti nawe
+  pic_link: images/fauna_072_maña.jpg
 - id: 73
   name_indigenous: Kaikiahe
   name_portuguese: quero-quero
@@ -392,6 +433,7 @@
   scientific_name: Dryocopus pileatus
   classification_indigenous: Totokwali nawe
   info: No ritual se chama Holikañoali
+  pic_link: images/fauna_074_totokwalili.jpg
 - id: 75
   name_indigenous: Kokoterese
   name_portuguese: gavião-caboclo
@@ -407,6 +449,7 @@
   name_portuguese: ariranha
   scientific_name: Pteronura brasiliensis
   classification_indigenous: Awere nawe
+  pic_link: images/fauna_077_awere.jpg
 - id: 78
   name_indigenous: Makoke
   name_portuguese: gavião-de-cauda-curta
@@ -417,41 +460,49 @@
   name_portuguese: gavião-de-rabo-branco
   scientific_name: Buteo albicaudatus (Vieillot, 1816)
   classification_indigenous: Kokotere nawe
+  pic_link: images/fauna_079_okwamada.jpg
 - id: 80
   name_indigenous: Kota
   name_portuguese: saúva
   scientific_name: Atta cephalotes
   classification_indigenous: Olati nawe
   info: Añiahali. Usada na alimentação.
+  pic_link: images/fauna_080_kota.jpg
 - id: 81
   name_indigenous: Waoli
   name_portuguese: borboleta
   scientific_name: 'Ordem: Lepidoptera'
   classification_indigenous: Waoli nawe
+  pic_link: images/fauna_081_waoli.jpg
 - id: 82
   name_indigenous: Malaeta
   name_portuguese: Maranduvá
   classification_indigenous: Ataoko nawe
+  pic_link: images/fauna_082_malaeta.jpg
 - id: 83
   name_indigenous: Hõi
   name_portuguese: Iguana verde
   scientific_name: guana iguana
   classification_indigenous: Maose nawe
+  pic_link: images/fauna_083_hõi.jpg
 - id: 84
   name_indigenous: Akola
   name_portuguese: escorpião
   scientific_name: 'Ordem: Scorpiones'
   classification_indigenous: Akola nawe
+  pic_link: images/fauna_084_akola.jpg
 - id: 85
   name_indigenous: Kariri
   name_portuguese: cascavel
   scientific_name: 'Família: Viperidae'
   classification_indigenous: Owi nawe
+  pic_link: images/fauna_085_kariri.jpg
 - id: 86
   name_indigenous: Koloalo
   name_portuguese: Sapo
   scientific_name: 'Ordem: Anura'
   classification_indigenous: Koloalo nawe
+  pic_link: images/fauna_086_koloalo.jpg
 - id: 87
   name_indigenous: Torilori
   name_portuguese: abelha
@@ -463,6 +514,7 @@
   name_portuguese: cachorro-vinagre
   scientific_name: Speothos venaticus
   classification_indigenous: Exini nawe
+  pic_link: images/fauna_088_dekwalahĩ.jpg
 - id: 89
   name_indigenous: Akakalohĩ
   name_portuguese: cachorro-do-mato
@@ -480,26 +532,31 @@
   classification_indigenous: Kohase nawe
   info: A espécie não existe no território Enawene Nawe, porém os anciãos conhecem
     o nome de seus antepassados.
+  pic_link: images/fauna_091_kohase_atoke_awo_dokose.jpg
 - id: 92
   name_indigenous: Menese
   name_portuguese: sucuri
   scientific_name: 'Género: Eunectes'
   classification_indigenous: Owi nawe
+  pic_link: images/fauna_092_menese.jpg
 - id: 93
   name_indigenous: Xaweyali
   name_portuguese: caititu
   scientific_name: Pecari tajacu
   classification_indigenous: Xamiali nawe
+  pic_link: images/fauna_093_xaweyali.jpg
 - id: 94
   name_indigenous: Kolixihi
   name_portuguese: caxinguelê
   scientific_name: Guerlinguetus brasiliensis
   classification_indigenous: Xokokowako nawe
+  pic_link: images/fauna_094_kolixihi.jpg
 - id: 95
   name_indigenous: Akioli
   name_portuguese: jabuti
   scientific_name: Chelonoidis carbonaria / Cheleonoidis denticulata
   classification_indigenous: Akioli nawe
+  pic_link: images/fauna_095_akioli.jpg
 - id: 96
   name_indigenous: téwe
   name_portuguese: anta
@@ -514,6 +571,7 @@
   name_indigenous: ahete
   name_portuguese: urucum
   scientific_name: Bixa orellana
+  pic_link: images/fauna_098_ahete.jpg
 - id: 99
   name_indigenous: erekiati
   name_portuguese: V
@@ -522,18 +580,22 @@
   name_indigenous: waloriki
   name_portuguese: bacaba
   scientific_name: Oenocarpus bacaba
+  pic_link: images/fauna_100_waloriki.jpg
 - id: 101
   name_indigenous: wase
   name_portuguese: amendoim
   scientific_name: Arachis hypogaea
+  pic_link: images/fauna_101_wase.jpg
 - id: 102
   name_indigenous: waxarikwaihi
   name_portuguese: máscara ritual
   scientific_name: Euterpe oleracea
+  pic_link: images/fauna_102_waxarikwaihi.jpg
 - id: 103
   name_indigenous: wayokwata
   name_portuguese: joaninha
   scientific_name: 'Família: Coccinellidae'
+  pic_link: images/fauna_103_wayokwata.jpg
 - id: 104
   name_indigenous: woita
   name_portuguese: capivara
@@ -542,6 +604,7 @@
   name_indigenous: wotohõ
   name_portuguese: macaco zogue-zogue
   scientific_name: Callicebus personatus
+  pic_link: images/fauna_105_wotohõ.jpg
 - id: 106
   name_indigenous: xihiya
   name_portuguese: jacamim
@@ -551,22 +614,27 @@
   name_indigenous: yahõ
   name_portuguese: jaú
   scientific_name: Zungaro zungaro
+  pic_link: images/fauna_107_yahõ.jpg
 - id: 108
   name_indigenous: yalawi
   name_portuguese: araruta
   scientific_name: Maranta arundinacea
+  pic_link: images/fauna_108_yalawi.jpg
 - id: 109
   name_indigenous: halila
   name_portuguese: tucunaré
   scientific_name: 'Género: Cichla'
+  pic_link: images/fauna_109_halila.jpg
 - id: 110
   name_indigenous: hoserese
   name_portuguese: coruja-buraqueira
   scientific_name: Athene cunicularia
+  pic_link: images/fauna_110_hoserese.jpg
 - id: 111
   name_indigenous: wisowisohi
   name_portuguese: caiarara
   scientific_name: 'Gênero: Cebus'
+  pic_link: images/fauna_111_wisowisohi.jpg
 - id: 112
   name_indigenous: walalaliyaka
   name_portuguese: peixe-abotoado
@@ -575,6 +643,7 @@
   name_indigenous: kolohi
   name_portuguese: bico-doce (calango)
   scientific_name: Ameiva ameiva
+  pic_link: images/fauna_113_kolohi.jpg
 - id: 114
   name_indigenous: towalio kasali
   name_portuguese: caninana
@@ -583,3 +652,4 @@
   name_indigenous: kayali
   name_portuguese: pacu
   scientific_name: 'Família: Myleinae'
+  pic_link: images/fauna_115_kayali.jpg

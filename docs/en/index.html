@@ -806,22 +806,48 @@
 
             </div>
 
-            <div class="index-hero-visual-single">
-                <div class="hero-rings-bg">
-                    <div class="td-target-rings" style="width:400px;height:400px;" aria-hidden="true">
-    <div class="td-target-ring" style="width:400px;height:400px;"></div>
-    <div class="td-target-ring" style="width:calc(400px * 0.73);height:calc(400px * 0.73);"></div>
-    <div class="td-target-ring" style="width:calc(400px * 0.47);height:calc(400px * 0.47);"></div>
-</div>
+            <div class="index-hero-visual">
+                <svg class="hero-village-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs>
+                        <clipPath id="vh-top"><rect x="0" y="0" width="500" height="250"/></clipPath>
+                        <clipPath id="vh-bot"><rect x="0" y="250" width="500" height="250"/></clipPath>
+                        <filter id="vh-soft" x="-10%" y="-10%" width="120%" height="120%">
+                            <feGaussianBlur stdDeviation="6"/>
+                        </filter>
+                    </defs>
+                    <circle class="hero-moiety-top" cx="250" cy="250" r="230" style="fill:var(--td-color-primary)" opacity="0.3" clip-path="url(#vh-top)" filter="url(#vh-soft)"/>
+                    <circle class="hero-moiety-bot" cx="250" cy="250" r="230" style="fill:var(--td-color-dark, #0B0F17)" opacity="0.3" clip-path="url(#vh-bot)" filter="url(#vh-soft)"/>
+                    <g>
+                        <path d="M480,250 A230,230 0 0,0 20,250" fill="none" style="stroke:var(--td-color-primary)" stroke-width="4" opacity="0.16"/>
+                        <path d="M480,250 A230,230 0 0,1 20,250" fill="none" style="stroke:var(--td-color-dark, #0B0F17)" stroke-width="4" opacity="0.16"/>
+                        <line x1="20" y1="250" x2="480" y2="250" style="stroke:var(--td-color-text-muted, #6B6F5A)" stroke-width="1" opacity="0.12"/>
+                        <circle cx="250" cy="250" r="165" fill="none" style="stroke:var(--td-color-primary)" stroke-width="1" opacity="0.06"/>
+                    </g>
+                    <g>
+                        <circle cx="250" cy="250" r="50" fill="none" style="stroke:var(--td-color-border-dark, #B8AFA2)" stroke-width="4" opacity="0.15"/>
+                        <circle class="hero-baito-pulse" cx="250" cy="250" r="35" style="fill:var(--td-color-accent)" opacity="0.15"/>
+                        <circle cx="250" cy="250" r="18" style="fill:var(--td-color-dark, #0B0F17)" opacity="0.18"/>
+                    </g>
+                </svg>
+
+                <div class="hero-photo-main">
+                    <img src="../images/hero.jpeg" alt="Enawenê-Nawê">
+                </div>
+
+                <div class="hero-photo-sat hero-photo-sat-1">
+                    <img src="../images/dictionary.jpg" alt="" loading="lazy">
+                </div>
+                <div class="hero-photo-sat hero-photo-sat-2">
+                    <img src="../images/encyclopedia.jpeg" alt="" loading="lazy">
+                </div>
+                <div class="hero-photo-sat hero-photo-sat-3">
+                    <img src="../images/eyaokwa.jpeg" alt="" loading="lazy">
+                </div>
+                <div class="hero-photo-sat hero-photo-sat-4">
+                    <img src="../images/ethnobotany.jpg" alt="" loading="lazy">
                 </div>
             </div>
-            <div class="hero-small-target">
-                <div class="td-target-rings" style="width:64px;height:64px;" aria-hidden="true">
-    <div class="td-target-ring" style="width:64px;height:64px;border-width:1.5px;"></div>
-    <div class="td-target-ring" style="width:calc(64px * 0.6);height:calc(64px * 0.6);border-width:1.5px;"></div>
-    <div style="width:calc(64px * 0.2);height:calc(64px * 0.2);background:var(--td-color-primary);border-radius:50%;"></div>
-</div>
-            </div>
+
         </div>
     </section>
 
@@ -909,6 +935,9 @@
     </svg>
 </div>
         <div class="teaser-card" data-section="dictionary">
+            <div class="teaser-card-image">
+                <img src="../images/dictionary.jpg" alt="" loading="lazy">
+            </div>
             <div class="teaser-card-body">
                 <div class="teaser-stat">
                     <span class="teaser-count">461</span>
@@ -931,6 +960,9 @@
     </svg>
 </div>
         <div class="teaser-card" data-section="encyclopedia">
+            <div class="teaser-card-image">
+                <img src="../images/encyclopedia.jpeg" alt="" loading="lazy">
+            </div>
             <div class="teaser-card-body">
                 <div class="teaser-stat">
                     <span class="teaser-count">25</span>
@@ -953,6 +985,9 @@
     </svg>
 </div>
         <div class="teaser-card" data-section="fauna">
+            <div class="teaser-card-image">
+                <img src="../images/eyaokwa.jpeg" alt="" loading="lazy">
+            </div>
             <div class="teaser-card-body">
                 <div class="teaser-stat">
                     <span class="teaser-count">115</span>
@@ -975,6 +1010,9 @@
     </svg>
 </div>
         <div class="teaser-card" data-section="ethnobotany">
+            <div class="teaser-card-image">
+                <img src="../images/ethnobotany.jpg" alt="" loading="lazy">
+            </div>
             <div class="teaser-card-body">
                 <div class="teaser-stat">
                     <span class="teaser-count">38</span>
@@ -997,6 +1035,9 @@
     </svg>
 </div>
         <div class="teaser-card" data-section="bibliography">
+            <div class="teaser-card-image">
+                <img src="../images/katoko.jpeg" alt="" loading="lazy">
+            </div>
             <div class="teaser-card-body">
                 <div class="teaser-stat">
                     <span class="teaser-count">33</span>
@@ -1019,6 +1060,9 @@
     </svg>
 </div>
         <div class="teaser-card" data-section="corpus">
+            <div class="teaser-card-image">
+                <img src="../images/corpus.jpg" alt="" loading="lazy">
+            </div>
             <div class="teaser-card-body">
                 <div class="teaser-stat">
                     <span class="teaser-count">7</span>

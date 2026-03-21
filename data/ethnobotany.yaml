@@ -15,6 +15,7 @@
   name_portuguese: cará roxo
   scientific_name: '?'
   usage: alimentação
+  pic_link: images/ethnobotany_003_yodairiro.jpg
 - id: 4
   name_indigenous: walolike
   name_portuguese: bacaba
@@ -23,6 +24,7 @@
   descriptions_of_use: Coleta a fruta, come, coloca na água fervendo; homem e mulher
     podem coletar. Também usado para fazer cesta. Iyohali eri, hayokone, owatalalo
     dayowa haokone, ena eyone owero eyone kalinetata. dolate hanali
+  pic_link: images/ethnobotany_004_walolike.jpg
 - id: 5
   name_indigenous: hakali
   name_portuguese: cara
@@ -30,6 +32,7 @@
   usage: alimentação
   descriptions_of_use: Hakali walowatitini kaliwayokotini walokwalixitini kali / O
     cará é assado pelas mulheres para nossa alimentação.
+  pic_link: images/ethnobotany_005_hakali.jpg
 - id: 6
   name_indigenous: kolowali
   name_portuguese: pequí
@@ -37,6 +40,7 @@
   usage: alimentação, mito
   descriptions_of_use: Kolawali aeñahali, owiro kaheta towetine, one dayoa towahali.
     / A fruta é usada na alimentação, preparada cozida; apenas mulheres fazem.
+  pic_link: images/ethnobotany_006_kolowali.jpg
 - id: 7
   name_indigenous: kolito
   name_portuguese: milho
@@ -45,6 +49,7 @@
   descriptions_of_use: Kolito wakayalitita laka oloneti ehe, walayalali ehe maokotine,
     owiro kaheta toweitine / O milho é utilizado no preparo da chicha para nossa alimentação,
     feito pelas mulheres Enawenenero Nawe.
+  pic_link: images/ethnobotany_007_kolito.jpg
 - id: 8
   name_indigenous: Ahete
   name_portuguese: urucum
@@ -53,6 +58,7 @@
   descriptions_of_use: Ahete Dotatowaneti Hanãli Ena nawe, owiro nawe, kali akayalititi.
     / O urucum é usado na pintura corporal durante os rituais; homens e mulheres também
     utilizam.
+  pic_link: images/ethnobotany_008_ahete.jpg
 - id: 9
   name_indigenous: olali
   name_portuguese: jatobá
@@ -67,6 +73,7 @@
   usage: Alimentação
   descriptions_of_use: Leite de mandioca oferecer para os rituais durante a noite
     | Ketese eyãokwa olone hanãli
+  pic_link: images/ethnobotany_010_ketese.jpg
 - id: 11
   name_indigenous: Halata kate
   name_portuguese: babaçu
@@ -74,6 +81,7 @@
   usage: material de casa, uso para ritual, artesamnato
   descriptions_of_use: "ultilizado para ritual, fazer pete, so apenas homens pode\
     \ fazer,\n hakolo hanali, halata hanali"
+  pic_link: images/ethnobotany_011_halata_kate.jpg
 - id: 12
   name_indigenous: Konohi
   name_portuguese: Algodão
@@ -81,6 +89,7 @@
   usage: artesanato
   descriptions_of_use: konohi wakaylitita laka hokwa ehe, taliti ehe / algodão é utilizado
     para confeccionar a rede, e tambem cocar
+  pic_link: images/ethnobotany_012_konohi.jpg
 - id: 13
   name_indigenous: dana
   name_portuguese: jenipapo
@@ -107,12 +116,14 @@
     em baixa da tera, coleta fruta dela e pode cozinhar ela de duas formas diferentes
     cozido e assado, coloca água fervendo, coloca direto na fogueira, doce é muito
     bom
+  pic_link: images/ethnobotany_015_amayo.jpg
 - id: 16
   name_indigenous: dolohi
   name_portuguese: bambu
   scientific_name: "Subfamília: \tBambusoideae"
   usage: fazer flauta
   descriptions_of_use: dolohi eyaokwa hanali. / usado para fazer flauta para ritual.
+  pic_link: images/ethnobotany_016_dolohi.jpg
 - id: 17
   name_indigenous: Ohata
   name_portuguese: Palmeira sete perna
@@ -120,12 +131,14 @@
   usage: usado para fabicar a flauta
   descriptions_of_use: eyaõkwa hañali, haonalai hañali | A flauta deve ser feita para
     o ritual e somente os homens podem usá-la durante a cerimônia
+  pic_link: images/ethnobotany_017_ohata.jpg
 - id: 18
   name_indigenous: akiona
   name_portuguese: timbó
   scientific_name: 'familias: leguminosas e sapindáceas'
   usage: uso pescaria
   descriptions_of_use: o timbó é utilizado pescaria / akiona akionatahali kakwa
+  pic_link: images/ethnobotany_018_akiona.jpg
 - id: 19
   name_indigenous: Yalawe
   name_portuguese: Araruta
@@ -165,6 +178,7 @@
     , awe kaxata,ela um vegetal nasci como corda ,é  feita  a coleta do feijão e pode
     cozinhar ele dois formas diferentes, coloca água fervedo, ou coloca direto para
     a fogueira,salgado e muito bom
+  pic_link: images/ethnobotany_023_kowatairo.png
 - id: 24
   name_indigenous: kohala ere
   name_portuguese: abacaxi
@@ -223,12 +237,14 @@
   usage: inaja derrubar corta e quemar virou e sal vegetal oferecer para aos espirítos
   descriptions_of_use: halata hakeratalaka esewehe ehe tana eyakaliti yokola ehetana
     | inaja derrubar ela e quemar virou sal vegetal oferecer para os espirítos
+  pic_link: images/ethnobotany_031_halata.jpg
 - id: 32
   name_indigenous: katehe
   name_portuguese: cogumelo
   usage: katehe olati hanali
   descriptions_of_use: katehe owiro eyotine holi halowatalixene haene | a mulher buscar
     cogumelo para assa para comer
+  pic_link: images/ethnobotany_032_katehe.jpg
 - id: 33
   name_indigenous: walise
   name_portuguese: seringueira
@@ -260,6 +276,7 @@
     enira,ayokahali eri, keya ehotene,um fruta Annona squamosa
 
     Ateira do cerrado ,mas arvore pequena, comer a fruta, quando maduro ficar preto'
+  pic_link: images/ethnobotany_035_eyolo_yokolali.jpg
 - id: 36
   name_indigenous: yolié
   name_portuguese: Ingá
