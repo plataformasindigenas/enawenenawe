@@ -57,3 +57,6 @@ theme:
     border_light: "#F0E8D8"
     success: "#4A7C59"
     error: "#A83220"
+  hero_background: "lattice"
+  hero_motif: "lattice"
+  hero_divider: "lattice"
