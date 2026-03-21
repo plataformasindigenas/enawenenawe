@@ -1,0 +1,49 @@
+project_name: "Enawenê-Nawê"
+project_subtitle: "Darakala Kakwali"
+site_title: "Enawenê-Nawê"
+site_tagline: "Língua, conhecimento e memória"
+culture_name: "Enawenê-Nawê"
+meta_prefix: "enawenenawe"
+locales: ["pt", "en"]
+default_locale: "pt"
+
+modules:
+  dictionary: { enabled: true }
+  encyclopedia: { enabled: true }
+  fauna: { enabled: true }
+  ethnobotany: { enabled: true }
+  bibliography: { enabled: true }
+  recordings: { enabled: false }
+  corpus: { enabled: true }
+  videos: { enabled: false }
+
+module_labels:
+  dictionary: "Dicionário"
+  encyclopedia: "Enciclopédia"
+  fauna: "Fauna"
+  ethnobotany: "Etnobotânica"
+  bibliography: "Bibliografia"
+  corpus: "Corpus"
+
+theme:
+  preset: "terra"
+  colors:
+    primary: "#C9A030"
+    accent: "#A83220"
+    accent_muted: "#8B2A1A"
+    accent_light: "#FDEAE6"
+    accent_ring: "rgba(201, 160, 48, 0.2)"
+    dark: "#2C1810"
+    bg: "#FAF3E8"
+    bg_light: "#F5ECD7"
+    bg_infobox: "#F8F1E4"
+    highlight: "#FFF8E1"
+    surface: "#FFFFFF"
+    text: "#2C1810"
+    text_muted: "#6B5E4F"
+    text_secondary: "#6B5E4F"
+    border: "#E8DCC8"
+    border_dark: "#C4B8A0"
+    border_light: "#F0E8D8"
+    success: "#4A7C59"
+    error: "#A83220"

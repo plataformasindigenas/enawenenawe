@@ -1,0 +1,304 @@
+# English locale for Enawenê-Nawê
+
+# HTML lang attribute
+html_lang: "en"
+
+# Accessibility
+skip_link: "Skip to content"
+nav_label: "Main navigation"
+search_label: "Search"
+filter_label: "Filter results"
+
+# Navigation
+nav_brand: "Enawenê-Nawê"
+nav_dictionary: "Dictionary"
+nav_encyclopedia: "Encyclopedia"
+nav_fauna: "Fauna"
+nav_ethnobotany: "Ethnobotany"
+nav_bibliography: "Bibliography"
+nav_corpus: "Corpus"
+
+# Footer
+footer_generated: "Generated with"
+footer_and: "and"
+
+# Index page
+index_title: "Home"
+index_hero_title: "Enawenê-Nawê"
+index_hero_tagline: "Darakala Kakwali"
+index_hero_subtitle: >-
+  A platform dedicated to the preservation, documentation, and appreciation of the linguistic and cultural knowledge of the Enawenê-Nawê people.
+index_about_title: "About the Project"
+index_about_p1: >-
+  <strong>Enawenê-Nawê</strong> is a platform dedicated to the preservation,
+  documentation, and appreciation of the linguistic and cultural knowledge of the Enawenê-Nawê people.
+index_about_p2: >-
+  This repository brings together a variety of linguistic and ethnographic resources, both
+  historical and contemporary, with the goal of supporting teaching, research, and
+  revitalization efforts for the Enawenê-Nawê language. The platform offers a set of
+  tools aimed at linguistic and anthropological study.
+
+# Platform cards
+card_dictionary_title: "Dictionary"
+card_dictionary_desc: "Words and expressions in the Enawenê-Nawê language with Portuguese translations, phonetic transcriptions, and examples."
+card_dictionary_label: "entries"
+card_encyclopedia_title: "Encyclopedia"
+card_encyclopedia_desc: "Articles about culture, rituals, social organization, and traditional knowledge of the Enawenê-Nawê people."
+card_encyclopedia_label: "articles"
+card_fauna_title: "Fauna"
+card_fauna_desc: "Animal names in the Enawenê-Nawê language with traditional classification, scientific names, and images."
+card_fauna_label: "species"
+card_ethnobotany_title: "Ethnobotany"
+card_ethnobotany_desc: "Plants used by the Enawenê-Nawê people with indigenous names, traditional uses, botanical families, and images."
+card_ethnobotany_label: "plants"
+card_bibliography_title: "Bibliography"
+card_bibliography_desc: "Bibliographic references on the language, culture, and history of the Enawenê-Nawê people."
+card_bibliography_label: "references"
+card_corpus_title: "Corpus"
+card_corpus_desc: "Linguistic corpus with annotated and translated texts in the Enawenê-Nawê language."
+card_corpus_label: "texts"
+card_recordings_title: "Recordings"
+card_recordings_desc: "Audio corpus with recordings of words and expressions in the Enawenê-Nawê language."
+card_recordings_label: "recordings"
+card_videos_title: "Videos"
+card_videos_desc: "Video recordings of Enawenê-Nawê rituals, ceremonies, and cultural practices hosted on YouTube."
+card_videos_label: "videos"
+
+# Dictionary page
+dict_title: "Enawenê-Nawê Dictionary"
+dict_search_placeholder: "Search (Enawenê-Nawê or Portuguese)..."
+dict_filter_all: "All word classes"
+dict_empty_title: "Search the dictionary"
+dict_empty_text: "Type a word in Enawenê-Nawê or Portuguese to begin"
+dict_loading: "Loading dictionary..."
+dict_no_results: "No results"
+dict_no_results_hint: "Try a different word or change the filter"
+dict_overflow: "Showing 100 of {n} results. Refine your search."
+dict_result_singular: "result found"
+dict_result_plural: "results found"
+dict_scientific_name: "Scientific name"
+dict_browse_hint: "Select an entry to see details"
+dict_all_pos: "All word classes"
+
+# Ethnobotany page
+ethnobotany_title: "Enawenê-Nawê Ethnobotany"
+ethnobotany_search_placeholder: "Search (Enawenê-Nawê, Portuguese, or scientific name)..."
+ethnobotany_filter_all: "All families"
+ethnobotany_no_results: "No results"
+ethnobotany_no_results_hint: "Try a different name or change the filter"
+ethnobotany_select_hint: "Click a plant to see details"
+ethnobotany_result_singular: "plant found"
+ethnobotany_result_plural: "plants found"
+ethnobotany_detail_family: "Botanical family"
+ethnobotany_detail_usage: "Usage (Enawenê-Nawê)"
+ethnobotany_detail_usage_pt: "Usage description"
+ethnobotany_detail_fruiting: "Fruiting period"
+ethnobotany_detail_environment: "Environment"
+ethnobotany_detail_abundance: "Abundance"
+ethnobotany_category_uncategorized: "No family"
+
+# Fauna page
+fauna_title: "Enawenê-Nawê Fauna"
+fauna_search_placeholder: "Search (Enawenê-Nawê, Portuguese, or scientific name)..."
+fauna_filter_all: "All categories"
+fauna_empty_title: "Search the fauna"
+fauna_empty_text: "Type a name in Enawenê-Nawê, Portuguese, or scientific to begin"
+fauna_no_results: "No results"
+fauna_no_results_hint: "Try a different name or change the filter"
+fauna_overflow: "Showing 100 of {n} results. Refine your search."
+fauna_result_singular: "species found"
+fauna_result_plural: "species found"
+fauna_family: "Family"
+fauna_category_uncategorized: "Uncategorized"
+fauna_detail_family: "Family"
+fauna_detail_classification: "Enawenê-Nawê classification"
+fauna_select_hint: "Click an animal to see details"
+
+# Encyclopedia page
+enc_title: "Enawenê-Nawê Encyclopedia"
+enc_search_placeholder: "Search the encyclopedia..."
+enc_filter_all: "All categories"
+enc_filter_uncategorized: "Uncategorized"
+enc_empty_title: "Search the encyclopedia"
+enc_empty_text: "Type a term to begin"
+enc_loading: "Loading encyclopedia..."
+enc_no_results: "No results"
+enc_no_results_hint: "Try a different term or change the filter"
+enc_overflow: "Showing 100 of {n} results. Refine your search."
+enc_result_singular: "article found"
+enc_result_plural: "articles found"
+enc_toc_title: "Contents"
+enc_variants: "Variants"
+enc_categories: "Categories"
+enc_external_link: "View external reference"
+enc_more_images: "More images"
+enc_examples: "Examples"
+enc_collapse: "Click to collapse"
+enc_entry_type: "Type"
+enc_references: "References"
+enc_last_updated: "Last updated"
+enc_back_to_index: "Back to encyclopedia"
+enc_see_also: "See also"
+enc_breadcrumb_label: "Breadcrumb"
+enc_welcome_text: "An encyclopedia dedicated to the preservation and documentation of the cultural, linguistic, and ethnographic knowledge of the Enawenê-Nawê people."
+enc_featured_title: "Featured article"
+enc_browse_categories: "Browse by category"
+enc_highlights_title: "Illustrated articles"
+enc_read_more: "Read more"
+enc_graph_title: "Connection map"
+enc_graph_all: "All"
+enc_graph_legend_category: "Category"
+enc_graph_legend_entry: "Article"
+
+# Infobox field labels
+infobox_participantes: "Participants"
+infobox_estação: "Season"
+infobox_duração: "Duration"
+infobox_local: "Location"
+infobox_tipo: "Type"
+infobox_nome_científico: "Scientific name"
+infobox_família: "Family"
+infobox_habitat: "Habitat"
+infobox_usos: "Uses"
+infobox_membros: "Members"
+infobox_funções: "Functions"
+infobox_relações: "Relations"
+infobox_região: "Region"
+infobox_rio: "River"
+infobox_coordenadas: "Coordinates"
+infobox_clã: "Clan"
+infobox_papel: "Role"
+infobox_período: "Period"
+infobox_material: "Material"
+infobox_função: "Function"
+
+# Bibliography page
+bib_title: "Enawenê-Nawê Bibliography"
+bib_search_placeholder: "Search (author, title, year)..."
+bib_filter_all: "All types"
+bib_empty_title: "Search the bibliography"
+bib_empty_text: "Type an author, title, or year to begin"
+bib_no_results: "No results"
+bib_no_results_hint: "Try a different author, title, or year"
+bib_overflow: "Showing 100 of {n} results. Refine your search."
+bib_result_singular: "reference found"
+bib_result_plural: "references found"
+
+# Corpus page
+corpus_title: "Enawenê-Nawê Corpus"
+corpus_search_placeholder: "Search the corpus..."
+corpus_no_results: "No results"
+corpus_select_hint: "Select a text to see details"
+corpus_result_singular: "text found"
+corpus_result_plural: "texts found"
+
+# POS labels
+pos_LEX: "Lexeme"
+pos_S: "Noun"
+pos_VC: "Causative Verb"
+pos_ADV: "Adverb"
+pos_PPASS: "Past Part."
+pos_POSP: "Postposition"
+pos_SUF: "Suffix"
+pos_INTJ: "Interjection"
+pos_VT: "Trans. Verb"
+pos_PRON: "Pronoun"
+pos_V: "Verb"
+pos_PRCL: "Particle"
+pos_PPAS: "Past Part."
+pos_PPART: "Particle"
+pos_NUM: "Numeral"
+pos_IP: "IP"
+pos_DEM: "Demonstrative"
+pos_CONJ: "Conjunction"
+pos_X: "Other"
+pos_PROPN: "Proper Noun"
+
+# Cross-linking
+see_also: "See also"
+see_in_fauna: "See in Fauna"
+see_in_dictionary: "See in Dictionary"
+see_in_encyclopedia: "See in Encyclopedia"
+
+# Common labels
+entries_label: "entries"
+species_label: "species"
+articles_label: "articles"
+references_label: "references"
+
+# Navigation (recordings/videos)
+nav_recordings: "Recordings"
+nav_videos: "Videos"
+
+# Terradoc UI
+nav_menu_label: "Menu"
+lang_switch_label: "Language selector"
+card_cta: "Explore"
+
+# Footer
+footer_description: >-
+  A platform dedicated to the preservation, documentation, and appreciation of
+  the linguistic and cultural knowledge of the Enawenê-Nawê people.
+footer_nav_heading: "Navigation"
+footer_resources_heading: "Resources"
+footer_contact_heading: "Contact"
+footer_email: ""
+footer_location: "Mato Grosso, Brazil"
+footer_credits: "Generated with aptoro & kodudo"
+footer_license: ""
+footer_text: ""
+
+# Index page - hero & teasers
+index_hero_cta: "Explore"
+index_sections_title: "Explore"
+index_view_all_dictionary: "View dictionary"
+index_view_all_encyclopedia: "View encyclopedia"
+index_view_all_fauna: "View fauna"
+index_view_all_videos: "View videos"
+index_gallery_title: "Images & Sounds"
+index_gallery_subtitle: "Visual and audio recordings of Enawenê-Nawê culture"
+index_about_subtitle: "Learn about the platform"
+index_about_who_title: "About us"
+index_about_cite_title: "How to cite"
+index_about_cite: >-
+  TRESOLDI, T. Enawenê-Nawê: Darakala Kakwali [digital platform]. 2025.
+  Available at: https://plataformasindigenas.github.io/enawenenawe/
+index_about_partners_title: "Partners"
+index_quote: >-
+  Language is the spirit of the people. To preserve the language is to preserve the soul of a culture.
+index_quote_attribution: ""
+
+# Statistics labels
+stat_dictionary_entries: "entries"
+stat_encyclopedia_entries: "articles"
+stat_fauna_entries: "species"
+stat_ethnobotany_entries: "plants"
+stat_bibliography_entries: "references"
+stat_recordings_entries: "recordings"
+stat_videos_entries: "videos"
+stat_corpus_entries: "texts"
+
+# Recordings page
+# Videos page
+vid_title: "Videos"
+vid_subtitle: "Video recordings of Enawenê-Nawê culture"
+vid_count_label: "videos"
+vid_watch: "Watch on YouTube"
+vid_filter_all: "All categories"
+
+# Recordings page
+rec_title: "Recordings Corpus"
+rec_subtitle: "Audio recordings of the Enawenê-Nawê language"
+rec_count_label: "recordings"
+rec_search_placeholder: "Search recordings..."
+rec_filters_title: "Filters"
+rec_filter_format: "Format"
+rec_filter_speaker: "Speaker"
+rec_filter_match: "Match type"
+rec_col_word: "Word"
+rec_col_speaker: "Speaker"
+rec_col_date: "Date"
+rec_col_match: "Match"
+rec_col_audio: "Audio"
+rec_no_results: "No recordings found"
+rec_overflow: "Showing 200 of {n} recordings. Refine your search."

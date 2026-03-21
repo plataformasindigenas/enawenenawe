@@ -1,0 +1,287 @@
+- id: 1
+  name_indigenous: esokate
+  name_portuguese: buriti
+  scientific_name: Mauritia flexuosa
+  usage: medicina, mágica, culinária, construção, artesanato
+- id: 2
+  name_indigenous: lolokwatehi
+  name_portuguese: açaí
+  scientific_name: Euterpe oleracea
+  usage: construção, alimentação
+  descriptions_of_use: A palha é usada na cobertura das casas.
+  pic_link: images/ethnobotany_002_lolokwatehi.jpg
+- id: 3
+  name_indigenous: Yodairiro
+  name_portuguese: cará roxo
+  scientific_name: '?'
+  usage: alimentação
+- id: 4
+  name_indigenous: walolike
+  name_portuguese: bacaba
+  scientific_name: Oenocarpus bacaba
+  usage: árvore, alimentação, construção, mito
+  descriptions_of_use: Coleta a fruta, come, coloca na água fervendo; homem e mulher
+    podem coletar. Também usado para fazer cesta. Iyohali eri, hayokone, owatalalo
+    dayowa haokone, ena eyone owero eyone kalinetata. dolate hanali
+- id: 5
+  name_indigenous: hakali
+  name_portuguese: cara
+  scientific_name: Dioscorea trifida
+  usage: alimentação
+  descriptions_of_use: Hakali walowatitini kaliwayokotini walokwalixitini kali / O
+    cará é assado pelas mulheres para nossa alimentação.
+- id: 6
+  name_indigenous: kolowali
+  name_portuguese: pequí
+  scientific_name: Caryocar coriaceum
+  usage: alimentação, mito
+  descriptions_of_use: Kolawali aeñahali, owiro kaheta towetine, one dayoa towahali.
+    / A fruta é usada na alimentação, preparada cozida; apenas mulheres fazem.
+- id: 7
+  name_indigenous: kolito
+  name_portuguese: milho
+  scientific_name: Zea mays
+  usage: alimentação, mito
+  descriptions_of_use: Kolito wakayalitita laka oloneti ehe, walayalali ehe maokotine,
+    owiro kaheta toweitine / O milho é utilizado no preparo da chicha para nossa alimentação,
+    feito pelas mulheres Enawenenero Nawe.
+- id: 8
+  name_indigenous: Ahete
+  name_portuguese: urucum
+  scientific_name: Bixa orellana
+  usage: ritual
+  descriptions_of_use: Ahete Dotatowaneti Hanãli Ena nawe, owiro nawe, kali akayalititi.
+    / O urucum é usado na pintura corporal durante os rituais; homens e mulheres também
+    utilizam.
+- id: 9
+  name_indigenous: olali
+  name_portuguese: jatobá
+  scientific_name: Hymenaea courbaril
+  usage: alimetação
+  descriptions_of_use: comida, fazer bebida | olali towalatahali, holi terahali. /
+    Misture com água para beber o caldo.
+- id: 10
+  name_indigenous: Ketese
+  name_portuguese: Mandioca
+  scientific_name: Manihot esculenta
+  usage: Alimentação
+  descriptions_of_use: Leite de mandioca oferecer para os rituais durante a noite
+    | Ketese eyãokwa olone hanãli
+- id: 11
+  name_indigenous: Halata kate
+  name_portuguese: babaçu
+  scientific_name: Attalea speciosa
+  usage: material de casa, uso para ritual, artesamnato
+  descriptions_of_use: "ultilizado para ritual, fazer pete, so apenas homens pode\
+    \ fazer,\n hakolo hanali, halata hanali"
+- id: 12
+  name_indigenous: Konohi
+  name_portuguese: Algodão
+  scientific_name: 'Género: Gossypium'
+  usage: artesanato
+  descriptions_of_use: konohi wakaylitita laka hokwa ehe, taliti ehe / algodão é utilizado
+    para confeccionar a rede, e tambem cocar
+- id: 13
+  name_indigenous: dana
+  name_portuguese: jenipapo
+  scientific_name: Genipa americana
+  usage: ritual
+  descriptions_of_use: hehehalinase heye wadanatititni eyaokwa kakwa. / pintura corporal
+    no ritual
+- id: 14
+  name_indigenous: Atarataha
+  name_portuguese: guandu
+  scientific_name: Cajanus cajan
+  usage: um planta, come, coloca água fervedo
+  descriptions_of_use: Haholokasetene heita, holokose laka hanene. / Ferver para amolecer
+    antes do consumo.
+- id: 15
+  name_indigenous: Amayo
+  name_portuguese: Batata doce
+  scientific_name: Ipomoea batatas
+  usage: alimentção
+  descriptions_of_use: Dotehikoni kalitã,holi haseka laka halowatene laka hayokine,haholokwalixene
+    laka hayokene hahotalate kali erekia hakonela laka awedali. ela tem fruta em baixa
+    da tera, coleta fruta dela e pode cozinhar ela dois formas diferentes, coloca
+    água fervedo, o coloca direto para a fogueira, doce e muito bom | ela tem fruta
+    em baixa da tera, coleta fruta dela e pode cozinhar ela de duas formas diferentes
+    cozido e assado, coloca água fervendo, coloca direto na fogueira, doce é muito
+    bom
+- id: 16
+  name_indigenous: dolohi
+  name_portuguese: bambu
+  scientific_name: "Subfamília: \tBambusoideae"
+  usage: fazer flauta
+  descriptions_of_use: dolohi eyaokwa hanali. / usado para fazer flauta para ritual.
+- id: 17
+  name_indigenous: Ohata
+  name_portuguese: Palmeira sete perna
+  scientific_name: Socratea exorrhiza
+  usage: usado para fabicar a flauta
+  descriptions_of_use: eyaõkwa hañali, haonalai hañali | A flauta deve ser feita para
+    o ritual e somente os homens podem usá-la durante a cerimônia
+- id: 18
+  name_indigenous: akiona
+  name_portuguese: timbó
+  scientific_name: 'familias: leguminosas e sapindáceas'
+  usage: uso pescaria
+  descriptions_of_use: o timbó é utilizado pescaria / akiona akionatahali kakwa
+- id: 19
+  name_indigenous: Yalawe
+  name_portuguese: Araruta
+  scientific_name: Maranta arundinacea
+  usage: planta,alimentação
+  descriptions_of_use: Dotehikoni kalitã,tasa haholokwalixine halowatene kali,ela
+    tem fruta em baixa da tera, coleta fruta dela e pode cozinhar ela dois formas
+    diferentes, coloca água fervedo, o coloca direto para a fogueira
+- id: 20
+  name_indigenous: maro ere
+  name_portuguese: caju do mato
+  scientific_name: Anacardium occidentale
+  usage: pesca
+  descriptions_of_use: mamerataita ekakwa kali. / nós usamos o caju do mato como isca
+    para pesca
+- id: 21
+  name_indigenous: Hetire
+  name_portuguese: Cabaça
+  scientific_name: Porongo
+  usage: Cabaça utilizada copo de tomar bebida
+  descriptions_of_use: Hetire xexase hanãli eyãokwa olonali kali | A cabaça utiliada
+    para copo tomar xixá
+  pic_link: images/ethnobotany_021_hetire.jpg
+- id: 22
+  name_indigenous: Wase
+  name_portuguese: Amendoim
+  scientific_name: Arachis hypogaea
+  usage: alimentação
+  descriptions_of_use: wase aeñahali, hatolosetene holi haiña kehe kaheta | amendoim
+    para comer, mulhur que fazer
+- id: 23
+  name_indigenous: kowatairo
+  name_portuguese: feijão de corda
+  scientific_name: Vigna unguiculata
+  usage: planta,alimentção
+  descriptions_of_use: kaihire katahali,tasa haholokwataitene halowatene kali, kehi
+    , awe kaxata,ela um vegetal nasci como corda ,é  feita  a coleta do feijão e pode
+    cozinhar ele dois formas diferentes, coloca água fervedo, ou coloca direto para
+    a fogueira,salgado e muito bom
+- id: 24
+  name_indigenous: kohala ere
+  name_portuguese: abacaxi
+  scientific_name: Ananas comosus
+  usage: kohalare heyone daka hayokwene
+  descriptions_of_use: kohalare heyone heyane daka hayokwene owayowa kaxata | o abacaxi
+    pegar um fruta corta com faca para comer
+- id: 25
+  name_indigenous: kowatase
+  name_portuguese: feijão fava
+  scientific_name: Vicia faba
+  usage: alimentaçaõ
+  descriptions_of_use: olati kowatase, owiro kaheta towetini ena owana | somente as
+    mulheres colhe o feijão fava, também são as mulheres que preparam este alimentos  para
+    os homens
+  pic_link: images/ethnobotany_025_kowatase.jpg
+- id: 26
+  name_indigenous: maro ere
+  name_portuguese: caju
+  scientific_name: Anacardium occidentale
+  usage: está fruta é utilizada iscar de anzol
+  descriptions_of_use: maroere maratihi ola hañali ehemaokoti | está fruta nós utilizada
+    iscar de anzol
+- id: 27
+  name_indigenous: oxekalise
+  name_portuguese: urucum amarelo
+  scientific_name: Bixa orellana, urucum amarelo
+  usage: ritual, midicina tradicional
+  descriptions_of_use: oxekalise hawehalito kakwa holi warati kali | urucum amarelo
+    ultilizada alimentacao e remedio midicina
+- id: 28
+  name_indigenous: atarataha
+  name_portuguese: feijaõ andu
+  scientific_name: Cajanus cajan
+  usage: alimentação
+  descriptions_of_use: olati hanali atarataha owiro nawe kaheta enowasero | as mulheres
+    cozinham para comer
+- id: 29
+  name_indigenous: kalana
+  name_portuguese: mauritiella armata
+  scientific_name: Mauritiella
+  usage: fruta de mauritiella utilizada é iscar de anzol e alimentacao
+  descriptions_of_use: kalanaere wanetine kali maratihi ola hañali kali | fruta de
+    mauritiella armata é alimentacao e tamabém utilizada escar de anzol
+  pic_link: images/ethnobotany_029_kalana.jpg
+- id: 30
+  name_indigenous: alitioko
+  name_portuguese: pimenta
+  scientific_name: Capsicum baccatum
+  usage: alimentos
+  descriptions_of_use: olati ekionere | mistura do comenda
+- id: 31
+  name_indigenous: halata
+  name_portuguese: inaja
+  scientific_name: Attalea maripa
+  usage: inaja derrubar corta e quemar virou e sal vegetal oferecer para aos espirítos
+  descriptions_of_use: halata hakeratalaka esewehe ehe tana eyakaliti yokola ehetana
+    | inaja derrubar ela e quemar virou sal vegetal oferecer para os espirítos
+- id: 32
+  name_indigenous: katehe
+  name_portuguese: cogumelo
+  usage: katehe olati hanali
+  descriptions_of_use: katehe owiro eyotine holi halowatalixene haene | a mulher buscar
+    cogumelo para assa para comer
+- id: 33
+  name_indigenous: walise
+  name_portuguese: seringueira
+  scientific_name: Hevea brasiliensis
+  usage: materia,artesanatos, magica
+  descriptions_of_use: Enawene hara ehi towetine,owero nawe etahi hanali, walise eyowali
+    kaxata diwa enawaliti kali,Enawene fazer coleta latex de seringueira para fazer
+    a bola, as mulhre coletar o látex da seringueira para ulotizar na seus joelhos
+    , seringueira fazer mal com as pessoas criancas e adulto tambem
+- id: 34
+  name_indigenous: eyolo yokolali
+  name_portuguese: Anona
+  scientific_name: Annona muricata (Graviola)
+  usage: fruta, alimentação
+  descriptions_of_use: eyolo yokolali kaira ekonere,owakase ekate, ekiakasehi kadene
+    enira,ayokahali eri, keya ehotene,um fruta anona de mata,mas anoneira nao e grande,
+    um arvore medio, comer a fruta, quando maduro ficar preto
+  pic_link: images/ethnobotany_034_eyolo_yokolali.jpg
+- id: 35
+  name_indigenous: eyolo yokolali
+  name_portuguese: 'Annona squamosa
+
+    Ateira'
+  scientific_name: 'Annona squamosa
+
+    Ateira'
+  usage: fruta, alimentação
+  descriptions_of_use: 'eyolo yokolali olokwalikwa ekonire,ekata katese ekate,ekiahi
+    enira,ayokahali eri, keya ehotene,um fruta Annona squamosa
+
+    Ateira do cerrado ,mas arvore pequena, comer a fruta, quando maduro ficar preto'
+- id: 36
+  name_indigenous: yolié
+  name_portuguese: Ingá
+  scientific_name: ingá, ingazeiro
+  usage: árvore, alimentação, medicina
+  descriptions_of_use: owaha yolié kate, akote yolié kate mahia hatoitã makali wala
+    taitã, waratitã yplié kate kali, ingazeiro um árvore alto tem muitos especies
+    diferentes, tem fruta,mas ingazeiro serve cura pessoas também
+- id: 37
+  name_indigenous: erexowa
+  name_portuguese: Maracujá Suspiro
+  scientific_name: Passiflora nitida Kunth
+  usage: fruta, alimentação
+  descriptions_of_use: mahita kakatere wala eihi wayate kahita, atakate nawe hinonetatã
+    anolokwitã laka tanetã,kalíe kadene hora hitati holi hitali kadene hote laka tasa
+    hiyo hayokone awe, owayowa kaxata ere,nao tem arvore,ela subir qualquer arvores
+    para conseguir viver,tem fruta, quando verde  ainda nao esta pronto e quando ficou
+    maduro ficar amarelo, e certo para coletar e para comer e muito doce
+- id: 38
+  name_indigenous: alaho
+  name_portuguese: banananeira ornamental
+  scientific_name: Musa ornata
+  usage: folhas utilizadas acapamento durante da chuvas e proteger a sol também
+  descriptions_of_use: alaho eraneti hañali ehetaneta | a banananeira utilizada acapamento
+    previsória para proteger sol e chuva tanbém

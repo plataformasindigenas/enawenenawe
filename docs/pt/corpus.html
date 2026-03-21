@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.svg">
+    <title>Corpus Enawenê-Nawê - Enawenê-Nawê</title>
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/terradoc.css">
+    <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+    <style>
+        :root {
+            --td-color-primary: #C9A030;
+            --td-color-accent: #A83220;
+            --td-color-accent-muted: #8B2A1A;
+            --td-color-bg: #FAF3E8;
+            --td-color-bg-light: #F5ECD7;
+            --td-color-bg-infobox: #F8F1E4;
+            --td-color-border: #E8DCC8;
+            --td-color-border-dark: #C4B8A0;
+            --td-color-text: #2C1810;
+            --td-color-text-muted: #6B5E4F;
+            --td-color-highlight: #FFF8E1;
+            --td-color-warning-bg: #FFF8E1;
+            --td-color-surface: #FFFFFF;
+            --td-color-border-light: #F0E8D8;
+            --td-color-text-secondary: #6B5E4F;
+            --td-color-accent-light: #FDEAE6;
+            --td-color-success: #4A7C59;
+            --td-color-error: #A83220;
+            --td-color-accent-ring: rgba(201, 160, 48, 0.2);
+            --td-radius: 28px;
+            --td-color-dark: #2C1810;
+            --td-radius-lg: 28px;
+            --td-radius-pill: 999px;
+            --td-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --td-font-headings: 'Sora', 'Inter', sans-serif;
+            --td-font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+            --td-term-color: #8B2A1A;
+            --td-term-weight: 600;
+            --td-color-gold: #D4A03A;
+        }
+        .corpus-header {
+            padding: 1.5rem 0 1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .corpus-header::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1.5rem;
+            width: 4px;
+            height: 48px;
+            background: var(--td-color-primary);
+            border-radius: 2px;
+        }
+        .corpus-header h1 {
+            margin: 0 0 0.5rem 0;
+        }
+        .corpus-header .subtitle {
+            color: var(--td-color-text-muted);
+            margin: 0;
+        }
+        .corpus-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+        .corpus-sidebar {
+            background: var(--td-color-surface);
+            border: 1px solid var(--td-color-border);
+            border-radius: var(--td-radius);
+            overflow: hidden;
+            position: sticky;
+            top: 5.5rem;
+        }
+        .corpus-sidebar-header {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--td-color-border-light);
+        }
+        .corpus-sidebar-header h3 {
+            margin: 0 0 0.75rem 0;
+            font-size: 0.95rem;
+            color: var(--td-color-primary);
+        }
+        .corpus-search-input {
+            width: 100%;
+            padding: 0.45rem 0.75rem;
+            border: 1px solid var(--td-color-border);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-family: var(--td-font-family);
+            background: var(--td-color-bg);
+            color: var(--td-color-text);
+            outline: none;
+            transition: border-color 0.15s;
+        }
+        .corpus-search-input:focus {
+            border-color: var(--td-color-primary);
+            box-shadow: 0 0 0 3px var(--td-color-accent-ring);
+        }
+        .corpus-stats {
+            font-size: 0.8rem;
+            color: var(--td-color-text-muted);
+            padding: 0.5rem 1.25rem;
+            border-bottom: 1px solid var(--td-color-border-light);
+        }
+        .corpus-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        .corpus-list-item {
+            padding: 0.6rem 1.25rem;
+            cursor: pointer;
+            border-bottom: 1px solid var(--td-color-border-light);
+            transition: background 0.15s;
+            font-size: 0.9rem;
+        }
+        .corpus-list-item:last-child {
+            border-bottom: none;
+        }
+        .corpus-list-item:hover {
+            background: var(--td-color-bg-light);
+        }
+        .corpus-list-item.active {
+            background: var(--td-color-accent-light);
+            border-left: 3px solid var(--td-color-primary);
+        }
+        .corpus-list-item-title {
+            font-weight: 600;
+            color: var(--td-color-primary);
+            line-height: 1.35;
+        }
+        .corpus-list-item-meta {
+            font-size: 0.75rem;
+            color: var(--td-color-text-muted);
+            margin-top: 0.15rem;
+        }
+        .corpus-lang-tag {
+            font-size: 0.7rem;
+            background: var(--td-color-accent-light);
+            color: var(--td-color-accent-muted);
+            padding: 0.1rem 0.45rem;
+            border-radius: 999px;
+        }
+        .corpus-main {
+            min-width: 0;
+        }
+        .corpus-detail {
+            background: var(--td-color-surface);
+            border: 1px solid var(--td-color-border);
+            border-radius: var(--td-radius);
+            padding: 2rem;
+        }
+        .corpus-detail-title {
+            font-family: var(--td-font-headings);
+            font-weight: 600;
+            font-size: 1.35rem;
+            color: var(--td-color-primary);
+            margin: 0 0 0.5rem 0;
+        }
+        .corpus-detail-meta {
+            font-size: 0.85rem;
+            color: var(--td-color-text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .corpus-detail-desc {
+            font-size: 0.9rem;
+            color: var(--td-color-text-secondary);
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--td-color-border-light);
+        }
+        .corpus-detail-content {
+            font-size: 0.95rem;
+            line-height: 1.75;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .corpus-hint {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--td-color-text-muted);
+            font-size: 0.95rem;
+        }
+        .corpus-no-results {
+            text-align: center;
+            padding: 2rem;
+            color: var(--td-color-text-muted);
+            font-size: 0.9rem;
+        }
+        .corpus-highlight {
+            background: var(--td-color-highlight);
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .corpus-layout {
+                grid-template-columns: 1fr;
+            }
+            .corpus-sidebar {
+                position: static;
+            }
+            .corpus-list {
+                max-height: 40vh;
+            }
+        }
+    </style>
+</head>
+<body class="td-style-terra">
+    <a href="#main-content" class="skip-link">Pular para conteúdo</a>
+
+    <nav id="td-nav" aria-label="Navegação principal">
+        <div class="td-nav-inner">
+            <a href="index.html" class="brand">
+                <img src="../images/logo.svg" alt="" class="brand-logo">
+                <span>Enawenê-Nawê</span>
+            </a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+            <div class="nav-links">
+                <a href="dictionary.html">Dicionário</a>
+                <a href="encyclopedia.html">Enciclopédia</a>
+                <a href="fauna.html">Fauna</a>
+                <a href="ethnobotany.html">Etnobotânica</a>
+                <a href="bibliography.html">Bibliografia</a>
+                <a href="corpus.html" class="active" aria-current="page">Corpus</a>
+            </div>
+            <div class="lang-switch" aria-label="Seletor de idioma">
+                    <span class="lang-current" aria-current="true">PT</span>
+<span class="lang-sep">/</span>                    <a href="../en/corpus.html" class="lang-link">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="td-container">
+    <div class="corpus-header">
+        <h1>Corpus Enawenê-Nawê <svg class="td-page-badge" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M12,1 A11,11 0 0,1 23,12 L1,12 A11,11 0 0,1 12,1 Z" fill="var(--td-color-primary)" opacity="0.2"/>
+    <path d="M12,23 A11,11 0 0,1 1,12 L23,12 A11,11 0 0,1 12,23 Z" fill="var(--td-color-dark, #0B0F17)" opacity="0.2"/>
+    <circle cx="12" cy="12" r="11" fill="none" stroke="var(--td-color-primary)" stroke-width="1.2" opacity="0.3"/>
+    <line x1="1" y1="12" x2="23" y2="12" stroke="var(--td-color-text-muted)" stroke-width="0.6" opacity="0.2"/>
+</svg></h1>
+        <p class="subtitle">7 textos</p>
+    </div>
+
+    <div class="no-js-only">
+        <div class="corpus-detail" style="margin-bottom:1.5rem;">
+            <h2 class="corpus-detail-title">Erekati Weka</h2>
+            <div class="corpus-detail-meta">
+<span>erekatiWeka.txt</span>            </div>
+            <div class="corpus-detail-content">EREKATI WEKA
+
+Hetati wadali hekiowana saili akoneta Mahia Erikiati tanali. Holinaneita wadali
+kawakanalina Erikiati daneta.
+Werototo, weroli holi owana onewini eya etoli ehi,weroli: Heya Hiyowa
+enaweti nowani, hanowaka onewini, "holita Weretotototo ... Nowita"
+- Haia nodani nowene nodane howana nodai Wadali.
+Erikiatineto "hotoso 0000 watatata Hoseee! ! ", horawenalo sewekwa, ewerakwane holise
+eyowa dane. Weretoto, weroli haniho heno aõkone. Seeesala edowata, maihia ikiawala.
+Kotayali Waha,
+- Koko kotayali hixo Kaliwa hane hedanowane konowere. hasetalikiwa aõkone,
+- Haia nodai notowaha nodanowene howana. "hotosooo ... seee"eyone dane
+aõkone haihio heno "seee" sala edowata, mahia tonane hekwali enawiti, holidewa
+enihio keraketakolaita.
+Dalawatali, tonotono waha.
+- Koko Dalawatali hixokoli
+Enawiti heyowa nowane koko Dalawatali, hanowaka hedanowane hokwatero.
+"holidewã toho ... toho ... nowita".
+- Haia nodai nodanowene howana hala henawenetowa. Kodanowene dowana.
+- Hatowaha dane takwadane ekatahe. Kawese kolihi kadeyane. "Xooo ... " dane
+eyone dane hanenakawa (tali ... tali ... tali) ere xasetene, erexa setene.
+- Hane nodai, newa eheye. Hõkotowane enowana holidewã, totowalaita eweseko
+tota eweseko xakolo ahete heye aloloirata, horahi heye aloloiratowa mao heye
+aloloiratowa.
+Awe wexana kaliyane Wadali erikiati atawa dewa.</div>
+        </div>
+        <div class="corpus-detail" style="margin-bottom:1.5rem;">
+            <h2 class="corpus-detail-title">Hakaliwanali</h2>
+            <div class="corpus-detail-meta">
+<span>hakaliwanali.txt</span>            </div>
+            <div class="corpus-detail-content">HAKALIWANALI
+
+Holi kadene, heretikaliwa ahakahatama, naweta tikaliwa nadai, holidewã
+kadene kawakanali, hato denaha enowana kaliyane, hakaliwanali, holi
+kadene heretikaliwa, kaliwa ahakahatama tikaliwa nodai, ahakahatama
+Kaliwa, holidema kadene kawakanali, hato dena enowana kaliyane mahiata
+enawene wala ekiaõkone dane.
+Hatoitat ikaliwa ahakahatamah olita tikaliwa, holidema, akirekwalikenaned aneha
+enowana kaliyane, holidema aokotane dane kaliyane. Mahiata enawene wala
+aokotene dane kaliyane, yaliyali kera kakaseokohi kera yaliyali.
+Holi dane enowana enali, ehowaneoko heye atatakohena netali dane, eheye erako
+hohoko xewena holi, heyenekata atatakohina netali, yaliyali, holita hato derati
+ewalila ehi taneta, yaliyali tolikiowa noweta "he'e" holinaneta kadene. Hato kalo
+waha alolokwa.
+Kalo hetati, towada alolokwa exowa dane, ehowane dahako dane, holi tikialiwa
+kaliyane, "terete" edahakona eralako exowa, erali heyeta aotalixowana dane
+"hotototo ! ! ! ... "
+Erali talakoko nikiata exowa kaliwa tokwa dane exowa weso! ! ! Tiolati esekokoya
+tokowena, awaliwena.
+Kaliawanekata, awaliona naha, ehitali kaliwa, xala naha, halawanaha,
+ekinetakowakali matiolanena holita, hato kakireriali waha towane exowa
+towane enekione.
+KakeriNali towane exowa kaliyane, holi enekana eyokwa, enekana owakwa
+holidema, kakeririali horehalita haita totadewa, heyakera hatalotakera tiolati Kera
+keyakeyalih, oli kakwanekatae kaokowena, holidemae yadeokoli, taneta holidema
+kakerinalih orehalita, hata tota dewa, heyakera tiolati keyakeyalihek akwanekata
+ekaokatetowena, holidewa mahokwanereta, holidewa kakerinali mahia awalide,
+dehetah ato kalo mahokwanerelitao kwaha laka,e xowatamao kwaha dewa, awali
+kaxa wayowe holidewã.
+- Nolitama, newayakolie xowatamao kwaha holidemam ahokwaneretao kwaha.
+- Nakeotowetama nema yakoli detama holidewa kane kahorane, kahorane
+netali eyokwa dane eheye, holidewa kahoraneta holi hato akoyananexa kaliyane
+erokwakala nawexa kaliyane, okwaha hato kaloxa etiolane okoha, hato.
+Walotali xakadene, enekana kakwa erakatetowe, aokwatetewe, enekana
+ekenitako, maratiyali okwaha hata meolakowaka henewenekwa, exowa towane,
+hato walotali exowa towane.
+- Haita ekiaokwane newadewa towane yakoli, haita meolakowaka enekana
+kaheta ekiata enako, kaliyane eyone kaliyane "waita" aokone hahiyi kaliyane.
+Edohanane kakwa (aokwatakotowe, alolo asetowalixowe), hato eta kadene
+Mahanaha akote akoyakaha nane, kaliyane.
+Yolotali etalase eyowa/akoyaka.
+Tolise "etalase" ewexi eyowa/akoyaka.
+Hetiwanee rawalolakosee wexahoe yowa/akoyaka
+Kahenekasee neranetoe se eyowa/akoyaka
+Hawa eyanaho eyowa erosetata eyowa kali /akoyaka
+Yawaloweta enewada eyowa etowesera eyokali/akoyaka
+t,A,UQ
+Erekatiwane esesekalihe eyowa/akoyaka, eneraneto akosaho eyowa erekiati
+eyowa kali.
+Dowa wera eyowa/akoyaka.
+Kayawalio enokola ewese eyowa/akoyaka.
+Honotairo hakolo eyowa/ akoyoka
+Kolitosero ekolitosera eyowa/akoyaka
+Sasai dolaite eyowa /akoyaka.
+Anoi exewere eyowa/akoyaka.
+Hakaliwanali eyohalitaha holi akoyaka halitane holi.</div>
+        </div>
+        <div class="corpus-detail" style="margin-bottom:1.5rem;">
+            <h2 class="corpus-detail-title">Hekiata Mataliokase</h2>
+            <div class="corpus-detail-meta">
+<span>hekiataMataliokase.txt</span>            </div>
+            <div class="corpus-detail-content">HEKIATA MATÁLIOKASE KATATONERO EYOTA
+
+Esewehe eneto tewana (2x), holi etine enane eraokata. (lolate kaweteho) maihia
+alatahaliwala enane ekiata.
+Holidema hane hahekotaita mamana, holi dema tewakane hatase halatene
+heyane, awa ala hixo ehe, alakatali kaxata, holidema okotiwa horalita alinene.
+- Nowatolo hayaha katola wayokwa weyane, newa eheye. Holidewa dane,
+eneto akasenene.
+- Hinatolo okwa katola dayokwa deyane okwa maio, newa eheye. Towe haranekwa
+neta, olokwalikwaneta newa, katola wayokwa weyane nowatolo, newa eheye.
+Holidema kadene kasanalo terena hawakalota anakwa dane erenõwa. - Nowatolo
+newa eheye "Haooo ... ", newa eheye, nowa kena nato. Newa eheye,
+- nowatolo, newa eheye, "Haooo ... ", newa eheye, eskoyona ekakwa, olokwalikwa
+hoyakanekwata tanadane, tewakwa enoneta
+Mayalalokwa.
+- halakotanexikia nowatolo dane.
+Alakatita hata memawaka, hata Tewakwa enoneta nane, Yakera esewehe tewakwali,
+tewakwa enoneta mayalalokwa okakoha, katola ere Ayona, hawiyowalo enane ekiata,
+alakana.
+- " Erooo", Newa, "haoo ", newa katatonero akiowala tene, aline.
+- hayaha, newa eheye takwatowane enowana.
+Katatonero takwatowane enowana
+- noxi, newa eheye "waaa", Newaxa. Mahia enatolo wala, aserokwati ekiawala
+wayone, eyakalotinero nane Anaõli honakonase nane, halitotonero nane, halita
+etotone, holi kadene ekiaxexe etotone, etawane wekakala tanane, kotalanawe anakwa
+wexi aõkonel, sala erowataxa, kotala nawe.
+Holi kanene noxe, newa eheye,
+- Hayaha erako hedowa, newa eheye, hala yotasero halata nohiti, mayehiro nawe
+halatanohiti, kowali nawe halata nohiti, noxe, newaxa eheye.
+- Haia newa, hala ahe newã. Erowaxa towane enowana "toooo" erowaxa towane
+enowana, wayawalonene.
+- erako haliowa noxe, newa eheye. Wayowalonene etotone katahe waha. - erakose
+noxe, newa eheye
+- nototone katahewaha noxe erakose. Etiho wixe aõkwa sala edowa,hatamane nawe
+alana ehawaneta, kolohi nawe alana ehawaneta, haholisera nawe, hakaserohonola
+nawe alana ehawaneta. Akolatene, ekotene hadolatera ako aõkone dane ekakwa
+exowa dane, Anãoli tikialiwa adonexetine)
+
+- Neraneto ehe nowita erakaka, Anãoli edakaka, etalonako tokwita ohaxakolixa
+holi ako dola hotokota, kalo ehio akakasetitã holi, katatonero takwana towane,
+exowatowane xerese ahererakana eheye "xerere, xerere" nowakiona eheye, awitakene
+hakexe kakwa (2x) holi dewa xerese kexiti tawane ehe taneta, hakixe kakwa awitakene.
+- Enawene yama dexola, Dekanereta nahiti dokwa, nokatawanena anina xire nawe,
+Anãoli Daera kateneta takoli kateneta. "katola akota takoli".
+-Anãoli doninahalo kakwa nokatawanena, anena xere nawe.
+Hahotakola awakona, akasaliyakota enaeta erakexene, one eyowa dane, -
+Nokatawanena newatola ere enawenero, newala anakwa enowana, wayone, hoxikiwa
+wenena, "kookoo" eheta hekiwata ere hokwa heyane hokwa, nodonenihalo erenane.
+Akolitene hataikwa aõkone dane, noxe akolata katatonero hotakolako aõkone dane,
+noxe ehekwali ehe aõkwa dane enaeta.
+Hanena katatonero one kakwa, hanera owana enako "Too,Too,Toooo", hali waha
+"too,too,too" aholokwana nane
+"- tokolokoko, Tokolokoko" newaxa notawatawa, ahakana ekatahe awetotokwa
+"tokolokoko kooo" amerokwa dane, akekeranene, akekeranetene yakoli "tá, tá"
+newanetali "hotãaa" Newanetali.
+- Heketane newa, wayolatene, wayone, noxe keyaliokolina, "koooo" - detaxa
+notawane eyowa, ekiaõli nasali Kaliwa nane, Anaoli kaliwa eyone nane, dane enowana.
+- Noxe Anaõho hixola notawane heyowa ekiatiyali? Nowironenawe tawane heyowa,
+noxe anaho, nowirone tamanexekia nene, hayahaxa heyetene nowane.
+-Maihia, nodanãkotita lalaka, nakaxa dola nehotokota nane, eyaõkwa hetatire dolane
+nane, Ahekatato, kalohio nawe nakakasetita, eyaõkwa hetatire Dalone, ahe katato,
+maihia natowala keiro, keiro kaliwa eyone, newa eheye. Holidewa dane enowana.
+- Noxi, Kiro, Kiro hixola notawe hiyowa?
+- Maihia, newa eheye.
+
+Alitaxekia ekiata nato nane, Anaõli kaliwa eyone, newa eheye.
+Holidewa detama enowana.
+- Noxe hixotaxala hiyone noxe?
+- Maihia nowe, keiro, keiro kaliwa, nowitine.
+Detama enowana.
+- Maihiaxala hixotawala, Kalitakase hixo heyonexa okwanane, Anaõli okawanane, newa eheye.
+- Mihia natowala nowixekia, anaõli eyone.
+Detawa enowana, Anaõli owana.
+- Noxi newa heye, anakowetena enowana kaliyane kerikwali, hadeta eyowa exowa enako,
+ataho eyowa akewahinene "ya, ya, ya," akewahakota edanita, katekwana kaliyane. Holidewa
+waxalikwahi oneta maireta Katatonero.
+Holidewa exowa enowana kaliane, awinexe hayasetiya aõkwa eheye, kaliyane ekanasako
+tohikene ahetahaliowatene, hayasetiya kakwa awali, awetene adolokwalotowena, kaliyane,
+kasena eyakaliti hakolone ako kase - Alixalane nato.
+- hekiase, newa eheye.
+- Noweta hixo, hehowalo oneta, hiwane yama nane, haita hotako ako, erakexa hixo, holi
+nane, newa eheye.
+Wayowakata yakoli, sali ako, mahia hakolo ekiawala ... akwakana eheye, - Hekiaoli nanita
+nato, newa eheye, akalakakana enowana, hahekonawe akalakana enowana, aweta
+akalakakata enowana, eneraneto ehe tana kaliyane, eyakalotinero ehe tana kaliyene.
+- Haholokwa, newa eheye, hala soli herexowita hehowalokwa heye. Kohase eyowa dane
+enowana, aholokwahane, aholokwahana, aweta xexase nawe atera enaetanita.
+- awe xexase nawe hatera enaetaneta, hala hirexowi eheye, ewesekokota toyama
+howakene, newa eheye, herexowina eheye nani, holi kadene. - Hayaha ali, nowaka
+noholokali ahe, hayahala hayokone, newa eheye.
+- Halokata, newa eheye, wayokowakana. Mahia xexase tanali enaeta,
+-Tasa hewesekokota, newa eheye "sooo".
+-Atete, erexowina eheye, katatonero weseko akerakwata, axakolotene,
+Kayotakatina, horawaka, watatakwatinero mãolina, holi owana wayota, tokwita eheyeha,
+wayota enowana kadawena kahita, kadate kaheta, wayota enowana, wayota (2x) anakwa
+enowana, xexe eyowa, kadawena kaheta okwaha, erakoseneta atikene'1 hauuu".
+- Eyola kaxatola notawatawa, "tahado" akehetene. Holidema wehenese taihiaho taneta,
+katatonero hetaola menekwa wehenese kataihiakota.
+Holinaneta eyaõkwa kenekwana enowana, kawanerena enowana eyaõkwa kenekwana,
+enowana kahesena enowana, arakana enowanata, enowana kaliwa arakana eyaõkwa
+enowana, asotalitene enowana, horawaka, denaha ehese wesenawe" yererere" Kolata
+naha. Anaõli
+Wakanalita "yeyererere" dane yotatawe hese wesenawe, onekalihi esokate owana
+edowanaha dane.
+Hanena eyowaline, kanakanalaline Kolata takwa eheye - "Waaa?" Nodai newa eheye?</div>
+        </div>
+        <div class="corpus-detail" style="margin-bottom:1.5rem;">
+            <h2 class="corpus-detail-title">Kakotere</h2>
+            <div class="corpus-detail-meta">
+<span>kakotere.txt</span>            </div>
+            <div class="corpus-detail-content">Akokwi watalia hiwatawatalia hohiya hiya</div>
+        </div>
+        <div class="corpus-detail" style="margin-bottom:1.5rem;">
+            <h2 class="corpus-detail-title">Kotaterahorali</h2>
+            <div class="corpus-detail-meta">
+<span>kotaterahorali.txt</span>            </div>
+            <div class="corpus-detail-content">KOTATERAHORALI EXA ATAWENA
+
+H atowahawata exa atawetama nane etatiho. tasa aõlatowa tama okwa.
+exa atawena, kawinãli enowa haliowa okwa nane, alineta dena enowanane:
+Holi akawinã:
+- Koko halotawa kakwali hayaha hinowataha nato koko:
+Newa. One kawiwina hatiho, newa eheye asewane kayahi atokere.
+Hetati hanena wakiowaseta ekaline atamero kwakataline kaheita seike
+Atikwa towane enowanatola.
+Hixola Hakawexita nadai nokotã:
+- Newa eheye Mahia hixowala nakawexita nani. newa eheye:
+- kokoli nakawexita halotawa kakwali nakawexita newa eheye haya hinõwaotaha ~
+koko one kawiwinãda hatiho koko Walawanere nowe naline.
+Kaliwa kayahiatokwere nowenawe hakone hokwa. Halani nowa eheye.
+- Naniha xayama hixo nane, natokwa xayama hixo nane nadai. Newa eheye xewa.
+Hanitama atali atokwere waha
+
+- Nadai natola hakawixita nodainokotã, newa eheye. Hixowala newa eheye
+hixowala nakawixita, kokoli nakawixita nane. Halotawa kakwali nakawixitanane.
+Hayaha hinowaota nato koko atali atokwere nowe taeko heheye.
+- Halani naniha yama hixo nane nadai. newa eheye deita ma Xooo ... 11 Mata lo
+Atokere waha takwa towane ... natola hakawixita nadai. Newa eheye.
+- mahia hixowala newa eheye, kokol i nakawixita nane nawe eheye, halotala
+kakwali nakawixita nane newa eheye, halane newa eheye naniha xayama hixo
+nadai natoka xayama hixo nani.
+Xewetama ekatahako "naka denaha Kanota atokwere waha. Hanitama
+atikwatana.Nodai newa eheye,
+- Natola hakawexita newa eheye, hixowala newa eheye, haita taeko Hayaha
+hinõwaotaha nato nowe tako heheye Kanota atokwere nowe heheye. Hatawaha
+xiwitama "Xooo ... "
+Hanetama Awaxa atokwere waha. "seike atikwatowane.
+- Natola hakawixita nadai. Newa ehiyi: hixowala nakawixita.
+- Kokoli nakawixita nane, newa eheye. halotawa kakwali nakawixitanane, newa
+eheye.
+- Nanehaxayamah ixo nane newa eheye.X ewetama.
+Exa Atokwere waha, 11Seike11 atikwa towane.
+- Natola hakawexita nodai, newa eheye, hixowala newa eheye, haitataeko hayaha
+hinõwatahan ato Exaa tokwere noweheheyea lotawa kakwali nakawixitanane,n ewa
+eheye, halane newa eheye, naneha xayama hixo nane nodai newa eheye.
+Hanitamah alotalakakwalAi lawanereh anena, "tawero seike".
+- Natola hakawixeta nodai?: ..
+Hixo nakawixita koko newa eheye, Hayaha hinõwaotaha nato kawiwinãdahatiho
+nowe nakawixeta hixo,hala newa eheye "hahaha ... " hala naolata hixo newa eheye.
+Salahei dowa ekotawirah ino tokwa. Yolatalimahah, oli ekalinae heye,h esekwataa wa
+aniha hixo, newa eheye. hesokwata hawita kwata awa aniha hixo.
+Aniha hixo ehi ekalinah ekiakwa.E tahiraseh anatad ane ekakwa,h ala anini ehi nane,
+awitakwa tawa okwaha masotanalwi ala okwaha, awitakwa erinõawaw alala! ! .
+Aokolikionõakata kahita, holidewa kalana heye takiowasehi enewe. Alawanere ewe
+kalana heye taneta. Mahiata katonere wala holi, holidewa kalana keweta,dotawa
+ehetaneta holinane hato kotatira horali hotakahi kali.</div>
+        </div>
+        <div class="corpus-detail" style="margin-bottom:1.5rem;">
+            <h2 class="corpus-detail-title">Okoyoli Ayawanere En</h2>
+            <div class="corpus-detail-meta">
+<span>okoyoliAyawanereEN.txt</span>            </div>
+            <div class="corpus-detail-content">Okoyoli e Ayawanere 
+
+Ayawanere etani Okoyoli, Ayawanere ameratahana holi owiro heye takwa, enewalo Lolahanero,Lolakate  esokwate   ayawane, holi Ayawanere heye awalo Lolahanero, holi nanita Ayawanere ehasakalone, Lolahanero tasawati wakoyoa holi, Lolahanero aikialatene: Hala enawenero xala nato laka, nexikere  wayakanetali hanolokwahena tako Awa akotekase hetalase tana, lolahanero nato nane teta nane, Ayawanere aikwalatamane: Mahia xakaliwa,  Awerata heye, awali xinakaha kakwa, holidema Lolahanero, hehe newa, awa waita hexota hetalase heyotitira natoweta waita noweta hetase, awa akotekase hetalase tana newa eheye. Hehe newa Ayawanere eheye, lolahanere heye, holi akoyona ekiakwa Ayawanere masemanere hatalase yakoli eyota heu,heu,heu mahia totaliwala etalase, owahakasena netali, holi Lolahanero otokowe eheye etine kaliyane  taololi newa etalase, holi Lolahanero nowa eheye: haita kera nowe heheye, eheta masemanera kaxali hixo kali, Natoweta waita nowetene noheti nowekera heheye, hetalase etine hexowa lalohi hesakwa laka  hehenesekwaneta  hala hetalse hakolata enako, holidema lalahe sakwa lolate towa  hatalase akolata enako, akolatene toheta hotaketikwa, mahia hakolako wala exowata towane eyaokwa honako exowata towane, holidema eyaokwa honako taetã, Ayawanere eraneto, exeneto kali enewaloha, Lololawa, Lololawalo, Waikwadawalo, Enodawalo, Axodawalo, Oherolawa, yaliyalisenero. Holi kadene atahana Ayawanere owana, holi owana hatalase alikiata akoyonane, hataha, akoyoa, hataha akoyoa kali, menaneta akoyakotane anolotitera hatalase, holi enetane kañakakena. Heheta heraneto kakwa  ekiata nowa heye, hala nowa heye, holidewa enetani Okoyoli awalolotene wayone, hala newa enetane Okoyoli, kalitasenane newa, ekialata nane enowana newa, aotahanane xexase kewalixa, atahana enowa, holi Ayawanere asewene hatalase alikiatama yakoli enowana, holi noxe aokwa enaita, holi heno eyowe towane, holi henoneta erekosetene, saka! Wata! Newa. Honalowatako ataolo eraokwa, holi ereyali Ayawanere tekwa, onedayowa erowa dane, takwanaha towane, hetikwaneta atahanatama yakoli enowana, aheranatama yakoli, wayoakataha honalowatako, araokota, koo!  Enetane erekone newaha, eyowane alatane dane, Ayawanere talase taolo alataha  kolowali ehe tana. Enereyali onedayoa Ayawanere erowa dane, holi deñoa owiro nawe denatama, akowalanaha enowana holi owana tohetama, akoyonatama ekiakwaha, kaweyakenatama enetane heye akwalinatamane, hala newa enetane, enanetatala laka newa, awahanatamane dane, wayonatamane awalolonatamane, hala newa kalitakase nane newe enetane detama ahotahanatamane akwalana enowana owiro ehe aokowetama , holi owana yakoli Ayawanere hatalase alikiatawa, hoyakakota aokone erekotewane , awetaho etaolo aokwa enaetaha, tohenatama yakoli aheranatamane yakoli, haita enetane erekotamane, wayoakanha eholita hoxekota ataolo, holidema Lololawalo tekotã ereñoa  Ayawanere deñoa, one kenekwadewatoa ehenokota toane Ayawanere towane haweñawali toli nakota erowatowane, holi deñoa eneraneto naha towaneha, haxineha emakayowa tekwanaha exeneto naha tikalita tekwaha ereñoa, holi deratiwa ewalila ehe taeta kasalila ehe taeta , holi ehola totokoli akasenene, hekiase nowayate hetonawe tekwanaha honeta heyerane kakwa, heyeta kakwa kali, holidewa kase kaliyane, dena hanetonawe deñoa, enotowata, waikwa edoata kali, hatiwaha dosako  honohera kakwa atalala wenekwatoweha, holi dosako kadene, eneto dewatiro amoyo ahotali enaeta, holi heye takwala terene kali, holi enetonaha atahanane, eheta hohona nodene hali okoyo, mahia denawe  dewa wala hetonawe tekoha honeta hali okoyo, eheta hehe edane herekotita kali, hamahokwanalotita hetonawe kali, holidewa hetonawe tekwaha honeta, holi enetonawe axikedowanaha enowa, holi ako daholosehe edawali heye.
+ Holi eneto dewatiro eyaokwa eheyeta enowana, hawawali eyeta enowana, eyerane, derohi nawe kali, holidewa eyaokwa tanita, haita tekwakoha ekiakwa nane, holidewa derati  wawañali ali tanita, enakeyoa Enodawalo tekwa ekiakwa nane, Holidewa maratihe eya enowana, hane Dokoweye tenehoko, ere kakwa waita nowawañalo heyota one kataheneta one alowala kataheneta, ahetese eya enowana, ere kakwa waita heyokwa aseotoa, hala hixowata heyane heto nawe ekwalali katahe newa heye, holi deñoa netokwati dewatiro awexenalota, holidema tekwaha enonita kaliyane. Okoyoli toheta mayanetowali toheta, tonowina dayowa ameratahana towane hayaneto hekwalo, hoxikia hetase alolokwa, alolokone hataxita wayowa enowana,mahia awe holi wala  waliwenakase kahita, holidema eraketene one dayowa, alatamane, walakonero alolokwa kaliyane, mahiata herehere wala wayowa enowana, hayaneto hekokota alolokwa wayowa  enowana kaliyane, hayaneto ehe eyotene, haneto nawe ekwalali katahi exoata dane ekakwaha hayeneto nawe hekwalo kakwa, holidema Okoyoli kayanetoweta walakonero kakwa, holidema kohase kahali wayateta, hane kadene eyakaliti ehe tana dane, holidema Ayawaliserikwa ehe tana. 
+ 
+Lolawekwaene nato awe nowalikwali, haitala noñakani dasewa</div>
+        </div>
+        <div class="corpus-detail" style="margin-bottom:1.5rem;">
+            <h2 class="corpus-detail-title">Yanaloli Nihaka</h2>
+            <div class="corpus-detail-meta">
+<span>yanaloliNihaka.txt</span>            </div>
+            <div class="corpus-detail-content">Yanaloli Nihaka
+
+Ehatowinãha, enahe kakwa, eyãokwa detaixira ehe towenane, ehose ahe eyãokwa ehetanena, ewesekoholose Lolali ehe tana, exiwire kadene, hetire ehe tana, ekano kakanowiro ehe tana.
+Enatoli danakata manaiyowa anihiane, eyaõkwa dakaka eriyali anihiane hanetonawe heye akone, holi asema enalinali Kalaliyama asemene eyaõkwa honako exowa dane eneraka kakwa.
+
+- Kerali akotine ewayate Anaoli, tasawati aniha hawayate eyaõkwa, haini awena eyaõkwa hanetonawe heye Yanalloli, newali kakwa exowana dane, enaliali kalaliyama eyaõkwa honako Kalaliyama. _Haia newaha eheye, holidema eyaõkwa hawayate aniha yanaloli, holi menekoya takwa towane enatoli anaoli.
+
+- Halakota nowatoli daokwa anenanawe.
+- haita henatoli eyaõkwa aniha, Anaho, amameya akota eyaõkwa haneto nawe heye henatoli Anaho, holidema edetaita anine, henatoli Anaho, hala newa.
+- Heketala nowatoli aniha, nowatoli howali eheralaka noyeta eyaõkwa nowatoli owana, alawata nowatolli aniha nowe wala, noyita eyaõkwa nowatoli owana, enerolalo toli ehe noyita eyaõkwa nowatoli owana, kerali dakakali wala eyaõkwa,
+hatolane mahia nakwali nowatoli heye.
+Alikianane.
+- Anena nawe nowenoli herane deyowa nowani enani kehenawe nadonixa one kolisewinã kolohekoni deya deyone nowani, towaneha alaekiaxane.
+Akaranekwatowaha totata towanakoha
+- Wiya wiyone enowana newaha. Anaõli dena erinõha, Tiwaliwali kadene oloneti owase.
+Anaõli ixohikase akolata, dane erinõha, ehatenane dane hokwa hiyi, Tiwaliwali wayone tekwa, Anaõli ehatane ixohikase kamamani kase alatene, esokate ehe tana.
+
+- Heketani awena wexo oka, Anaõli deta manaiyowa, tiwaliwali dane erenõwaha.
+- dayaha tenekati ehatena wixo ixohikase kakwa. Holidema hoxakwanatã.
+- Tenekati ehatena wixo anena nawe. Tenekati ehatetã wixo hoka?, Tenekati dalikailatã wixo nani, enani kehenawe nalonixa, one kolisewinãkioni newa dalikatakati wixo nani. Tiwaliwali kakwa enõlinaha.
+- amaserakana maiha oloniti akwanixali dewa ekialina amaserana wixo, hamaraniya tekwa holidema maiha oloneti akwanixali.
+- Maiha nawaserakana wala tahane deyayone laka. Maihata akotewala teokaha, Anãoli tohetawa erinõha, kahesere ako ixowa hanena, "yirere" newalini holoti kakwa ekialini "hotõtõ" newalini, hatohaita aniha kakwanaha, awanewanita
+amehowalitane, menekwata totenaha.
+
+Anãoli hanatoli derixaka ekialina, totaha dane wayowinãha, menane anihakotane dane, owironawe waha aninã.
+-Tamiro nawe, wiya Anãoli wakalalowena. Holikiwanaha waha yakoli ekano katahe, hala malikwalita ehe yakoli, hakano katahenita anihane, holikadene, ekianawalotã owiro tekwa, tekwa ekano katahenitã, totenahaxa wayowiríaha dewa, tekoha
+yakoli, hanena erinõha, Yola heraokotã holi hiyi takoha towane,
+- Nokayanetonaxa hanatolo kakwalo kakwa.
+_Haia hekiatawaita haõka wixo hoka, wikaninãkena xikia, Anaõli xikia aninã wixo,
+anã, kinãli kaxata kaliyani, heketawaita hixana wehawanita hoka?
+-Alawaita nakahirotowana dehawanita, newa yakoli, hokatihi, asahi maiha tetalini hekinãli, xiwitãma.
+
+wetokalakohi waha watawatahi.
+- Nokayanetona xikia, newa heye.
+- Haia, newa, hekiatawata hixana wehawanitã hoka, wikiahowalina nani, eyaka nawe ololi nawe ohokakakwana wirinõwa nani, tahane hiyayone laka kiwini kaxata kaliyani, hala, hekiatawaita hixana wehawanitã, alawaita nakahirotowana
+dehawanita. "watai" newayakoli "tãnalahi" newanitali.
+- Maiha tetalini newa iheyi, wexiwitama xakane "wererere" newaliniha, Kolohe asekakotitã, weta, weta newita,
+- Ah!!! nokayanetona xikia maratiyalo kakwa hanatolo kakwalo kakwa nokayanetona, hala newa,
+- Hekiatawaita hixana wehawanita hoka? Alawaita nataoli kakwaita netolihali eyakanawe ololi nawe, dehita, neraneto wakoya enekoninã waita makamanero dexo, holi hiyi setoha kaliyani, halahakoha aokane,
+- Etakose deyane, newa eheyiha, nakena nani kiwinãli kaxata _Maiha waita erekakwaita waita, nerakixini nan,i awa waita dewarena. Hanena waikwiaseta aokone, aolotene kaliyani "waiiiiii, ... hotitootoo hoto olololooo" kaohanãli aokotene
+manãkota dane totata kera.
+ekinitãkoli,kahetã kahesere
+Kahitata maiha kerali, hatãlioko maini kali, holikadene hayaneto owa erixowata kaliyani, haitaxa eneraneto maini kalinani, akasekitene, kaohanãlinero ehe tanaha, akasekitene akalakanene enowanaha kaliyane, heyayowa ere awehowalina dexo, Anaõli akioli tahe, akote sewaliti manatahi kaheta akiolititahe, maiha waita dewaniro wala makamanero waita dexo, holi nanita akasekitene holidema eyakaliti tanetitira, hataola tamane ehe akasekitene, holidewa marita enoli nawe onita marita kaohanãli onita. Hodai halakwa kaohanãl</div>
+        </div>
+    </div>
+
+    <div class="js-only">
+        <div class="corpus-layout">
+            <aside class="corpus-sidebar">
+                <div class="corpus-sidebar-header">
+                    <h3>Corpus Enawenê-Nawê</h3>
+                    <input type="text" id="corpus-search" class="corpus-search-input"
+                           placeholder="Pesquisar no corpus..."
+                           autocomplete="off"
+                           aria-label="Pesquisar no corpus...">
+                </div>
+                <div class="corpus-stats" id="corpus-stats" aria-live="polite"></div>
+                <ul class="corpus-list" id="corpus-list"></ul>
+            </aside>
+
+            <div class="corpus-main">
+                <div id="corpus-detail" class="corpus-detail">
+                    <div class="corpus-hint">Selecione um texto para ver os detalhes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <div class="footer-adugo-spine" aria-hidden="true">
+            <svg viewBox="0 0 1200 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="14" x2="1200" y2="14" stroke="var(--td-color-primary)" stroke-width="2" stroke-linecap="round" opacity="0.15"/>
+                <g stroke="var(--td-color-primary)" stroke-linecap="round" opacity="0.12">
+                    <line x1="45" y1="5" x2="45" y2="23" stroke-width="2.5"/>
+                    <line x1="68" y1="7" x2="68" y2="21" stroke-width="3.5"/>
+                    <line x1="105" y1="3" x2="105" y2="25" stroke-width="2"/>
+                    <line x1="120" y1="8" x2="120" y2="20" stroke-width="4"/>
+                    <line x1="160" y1="6" x2="160" y2="22" stroke-width="2.8"/>
+                    <line x1="195" y1="4" x2="195" y2="24" stroke-width="3.2"/>
+                    <line x1="265" y1="5" x2="265" y2="23" stroke-width="3"/>
+                    <line x1="298" y1="3" x2="298" y2="25" stroke-width="3.8"/>
+                    <line x1="335" y1="8" x2="335" y2="20" stroke-width="3.5"/>
+                    <line x1="372" y1="6" x2="372" y2="22" stroke-width="4"/>
+                    <line x1="408" y1="7" x2="408" y2="21" stroke-width="3.2"/>
+                    <line x1="468" y1="3" x2="468" y2="25" stroke-width="3.5"/>
+                    <line x1="498" y1="1" x2="498" y2="27" stroke-width="4.2"/>
+                    <line x1="528" y1="7" x2="528" y2="21" stroke-width="3.8"/>
+                    <line x1="558" y1="2" x2="558" y2="26" stroke-width="3.2"/>
+                    <line x1="590" y1="1" x2="590" y2="27" stroke-width="2.5"/>
+                    <line x1="615" y1="3" x2="615" y2="25" stroke-width="2.2"/>
+                    <line x1="645" y1="2" x2="645" y2="26" stroke-width="3"/>
+                    <line x1="672" y1="4" x2="672" y2="24" stroke-width="3.5"/>
+                    <line x1="705" y1="3" x2="705" y2="25" stroke-width="3.8"/>
+                    <line x1="738" y1="1" x2="738" y2="27" stroke-width="4"/>
+                    <line x1="790" y1="4" x2="790" y2="24" stroke-width="2.5"/>
+                    <line x1="828" y1="3" x2="828" y2="25" stroke-width="2.8"/>
+                    <line x1="865" y1="8" x2="865" y2="20" stroke-width="2.2"/>
+                    <line x1="900" y1="6" x2="900" y2="22" stroke-width="2.6"/>
+                    <line x1="980" y1="4" x2="980" y2="24" stroke-width="3.5"/>
+                    <line x1="1040" y1="6" x2="1040" y2="22" stroke-width="3.8"/>
+                    <line x1="1095" y1="7" x2="1095" y2="21" stroke-width="3.5"/>
+                    <line x1="1160" y1="9" x2="1160" y2="19" stroke-width="4"/>
+                </g>
+            </svg>
+        </div>
+        <div class="td-container">
+            <div class="footer-grid">
+                <div class="footer-brand-col">
+                    <a href="index.html" class="brand" style="color:white;text-decoration:none;font-family:var(--td-font-headings);font-weight:700;font-size:1.15rem;display:inline-flex;align-items:center;gap:0.6rem;">
+                        <img src="../images/logo.svg" alt="" class="brand-logo" style="width:56px;height:56px;">
+                        Enawenê-Nawê
+                    </a>
+                    <p class="footer-brand-desc">Plataforma dedicada à preservação, documentação e valorização dos saberes linguísticos e culturais do povo Enawenê-Nawê.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="dictionary.html">Dicionário</a></li>
+                        <li><a href="encyclopedia.html">Enciclopédia</a></li>
+                        <li><a href="fauna.html">Fauna</a></li>
+                        <li><a href="ethnobotany.html">Etnobotânica</a></li>
+                        <li><a href="bibliography.html">Bibliografia</a></li>
+                        <li><a href="corpus.html">Corpus</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contato</h4>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">&#9906;</span>
+                        <span>Mato Grosso, Brasil</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Gerado com <a href="https://pypi.org/project/terradoc/">terradoc</a>, <a href="https://pypi.org/project/aptoro/">aptoro</a> &amp; <a href="https://pypi.org/project/kodudo/">kodudo</a></p>
+                <p></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/common.js"></script>
+    <script>
+    var T = {"articles_label": "verbetes", "bib_empty_text": "Digite um autor, t\u00edtulo ou ano para come\u00e7ar", "bib_empty_title": "Pesquise a bibliografia", "bib_filter_all": "Todos os tipos", "bib_no_results": "Nenhum resultado", "bib_no_results_hint": "Tente um autor, t\u00edtulo ou ano diferente", "bib_overflow": "Mostrando 100 de {n} resultados. Refine sua busca.", "bib_result_plural": "refer\u00eancias encontradas", "bib_result_singular": "refer\u00eancia encontrada", "bib_search_placeholder": "Pesquisar (autor, t\u00edtulo, ano)...", "bib_title": "Bibliografia Enawen\u00ea-Naw\u00ea", "card_bibliography_desc": "Refer\u00eancias bibliogr\u00e1ficas sobre a l\u00edngua, cultura e hist\u00f3ria do povo Enawen\u00ea-Naw\u00ea.", "card_bibliography_label": "refer\u00eancias", "card_bibliography_title": "Bibliografia", "card_corpus_desc": "Corpus lingu\u00edstico com textos anotados e traduzidos na l\u00edngua Enawen\u00ea-Naw\u00ea.", "card_corpus_label": "textos", "card_corpus_title": "Corpus", "card_cta": "Explorar", "card_dictionary_desc": "Palavras e express\u00f5es da l\u00edngua Enawen\u00ea-Naw\u00ea com tradu\u00e7\u00e3o para Portugu\u00eas, transcri\u00e7\u00e3o fon\u00e9tica e exemplos.", "card_dictionary_label": "entradas", "card_dictionary_title": "Dicion\u00e1rio", "card_encyclopedia_desc": "Verbetes sobre cultura, rituais, organiza\u00e7\u00e3o social e conhecimentos tradicionais do povo Enawen\u00ea-Naw\u00ea.", "card_encyclopedia_label": "verbetes", "card_encyclopedia_title": "Enciclop\u00e9dia", "card_ethnobotany_desc": "Plantas utilizadas pelo povo Enawen\u00ea-Naw\u00ea com nomes na l\u00edngua, usos tradicionais, fam\u00edlias bot\u00e2nicas e imagens.", "card_ethnobotany_label": "plantas", "card_ethnobotany_title": "Etnobot\u00e2nica", "card_fauna_desc": "Nomes de animais na l\u00edngua Enawen\u00ea-Naw\u00ea com classifica\u00e7\u00e3o tradicional, nomes cient\u00edficos e imagens.", "card_fauna_label": "esp\u00e9cies", "card_fauna_title": "Fauna", "card_recordings_desc": "Corpus sonoro com grava\u00e7\u00f5es de palavras e express\u00f5es na l\u00edngua Enawen\u00ea-Naw\u00ea.", "card_recordings_label": "grava\u00e7\u00f5es", "card_recordings_title": "Grava\u00e7\u00f5es", "card_videos_desc": "Registros em v\u00eddeo de rituais, cerim\u00f4nias e pr\u00e1ticas culturais do povo Enawen\u00ea-Naw\u00ea hospedados no YouTube.", "card_videos_label": "v\u00eddeos", "card_videos_title": "V\u00eddeos", "corpus_no_results": "Nenhum resultado", "corpus_result_plural": "textos encontrados", "corpus_result_singular": "texto encontrado", "corpus_search_placeholder": "Pesquisar no corpus...", "corpus_select_hint": "Selecione um texto para ver os detalhes", "corpus_title": "Corpus Enawen\u00ea-Naw\u00ea", "dict_all_pos": "Todas as classes", "dict_browse_hint": "Selecione uma entrada para ver os detalhes", "dict_empty_text": "Digite uma palavra em Enawen\u00ea-Naw\u00ea ou Portugu\u00eas para come\u00e7ar", "dict_empty_title": "Pesquise no dicion\u00e1rio", "dict_filter_all": "Todas as classes", "dict_loading": "Carregando dicion\u00e1rio...", "dict_no_results": "Nenhum resultado", "dict_no_results_hint": "Tente uma palavra diferente ou altere o filtro", "dict_overflow": "Mostrando 100 de {n} resultados. Refine sua busca.", "dict_result_plural": "resultados encontrados", "dict_result_singular": "resultado encontrado", "dict_scientific_name": "Nome cient\u00edfico", "dict_search_placeholder": "Pesquisar (Enawen\u00ea-Naw\u00ea ou Portugu\u00eas)...", "dict_title": "Dicion\u00e1rio Enawen\u00ea-Naw\u00ea", "enc_back_to_index": "Voltar \u00e0 enciclop\u00e9dia", "enc_breadcrumb_label": "Navega\u00e7\u00e3o", "enc_browse_categories": "Navegar por categorias", "enc_categories": "Categorias", "enc_collapse": "Clique para recolher", "enc_empty_text": "Digite um termo para come\u00e7ar", "enc_empty_title": "Pesquise na enciclop\u00e9dia", "enc_entry_type": "Tipo", "enc_examples": "Exemplos", "enc_external_link": "Ver refer\u00eancia externa", "enc_featured_title": "Verbete em destaque", "enc_filter_all": "Todas as categorias", "enc_filter_uncategorized": "Sem categoria", "enc_graph_all": "Todos", "enc_graph_legend_category": "Categoria", "enc_graph_legend_entry": "Verbete", "enc_graph_title": "Mapa de conex\u00f5es", "enc_highlights_title": "Verbetes ilustrados", "enc_last_updated": "\u00daltima atualiza\u00e7\u00e3o", "enc_loading": "Carregando enciclop\u00e9dia...", "enc_more_images": "Mais imagens", "enc_no_results": "Nenhum resultado", "enc_no_results_hint": "Tente um termo diferente ou altere o filtro", "enc_overflow": "Mostrando 100 de {n} resultados. Refine sua busca.", "enc_read_more": "Ler mais", "enc_references": "Refer\u00eancias", "enc_result_plural": "verbetes encontrados", "enc_result_singular": "verbete encontrado", "enc_search_placeholder": "Pesquisar na enciclop\u00e9dia...", "enc_see_also": "Ver tamb\u00e9m", "enc_title": "Enciclop\u00e9dia Enawen\u00ea-Naw\u00ea", "enc_toc_title": "Conte\u00fado", "enc_variants": "Variantes", "enc_welcome_text": "Enciclop\u00e9dia dedicada \u00e0 preserva\u00e7\u00e3o e documenta\u00e7\u00e3o dos saberes culturais, lingu\u00edsticos e etnogr\u00e1ficos do povo Enawen\u00ea-Naw\u00ea.", "entries_label": "entradas", "ethnobotany_category_uncategorized": "Sem fam\u00edlia", "ethnobotany_detail_abundance": "Abund\u00e2ncia", "ethnobotany_detail_environment": "Ambiente", "ethnobotany_detail_family": "Fam\u00edlia bot\u00e2nica", "ethnobotany_detail_fruiting": "Frutifica\u00e7\u00e3o", "ethnobotany_detail_usage": "Uso (Enawen\u00ea-Naw\u00ea)", "ethnobotany_detail_usage_pt": "Descri\u00e7\u00e3o do uso", "ethnobotany_filter_all": "Todas as fam\u00edlias", "ethnobotany_no_results": "Nenhum resultado", "ethnobotany_no_results_hint": "Tente um nome diferente ou altere o filtro", "ethnobotany_result_plural": "plantas encontradas", "ethnobotany_result_singular": "planta encontrada", "ethnobotany_search_placeholder": "Pesquisar (Enawen\u00ea-Naw\u00ea, Portugu\u00eas ou nome cient\u00edfico)...", "ethnobotany_select_hint": "Clique em uma planta para ver os detalhes", "ethnobotany_title": "Etnobot\u00e2nica Enawen\u00ea-Naw\u00ea", "fauna_category_uncategorized": "Sem classifica\u00e7\u00e3o", "fauna_detail_classification": "Classifica\u00e7\u00e3o Enawen\u00ea-Naw\u00ea", "fauna_detail_family": "Fam\u00edlia", "fauna_empty_text": "Digite um nome em Enawen\u00ea-Naw\u00ea, Portugu\u00eas ou cient\u00edfico para come\u00e7ar", "fauna_empty_title": "Pesquise a fauna", "fauna_family": "Fam\u00edlia", "fauna_filter_all": "Todas as categorias", "fauna_no_results": "Nenhum resultado", "fauna_no_results_hint": "Tente um nome diferente ou altere o filtro", "fauna_overflow": "Mostrando 100 de {n} resultados. Refine sua busca.", "fauna_result_plural": "esp\u00e9cies encontradas", "fauna_result_singular": "esp\u00e9cie encontrada", "fauna_search_placeholder": "Pesquisar (Enawen\u00ea-Naw\u00ea, Portugu\u00eas ou nome cient\u00edfico)...", "fauna_select_hint": "Clique em um animal para ver os detalhes", "fauna_title": "Fauna Enawen\u00ea-Naw\u00ea", "filter_label": "Filtrar resultados", "footer_and": "e", "footer_contact_heading": "Contato", "footer_credits": "Gerado com aptoro \u0026 kodudo", "footer_description": "Plataforma dedicada \u00e0 preserva\u00e7\u00e3o, documenta\u00e7\u00e3o e valoriza\u00e7\u00e3o dos saberes lingu\u00edsticos e culturais do povo Enawen\u00ea-Naw\u00ea.", "footer_email": "", "footer_generated": "Gerado com", "footer_license": "", "footer_location": "Mato Grosso, Brasil", "footer_nav_heading": "Navega\u00e7\u00e3o", "footer_resources_heading": "Recursos", "footer_text": "", "html_lang": "pt-BR", "index_about_cite": "TRESOLDI, T. Enawen\u00ea-Naw\u00ea: Darakala Kakwali [plataforma digital]. 2025. Dispon\u00edvel em: https://plataformasindigenas.github.io/enawenenawe/", "index_about_cite_title": "Como citar", "index_about_p1": "\u003cstrong\u003eEnawen\u00ea-Naw\u00ea\u003c/strong\u003e \u00e9 uma plataforma dedicada \u00e0 preserva\u00e7\u00e3o, documenta\u00e7\u00e3o e valoriza\u00e7\u00e3o dos saberes lingu\u00edsticos e culturais do povo Enawen\u00ea-Naw\u00ea.", "index_about_p2": "Este reposit\u00f3rio re\u00fane uma variedade de recursos lingu\u00edsticos e etnogr\u00e1ficos, tanto hist\u00f3ricos quanto contempor\u00e2neos, com o objetivo de apoiar o ensino, a pesquisa e os esfor\u00e7os de revitaliza\u00e7\u00e3o da l\u00edngua Enawen\u00ea-Naw\u00ea. A plataforma oferece um conjunto de ferramentas voltadas para o estudo lingu\u00edstico e antropol\u00f3gico.", "index_about_partners_title": "Parceiros", "index_about_subtitle": "Conhe\u00e7a a plataforma", "index_about_title": "Sobre o Projeto", "index_about_who_title": "Quem somos", "index_gallery_subtitle": "Registros visuais e sonoros da cultura Enawen\u00ea-Naw\u00ea", "index_gallery_title": "Imagens \u0026 Sons", "index_hero_cta": "Explorar", "index_hero_subtitle": "Plataforma dedicada \u00e0 preserva\u00e7\u00e3o, documenta\u00e7\u00e3o e valoriza\u00e7\u00e3o dos saberes lingu\u00edsticos e culturais do povo Enawen\u00ea-Naw\u00ea.", "index_hero_tagline": "Darakala Kakwali", "index_hero_title": "Enawen\u00ea-Naw\u00ea", "index_quote": "A l\u00edngua \u00e9 o esp\u00edrito do povo. Preservar a l\u00edngua \u00e9 preservar a alma de uma cultura.", "index_quote_attribution": "", "index_sections_title": "Explorar", "index_title": "In\u00edcio", "index_view_all_dictionary": "Ver dicion\u00e1rio", "index_view_all_encyclopedia": "Ver enciclop\u00e9dia", "index_view_all_fauna": "Ver fauna", "index_view_all_videos": "Ver v\u00eddeos", "infobox_cl\u00e3": "Cl\u00e3", "infobox_coordenadas": "Coordenadas", "infobox_dura\u00e7\u00e3o": "Dura\u00e7\u00e3o", "infobox_esta\u00e7\u00e3o": "Esta\u00e7\u00e3o", "infobox_fam\u00edlia": "Fam\u00edlia", "infobox_fun\u00e7\u00e3o": "Fun\u00e7\u00e3o", "infobox_fun\u00e7\u00f5es": "Fun\u00e7\u00f5es", "infobox_habitat": "Habitat", "infobox_local": "Local", "infobox_material": "Material", "infobox_membros": "Membros", "infobox_nome_cient\u00edfico": "Nome cient\u00edfico", "infobox_papel": "Papel", "infobox_participantes": "Participantes", "infobox_per\u00edodo": "Per\u00edodo", "infobox_regi\u00e3o": "Regi\u00e3o", "infobox_rela\u00e7\u00f5es": "Rela\u00e7\u00f5es", "infobox_rio": "Rio", "infobox_tipo": "Tipo", "infobox_usos": "Usos", "lang_switch_label": "Seletor de idioma", "nav_bibliography": "Bibliografia", "nav_brand": "Enawen\u00ea-Naw\u00ea", "nav_corpus": "Corpus", "nav_dictionary": "Dicion\u00e1rio", "nav_encyclopedia": "Enciclop\u00e9dia", "nav_ethnobotany": "Etnobot\u00e2nica", "nav_fauna": "Fauna", "nav_label": "Navega\u00e7\u00e3o principal", "nav_menu_label": "Menu", "nav_recordings": "Grava\u00e7\u00f5es", "nav_videos": "V\u00eddeos", "pos_ADV": "Adv\u00e9rbio", "pos_CONJ": "Conjun\u00e7\u00e3o", "pos_DEM": "Demonstrativo", "pos_INTJ": "Interjei\u00e7\u00e3o", "pos_IP": "IP", "pos_LEX": "Lexema", "pos_NUM": "Numeral", "pos_POSP": "Posposi\u00e7\u00e3o", "pos_PPART": "Part\u00edcula", "pos_PPAS": "Part. Pass.", "pos_PPASS": "Part. Pass.", "pos_PRCL": "Part\u00edcula", "pos_PRON": "Pronome", "pos_PROPN": "Nome Pr\u00f3prio", "pos_S": "Substantivo", "pos_SUF": "Sufixo", "pos_V": "Verbo", "pos_VC": "Verbo Causativo", "pos_VT": "Verbo Trans.", "pos_X": "Outro", "rec_col_audio": "\u00c1udio", "rec_col_date": "Data", "rec_col_match": "Match", "rec_col_speaker": "Falante", "rec_col_word": "Palavra", "rec_count_label": "grava\u00e7\u00f5es", "rec_filter_format": "Formato", "rec_filter_match": "Tipo de match", "rec_filter_speaker": "Falante", "rec_filters_title": "Filtros", "rec_no_results": "Nenhuma grava\u00e7\u00e3o encontrada", "rec_overflow": "Mostrando 200 de {n} grava\u00e7\u00f5es. Refine sua busca.", "rec_search_placeholder": "Pesquisar grava\u00e7\u00f5es...", "rec_subtitle": "Registros sonoros da l\u00edngua Enawen\u00ea-Naw\u00ea", "rec_title": "Corpus de Grava\u00e7\u00f5es", "references_label": "refer\u00eancias", "search_label": "Pesquisar", "see_also": "Ver tamb\u00e9m", "see_in_dictionary": "Ver no Dicion\u00e1rio", "see_in_encyclopedia": "Ver na Enciclop\u00e9dia", "see_in_fauna": "Ver na Fauna", "skip_link": "Pular para conte\u00fado", "species_label": "esp\u00e9cies", "stat_bibliography_entries": "refer\u00eancias", "stat_corpus_entries": "textos", "stat_dictionary_entries": "entradas", "stat_encyclopedia_entries": "verbetes", "stat_ethnobotany_entries": "plantas", "stat_fauna_entries": "esp\u00e9cies", "stat_recordings_entries": "grava\u00e7\u00f5es", "stat_videos_entries": "v\u00eddeos", "vid_count_label": "v\u00eddeos", "vid_filter_all": "Todas as categorias", "vid_subtitle": "Registros em v\u00eddeo da cultura Enawen\u00ea-Naw\u00ea", "vid_title": "V\u00eddeos", "vid_watch": "Assistir no YouTube"};
+    var allData = [{"content": "EREKATI WEKA\n\nHetati wadali hekiowana saili akoneta Mahia Erikiati tanali. Holinaneita wadali\nkawakanalina Erikiati daneta.\nWerototo, weroli holi owana onewini eya etoli ehi,weroli: Heya Hiyowa\nenaweti nowani, hanowaka onewini, \"holita Weretotototo ... Nowita\"\n- Haia nodani nowene nodane howana nodai Wadali.\nErikiatineto \"hotoso 0000 watatata Hoseee! ! \", horawenalo sewekwa, ewerakwane holise\neyowa dane. Weretoto, weroli haniho heno a\u00f5kone. Seeesala edowata, maihia ikiawala.\nKotayali Waha,\n- Koko kotayali hixo Kaliwa hane hedanowane konowere. hasetalikiwa a\u00f5kone,\n- Haia nodai notowaha nodanowene howana. \"hotosooo ... seee\"eyone dane\na\u00f5kone haihio heno \"seee\" sala edowata, mahia tonane hekwali enawiti, holidewa\nenihio keraketakolaita.\nDalawatali, tonotono waha.\n- Koko Dalawatali hixokoli\nEnawiti heyowa nowane koko Dalawatali, hanowaka hedanowane hokwatero.\n\"holidew\u00e3 toho ... toho ... nowita\".\n- Haia nodai nodanowene howana hala henawenetowa. Kodanowene dowana.\n- Hatowaha dane takwadane ekatahe. Kawese kolihi kadeyane. \"Xooo ... \" dane\neyone dane hanenakawa (tali ... tali ... tali) ere xasetene, erexa setene.\n- Hane nodai, newa eheye. H\u00f5kotowane enowana holidew\u00e3, totowalaita eweseko\ntota eweseko xakolo ahete heye aloloirata, horahi heye aloloiratowa mao heye\naloloiratowa.\nAwe wexana kaliyane Wadali erikiati atawa dewa.", "description": null, "filename": "erekatiWeka.txt", "id": "erekatiweka", "language": null, "title": "Erekati Weka"}, {"content": "HAKALIWANALI\n\nHoli kadene, heretikaliwa ahakahatama, naweta tikaliwa nadai, holidew\u00e3\nkadene kawakanali, hato denaha enowana kaliyane, hakaliwanali, holi\nkadene heretikaliwa, kaliwa ahakahatama tikaliwa nodai, ahakahatama\nKaliwa, holidema kadene kawakanali, hato dena enowana kaliyane mahiata\nenawene wala ekia\u00f5kone dane.\nHatoitat ikaliwa ahakahatamah olita tikaliwa, holidema, akirekwalikenaned aneha\nenowana kaliyane, holidema aokotane dane kaliyane. Mahiata enawene wala\naokotene dane kaliyane, yaliyali kera kakaseokohi kera yaliyali.\nHoli dane enowana enali, ehowaneoko heye atatakohena netali dane, eheye erako\nhohoko xewena holi, heyenekata atatakohina netali, yaliyali, holita hato derati\newalila ehi taneta, yaliyali tolikiowa noweta \"he\u0027e\" holinaneta kadene. Hato kalo\nwaha alolokwa.\nKalo hetati, towada alolokwa exowa dane, ehowane dahako dane, holi tikialiwa\nkaliyane, \"terete\" edahakona eralako exowa, erali heyeta aotalixowana dane\n\"hotototo ! ! ! ... \"\nErali talakoko nikiata exowa kaliwa tokwa dane exowa weso! ! ! Tiolati esekokoya\ntokowena, awaliwena.\nKaliawanekata, awaliona naha, ehitali kaliwa, xala naha, halawanaha,\nekinetakowakali matiolanena holita, hato kakireriali waha towane exowa\ntowane enekione.\nKakeriNali towane exowa kaliyane, holi enekana eyokwa, enekana owakwa\nholidema, kakeririali horehalita haita totadewa, heyakera hatalotakera tiolati Kera\nkeyakeyalih, oli kakwanekatae kaokowena, holidemae yadeokoli, taneta holidema\nkakerinalih orehalita, hata tota dewa, heyakera tiolati keyakeyalihek akwanekata\nekaokatetowena, holidewa mahokwanereta, holidewa kakerinali mahia awalide,\ndehetah ato kalo mahokwanerelitao kwaha laka,e xowatamao kwaha dewa, awali\nkaxa wayowe holidew\u00e3.\n- Nolitama, newayakolie xowatamao kwaha holidemam ahokwaneretao kwaha.\n- Nakeotowetama nema yakoli detama holidewa kane kahorane, kahorane\nnetali eyokwa dane eheye, holidewa kahoraneta holi hato akoyananexa kaliyane\nerokwakala nawexa kaliyane, okwaha hato kaloxa etiolane okoha, hato.\nWalotali xakadene, enekana kakwa erakatetowe, aokwatetewe, enekana\nekenitako, maratiyali okwaha hata meolakowaka henewenekwa, exowa towane,\nhato walotali exowa towane.\n- Haita ekiaokwane newadewa towane yakoli, haita meolakowaka enekana\nkaheta ekiata enako, kaliyane eyone kaliyane \"waita\" aokone hahiyi kaliyane.\nEdohanane kakwa (aokwatakotowe, alolo asetowalixowe), hato eta kadene\nMahanaha akote akoyakaha nane, kaliyane.\nYolotali etalase eyowa/akoyaka.\nTolise \"etalase\" ewexi eyowa/akoyaka.\nHetiwanee rawalolakosee wexahoe yowa/akoyaka\nKahenekasee neranetoe se eyowa/akoyaka\nHawa eyanaho eyowa erosetata eyowa kali /akoyaka\nYawaloweta enewada eyowa etowesera eyokali/akoyaka\nt,A,UQ\nErekatiwane esesekalihe eyowa/akoyaka, eneraneto akosaho eyowa erekiati\neyowa kali.\nDowa wera eyowa/akoyaka.\nKayawalio enokola ewese eyowa/akoyaka.\nHonotairo hakolo eyowa/ akoyoka\nKolitosero ekolitosera eyowa/akoyaka\nSasai dolaite eyowa /akoyaka.\nAnoi exewere eyowa/akoyaka.\nHakaliwanali eyohalitaha holi akoyaka halitane holi.", "description": null, "filename": "hakaliwanali.txt", "id": "hakaliwanali", "language": null, "title": "Hakaliwanali"}, {"content": "HEKIATA MAT\u00c1LIOKASE KATATONERO EYOTA\n\nEsewehe eneto tewana (2x), holi etine enane eraokata. (lolate kaweteho) maihia\nalatahaliwala enane ekiata.\nHolidema hane hahekotaita mamana, holi dema tewakane hatase halatene\nheyane, awa ala hixo ehe, alakatali kaxata, holidema okotiwa horalita alinene.\n- Nowatolo hayaha katola wayokwa weyane, newa eheye. Holidewa dane,\neneto akasenene.\n- Hinatolo okwa katola dayokwa deyane okwa maio, newa eheye. Towe haranekwa\nneta, olokwalikwaneta newa, katola wayokwa weyane nowatolo, newa eheye.\nHolidema kadene kasanalo terena hawakalota anakwa dane eren\u00f5wa. - Nowatolo\nnewa eheye \"Haooo ... \", newa eheye, nowa kena nato. Newa eheye,\n- nowatolo, newa eheye, \"Haooo ... \", newa eheye, eskoyona ekakwa, olokwalikwa\nhoyakanekwata tanadane, tewakwa enoneta\nMayalalokwa.\n- halakotanexikia nowatolo dane.\nAlakatita hata memawaka, hata Tewakwa enoneta nane, Yakera esewehe tewakwali,\ntewakwa enoneta mayalalokwa okakoha, katola ere Ayona, hawiyowalo enane ekiata,\nalakana.\n- \" Erooo\", Newa, \"haoo \", newa katatonero akiowala tene, aline.\n- hayaha, newa eheye takwatowane enowana.\nKatatonero takwatowane enowana\n- noxi, newa eheye \"waaa\", Newaxa. Mahia enatolo wala, aserokwati ekiawala\nwayone, eyakalotinero nane Ana\u00f5li honakonase nane, halitotonero nane, halita\netotone, holi kadene ekiaxexe etotone, etawane wekakala tanane, kotalanawe anakwa\nwexi a\u00f5konel, sala erowataxa, kotala nawe.\nHoli kanene noxe, newa eheye,\n- Hayaha erako hedowa, newa eheye, hala yotasero halata nohiti, mayehiro nawe\nhalatanohiti, kowali nawe halata nohiti, noxe, newaxa eheye.\n- Haia newa, hala ahe new\u00e3. Erowaxa towane enowana \"toooo\" erowaxa towane\nenowana, wayawalonene.\n- erako haliowa noxe, newa eheye. Wayowalonene etotone katahe waha. - erakose\nnoxe, newa eheye\n- nototone katahewaha noxe erakose. Etiho wixe a\u00f5kwa sala edowa,hatamane nawe\nalana ehawaneta, kolohi nawe alana ehawaneta, haholisera nawe, hakaserohonola\nnawe alana ehawaneta. Akolatene, ekotene hadolatera ako a\u00f5kone dane ekakwa\nexowa dane, An\u00e3oli tikialiwa adonexetine)\n\n- Neraneto ehe nowita erakaka, An\u00e3oli edakaka, etalonako tokwita ohaxakolixa\nholi ako dola hotokota, kalo ehio akakasetit\u00e3 holi, katatonero takwana towane,\nexowatowane xerese ahererakana eheye \"xerere, xerere\" nowakiona eheye, awitakene\nhakexe kakwa (2x) holi dewa xerese kexiti tawane ehe taneta, hakixe kakwa awitakene.\n- Enawene yama dexola, Dekanereta nahiti dokwa, nokatawanena anina xire nawe,\nAn\u00e3oli Daera kateneta takoli kateneta. \"katola akota takoli\".\n-An\u00e3oli doninahalo kakwa nokatawanena, anena xere nawe.\nHahotakola awakona, akasaliyakota enaeta erakexene, one eyowa dane, -\nNokatawanena newatola ere enawenero, newala anakwa enowana, wayone, hoxikiwa\nwenena, \"kookoo\" eheta hekiwata ere hokwa heyane hokwa, nodonenihalo erenane.\nAkolitene hataikwa a\u00f5kone dane, noxe akolata katatonero hotakolako a\u00f5kone dane,\nnoxe ehekwali ehe a\u00f5kwa dane enaeta.\nHanena katatonero one kakwa, hanera owana enako \"Too,Too,Toooo\", hali waha\n\"too,too,too\" aholokwana nane\n\"- tokolokoko, Tokolokoko\" newaxa notawatawa, ahakana ekatahe awetotokwa\n\"tokolokoko kooo\" amerokwa dane, akekeranene, akekeranetene yakoli \"t\u00e1, t\u00e1\"\nnewanetali \"hot\u00e3aa\" Newanetali.\n- Heketane newa, wayolatene, wayone, noxe keyaliokolina, \"koooo\" - detaxa\nnotawane eyowa, ekia\u00f5li nasali Kaliwa nane, Anaoli kaliwa eyone nane, dane enowana.\n- Noxe Ana\u00f5ho hixola notawane heyowa ekiatiyali? Nowironenawe tawane heyowa,\nnoxe anaho, nowirone tamanexekia nene, hayahaxa heyetene nowane.\n-Maihia, nodan\u00e3kotita lalaka, nakaxa dola nehotokota nane, eya\u00f5kwa hetatire dolane\nnane, Ahekatato, kalohio nawe nakakasetita, eya\u00f5kwa hetatire Dalone, ahe katato,\nmaihia natowala keiro, keiro kaliwa eyone, newa eheye. Holidewa dane enowana.\n- Noxi, Kiro, Kiro hixola notawe hiyowa?\n- Maihia, newa eheye.\n\nAlitaxekia ekiata nato nane, Ana\u00f5li kaliwa eyone, newa eheye.\nHolidewa detama enowana.\n- Noxe hixotaxala hiyone noxe?\n- Maihia nowe, keiro, keiro kaliwa, nowitine.\nDetama enowana.\n- Maihiaxala hixotawala, Kalitakase hixo heyonexa okwanane, Ana\u00f5li okawanane, newa eheye.\n- Mihia natowala nowixekia, ana\u00f5li eyone.\nDetawa enowana, Ana\u00f5li owana.\n- Noxi newa heye, anakowetena enowana kaliyane kerikwali, hadeta eyowa exowa enako,\nataho eyowa akewahinene \"ya, ya, ya,\" akewahakota edanita, katekwana kaliyane. Holidewa\nwaxalikwahi oneta maireta Katatonero.\nHolidewa exowa enowana kaliane, awinexe hayasetiya a\u00f5kwa eheye, kaliyane ekanasako\ntohikene ahetahaliowatene, hayasetiya kakwa awali, awetene adolokwalotowena, kaliyane,\nkasena eyakaliti hakolone ako kase - Alixalane nato.\n- hekiase, newa eheye.\n- Noweta hixo, hehowalo oneta, hiwane yama nane, haita hotako ako, erakexa hixo, holi\nnane, newa eheye.\nWayowakata yakoli, sali ako, mahia hakolo ekiawala ... akwakana eheye, - Hekiaoli nanita\nnato, newa eheye, akalakakana enowana, hahekonawe akalakana enowana, aweta\nakalakakata enowana, eneraneto ehe tana kaliyane, eyakalotinero ehe tana kaliyene.\n- Haholokwa, newa eheye, hala soli herexowita hehowalokwa heye. Kohase eyowa dane\nenowana, aholokwahane, aholokwahana, aweta xexase nawe atera enaetanita.\n- awe xexase nawe hatera enaetaneta, hala hirexowi eheye, ewesekokota toyama\nhowakene, newa eheye, herexowina eheye nani, holi kadene. - Hayaha ali, nowaka\nnoholokali ahe, hayahala hayokone, newa eheye.\n- Halokata, newa eheye, wayokowakana. Mahia xexase tanali enaeta,\n-Tasa hewesekokota, newa eheye \"sooo\".\n-Atete, erexowina eheye, katatonero weseko akerakwata, axakolotene,\nKayotakatina, horawaka, watatakwatinero m\u00e3olina, holi owana wayota, tokwita eheyeha,\nwayota enowana kadawena kahita, kadate kaheta, wayota enowana, wayota (2x) anakwa\nenowana, xexe eyowa, kadawena kaheta okwaha, erakoseneta atikene\u00271 hauuu\".\n- Eyola kaxatola notawatawa, \"tahado\" akehetene. Holidema wehenese taihiaho taneta,\nkatatonero hetaola menekwa wehenese kataihiakota.\nHolinaneta eya\u00f5kwa kenekwana enowana, kawanerena enowana eya\u00f5kwa kenekwana,\nenowana kahesena enowana, arakana enowanata, enowana kaliwa arakana eya\u00f5kwa\nenowana, asotalitene enowana, horawaka, denaha ehese wesenawe\" yererere\" Kolata\nnaha. Ana\u00f5li\nWakanalita \"yeyererere\" dane yotatawe hese wesenawe, onekalihi esokate owana\nedowanaha dane.\nHanena eyowaline, kanakanalaline Kolata takwa eheye - \"Waaa?\" Nodai newa eheye?", "description": null, "filename": "hekiataMataliokase.txt", "id": "hekiatamataliokase", "language": null, "title": "Hekiata Mataliokase"}, {"content": "Akokwi watalia hiwatawatalia hohiya hiya", "description": null, "filename": "kakotere.txt", "id": "kakotere", "language": null, "title": "Kakotere"}, {"content": "KOTATERAHORALI EXA ATAWENA\n\nH atowahawata exa atawetama nane etatiho. tasa a\u00f5latowa tama okwa.\nexa atawena, kawin\u00e3li enowa haliowa okwa nane, alineta dena enowanane:\nHoli akawin\u00e3:\n- Koko halotawa kakwali hayaha hinowataha nato koko:\nNewa. One kawiwina hatiho, newa eheye asewane kayahi atokere.\nHetati hanena wakiowaseta ekaline atamero kwakataline kaheita seike\nAtikwa towane enowanatola.\nHixola Hakawexita nadai nokot\u00e3:\n- Newa eheye Mahia hixowala nakawexita nani. newa eheye:\n- kokoli nakawexita halotawa kakwali nakawexita newa eheye haya hin\u00f5waotaha ~\nkoko one kawiwin\u00e3da hatiho koko Walawanere nowe naline.\nKaliwa kayahiatokwere nowenawe hakone hokwa. Halani nowa eheye.\n- Naniha xayama hixo nane, natokwa xayama hixo nane nadai. Newa eheye xewa.\nHanitama atali atokwere waha\n\n- Nadai natola hakawixita nodainokot\u00e3, newa eheye. Hixowala newa eheye\nhixowala nakawixita, kokoli nakawixita nane. Halotawa kakwali nakawixitanane.\nHayaha hinowaota nato koko atali atokwere nowe taeko heheye.\n- Halani naniha yama hixo nane nadai. newa eheye deita ma Xooo ... 11 Mata lo\nAtokere waha takwa towane ... natola hakawixita nadai. Newa eheye.\n- mahia hixowala newa eheye, kokol i nakawixita nane nawe eheye, halotala\nkakwali nakawixita nane newa eheye, halane newa eheye naniha xayama hixo\nnadai natoka xayama hixo nani.\nXewetama ekatahako \"naka denaha Kanota atokwere waha. Hanitama\natikwatana.Nodai newa eheye,\n- Natola hakawexita newa eheye, hixowala newa eheye, haita taeko Hayaha\nhin\u00f5waotaha nato nowe tako heheye Kanota atokwere nowe heheye. Hatawaha\nxiwitama \"Xooo ... \"\nHanetama Awaxa atokwere waha. \"seike atikwatowane.\n- Natola hakawixita nadai. Newa ehiyi: hixowala nakawixita.\n- Kokoli nakawixita nane, newa eheye. halotawa kakwali nakawixitanane, newa\neheye.\n- Nanehaxayamah ixo nane newa eheye.X ewetama.\nExa Atokwere waha, 11Seike11 atikwa towane.\n- Natola hakawexita nodai, newa eheye, hixowala newa eheye, haitataeko hayaha\nhin\u00f5watahan ato Exaa tokwere noweheheyea lotawa kakwali nakawixitanane,n ewa\neheye, halane newa eheye, naneha xayama hixo nane nodai newa eheye.\nHanitamah alotalakakwalAi lawanereh anena, \"tawero seike\".\n- Natola hakawixeta nodai?: ..\nHixo nakawixita koko newa eheye, Hayaha hin\u00f5waotaha nato kawiwin\u00e3dahatiho\nnowe nakawixeta hixo,hala newa eheye \"hahaha ... \" hala naolata hixo newa eheye.\nSalahei dowa ekotawirah ino tokwa. Yolatalimahah, oli ekalinae heye,h esekwataa wa\naniha hixo, newa eheye. hesokwata hawita kwata awa aniha hixo.\nAniha hixo ehi ekalinah ekiakwa.E tahiraseh anatad ane ekakwa,h ala anini ehi nane,\nawitakwa tawa okwaha masotanalwi ala okwaha, awitakwa erin\u00f5awaw alala! ! .\nAokolikion\u00f5akata kahita, holidewa kalana heye takiowasehi enewe. Alawanere ewe\nkalana heye taneta. Mahiata katonere wala holi, holidewa kalana keweta,dotawa\nehetaneta holinane hato kotatira horali hotakahi kali.", "description": null, "filename": "kotaterahorali.txt", "id": "kotaterahorali", "language": null, "title": "Kotaterahorali"}, {"content": "Okoyoli e Ayawanere \n\nAyawanere etani Okoyoli, Ayawanere ameratahana holi owiro heye takwa, enewalo Lolahanero,Lolakate  esokwate   ayawane, holi Ayawanere heye awalo Lolahanero, holi nanita Ayawanere ehasakalone, Lolahanero tasawati wakoyoa holi, Lolahanero aikialatene: Hala enawenero xala nato laka, nexikere  wayakanetali hanolokwahena tako Awa akotekase hetalase tana, lolahanero nato nane teta nane, Ayawanere aikwalatamane: Mahia xakaliwa,  Awerata heye, awali xinakaha kakwa, holidema Lolahanero, hehe newa, awa waita hexota hetalase heyotitira natoweta waita noweta hetase, awa akotekase hetalase tana newa eheye. Hehe newa Ayawanere eheye, lolahanere heye, holi akoyona ekiakwa Ayawanere masemanere hatalase yakoli eyota heu,heu,heu mahia totaliwala etalase, owahakasena netali, holi Lolahanero otokowe eheye etine kaliyane  taololi newa etalase, holi Lolahanero nowa eheye: haita kera nowe heheye, eheta masemanera kaxali hixo kali, Natoweta waita nowetene noheti nowekera heheye, hetalase etine hexowa lalohi hesakwa laka  hehenesekwaneta  hala hetalse hakolata enako, holidema lalahe sakwa lolate towa  hatalase akolata enako, akolatene toheta hotaketikwa, mahia hakolako wala exowata towane eyaokwa honako exowata towane, holidema eyaokwa honako taet\u00e3, Ayawanere eraneto, exeneto kali enewaloha, Lololawa, Lololawalo, Waikwadawalo, Enodawalo, Axodawalo, Oherolawa, yaliyalisenero. Holi kadene atahana Ayawanere owana, holi owana hatalase alikiata akoyonane, hataha, akoyoa, hataha akoyoa kali, menaneta akoyakotane anolotitera hatalase, holi enetane ka\u00f1akakena. Heheta heraneto kakwa  ekiata nowa heye, hala nowa heye, holidewa enetani Okoyoli awalolotene wayone, hala newa enetane Okoyoli, kalitasenane newa, ekialata nane enowana newa, aotahanane xexase kewalixa, atahana enowa, holi Ayawanere asewene hatalase alikiatama yakoli enowana, holi noxe aokwa enaita, holi heno eyowe towane, holi henoneta erekosetene, saka! Wata! Newa. Honalowatako ataolo eraokwa, holi ereyali Ayawanere tekwa, onedayowa erowa dane, takwanaha towane, hetikwaneta atahanatama yakoli enowana, aheranatama yakoli, wayoakataha honalowatako, araokota, koo!  Enetane erekone newaha, eyowane alatane dane, Ayawanere talase taolo alataha  kolowali ehe tana. Enereyali onedayoa Ayawanere erowa dane, holi de\u00f1oa owiro nawe denatama, akowalanaha enowana holi owana tohetama, akoyonatama ekiakwaha, kaweyakenatama enetane heye akwalinatamane, hala newa enetane, enanetatala laka newa, awahanatamane dane, wayonatamane awalolonatamane, hala newa kalitakase nane newe enetane detama ahotahanatamane akwalana enowana owiro ehe aokowetama , holi owana yakoli Ayawanere hatalase alikiatawa, hoyakakota aokone erekotewane , awetaho etaolo aokwa enaetaha, tohenatama yakoli aheranatamane yakoli, haita enetane erekotamane, wayoakanha eholita hoxekota ataolo, holidema Lololawalo tekot\u00e3 ere\u00f1oa  Ayawanere de\u00f1oa, one kenekwadewatoa ehenokota toane Ayawanere towane hawe\u00f1awali toli nakota erowatowane, holi de\u00f1oa eneraneto naha towaneha, haxineha emakayowa tekwanaha exeneto naha tikalita tekwaha ere\u00f1oa, holi deratiwa ewalila ehe taeta kasalila ehe taeta , holi ehola totokoli akasenene, hekiase nowayate hetonawe tekwanaha honeta heyerane kakwa, heyeta kakwa kali, holidewa kase kaliyane, dena hanetonawe de\u00f1oa, enotowata, waikwa edoata kali, hatiwaha dosako  honohera kakwa atalala wenekwatoweha, holi dosako kadene, eneto dewatiro amoyo ahotali enaeta, holi heye takwala terene kali, holi enetonaha atahanane, eheta hohona nodene hali okoyo, mahia denawe  dewa wala hetonawe tekoha honeta hali okoyo, eheta hehe edane herekotita kali, hamahokwanalotita hetonawe kali, holidewa hetonawe tekwaha honeta, holi enetonawe axikedowanaha enowa, holi ako daholosehe edawali heye.\n Holi eneto dewatiro eyaokwa eheyeta enowana, hawawali eyeta enowana, eyerane, derohi nawe kali, holidewa eyaokwa tanita, haita tekwakoha ekiakwa nane, holidewa derati  wawa\u00f1ali ali tanita, enakeyoa Enodawalo tekwa ekiakwa nane, Holidewa maratihe eya enowana, hane Dokoweye tenehoko, ere kakwa waita nowawa\u00f1alo heyota one kataheneta one alowala kataheneta, ahetese eya enowana, ere kakwa waita heyokwa aseotoa, hala hixowata heyane heto nawe ekwalali katahe newa heye, holi de\u00f1oa netokwati dewatiro awexenalota, holidema tekwaha enonita kaliyane. Okoyoli toheta mayanetowali toheta, tonowina dayowa ameratahana towane hayaneto hekwalo, hoxikia hetase alolokwa, alolokone hataxita wayowa enowana,mahia awe holi wala  waliwenakase kahita, holidema eraketene one dayowa, alatamane, walakonero alolokwa kaliyane, mahiata herehere wala wayowa enowana, hayaneto hekokota alolokwa wayowa  enowana kaliyane, hayaneto ehe eyotene, haneto nawe ekwalali katahi exoata dane ekakwaha hayeneto nawe hekwalo kakwa, holidema Okoyoli kayanetoweta walakonero kakwa, holidema kohase kahali wayateta, hane kadene eyakaliti ehe tana dane, holidema Ayawaliserikwa ehe tana. \n \nLolawekwaene nato awe nowalikwali, haitala no\u00f1akani dasewa", "description": null, "filename": "okoyoliAyawanereEN.txt", "id": "okoyoliayawanereen", "language": null, "title": "Okoyoli Ayawanere En"}, {"content": "Yanaloli Nihaka\n\nEhatowin\u00e3ha, enahe kakwa, ey\u00e3okwa detaixira ehe towenane, ehose ahe ey\u00e3okwa ehetanena, ewesekoholose Lolali ehe tana, exiwire kadene, hetire ehe tana, ekano kakanowiro ehe tana.\nEnatoli danakata manaiyowa anihiane, eya\u00f5kwa dakaka eriyali anihiane hanetonawe heye akone, holi asema enalinali Kalaliyama asemene eya\u00f5kwa honako exowa dane eneraka kakwa.\n\n- Kerali akotine ewayate Anaoli, tasawati aniha hawayate eya\u00f5kwa, haini awena eya\u00f5kwa hanetonawe heye Yanalloli, newali kakwa exowana dane, enaliali kalaliyama eya\u00f5kwa honako Kalaliyama. _Haia newaha eheye, holidema eya\u00f5kwa hawayate aniha yanaloli, holi menekoya takwa towane enatoli anaoli.\n\n- Halakota nowatoli daokwa anenanawe.\n- haita henatoli eya\u00f5kwa aniha, Anaho, amameya akota eya\u00f5kwa haneto nawe heye henatoli Anaho, holidema edetaita anine, henatoli Anaho, hala newa.\n- Heketala nowatoli aniha, nowatoli howali eheralaka noyeta eya\u00f5kwa nowatoli owana, alawata nowatolli aniha nowe wala, noyita eya\u00f5kwa nowatoli owana, enerolalo toli ehe noyita eya\u00f5kwa nowatoli owana, kerali dakakali wala eya\u00f5kwa,\nhatolane mahia nakwali nowatoli heye.\nAlikianane.\n- Anena nawe nowenoli herane deyowa nowani enani kehenawe nadonixa one kolisewin\u00e3 kolohekoni deya deyone nowani, towaneha alaekiaxane.\nAkaranekwatowaha totata towanakoha\n- Wiya wiyone enowana newaha. Ana\u00f5li dena erin\u00f5ha, Tiwaliwali kadene oloneti owase.\nAna\u00f5li ixohikase akolata, dane erin\u00f5ha, ehatenane dane hokwa hiyi, Tiwaliwali wayone tekwa, Ana\u00f5li ehatane ixohikase kamamani kase alatene, esokate ehe tana.\n\n- Heketani awena wexo oka, Ana\u00f5li deta manaiyowa, tiwaliwali dane eren\u00f5waha.\n- dayaha tenekati ehatena wixo ixohikase kakwa. Holidema hoxakwanat\u00e3.\n- Tenekati ehatena wixo anena nawe. Tenekati ehatet\u00e3 wixo hoka?, Tenekati dalikailat\u00e3 wixo nani, enani kehenawe nalonixa, one kolisewin\u00e3kioni newa dalikatakati wixo nani. Tiwaliwali kakwa en\u00f5linaha.\n- amaserakana maiha oloniti akwanixali dewa ekialina amaserana wixo, hamaraniya tekwa holidema maiha oloneti akwanixali.\n- Maiha nawaserakana wala tahane deyayone laka. Maihata akotewala teokaha, An\u00e3oli tohetawa erin\u00f5ha, kahesere ako ixowa hanena, \"yirere\" newalini holoti kakwa ekialini \"hot\u00f5t\u00f5\" newalini, hatohaita aniha kakwanaha, awanewanita\namehowalitane, menekwata totenaha.\n\nAn\u00e3oli hanatoli derixaka ekialina, totaha dane wayowin\u00e3ha, menane anihakotane dane, owironawe waha anin\u00e3.\n-Tamiro nawe, wiya An\u00e3oli wakalalowena. Holikiwanaha waha yakoli ekano katahe, hala malikwalita ehe yakoli, hakano katahenita anihane, holikadene, ekianawalot\u00e3 owiro tekwa, tekwa ekano katahenit\u00e3, totenahaxa wayowir\u00edaha dewa, tekoha\nyakoli, hanena erin\u00f5ha, Yola heraokot\u00e3 holi hiyi takoha towane,\n- Nokayanetonaxa hanatolo kakwalo kakwa.\n_Haia hekiatawaita ha\u00f5ka wixo hoka, wikanin\u00e3kena xikia, Ana\u00f5li xikia anin\u00e3 wixo,\nan\u00e3, kin\u00e3li kaxata kaliyani, heketawaita hixana wehawanita hoka?\n-Alawaita nakahirotowana dehawanita, newa yakoli, hokatihi, asahi maiha tetalini hekin\u00e3li, xiwit\u00e3ma.\n\nwetokalakohi waha watawatahi.\n- Nokayanetona xikia, newa heye.\n- Haia, newa, hekiatawata hixana wehawanit\u00e3 hoka, wikiahowalina nani, eyaka nawe ololi nawe ohokakakwana wirin\u00f5wa nani, tahane hiyayone laka kiwini kaxata kaliyani, hala, hekiatawaita hixana wehawanit\u00e3, alawaita nakahirotowana\ndehawanita. \"watai\" newayakoli \"t\u00e3nalahi\" newanitali.\n- Maiha tetalini newa iheyi, wexiwitama xakane \"wererere\" newaliniha, Kolohe asekakotit\u00e3, weta, weta newita,\n- Ah!!! nokayanetona xikia maratiyalo kakwa hanatolo kakwalo kakwa nokayanetona, hala newa,\n- Hekiatawaita hixana wehawanita hoka? Alawaita nataoli kakwaita netolihali eyakanawe ololi nawe, dehita, neraneto wakoya enekonin\u00e3 waita makamanero dexo, holi hiyi setoha kaliyani, halahakoha aokane,\n- Etakose deyane, newa eheyiha, nakena nani kiwin\u00e3li kaxata _Maiha waita erekakwaita waita, nerakixini nan,i awa waita dewarena. Hanena waikwiaseta aokone, aolotene kaliyani \"waiiiiii, ... hotitootoo hoto olololooo\" kaohan\u00e3li aokotene\nman\u00e3kota dane totata kera.\nekinit\u00e3koli,kahet\u00e3 kahesere\nKahitata maiha kerali, hat\u00e3lioko maini kali, holikadene hayaneto owa erixowata kaliyani, haitaxa eneraneto maini kalinani, akasekitene, kaohan\u00e3linero ehe tanaha, akasekitene akalakanene enowanaha kaliyane, heyayowa ere awehowalina dexo, Ana\u00f5li akioli tahe, akote sewaliti manatahi kaheta akiolititahe, maiha waita dewaniro wala makamanero waita dexo, holi nanita akasekitene holidema eyakaliti tanetitira, hataola tamane ehe akasekitene, holidewa marita enoli nawe onita marita kaohan\u00e3li onita. Hodai halakwa kaohan\u00e3l", "description": null, "filename": "yanaloliNihaka.txt", "id": "yanalolinihaka", "language": null, "title": "Yanaloli Nihaka"}];
+
+    (function() {
+        var searchInput = document.getElementById('corpus-search');
+        var listEl = document.getElementById('corpus-list');
+        var detailEl = document.getElementById('corpus-detail');
+        var statsEl = document.getElementById('corpus-stats');
+        var activeId = null;
+        var currentQuery = '';
+
+        function escapeRe(s) {
+            return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        function highlightText(text, query) {
+            if (!query) return escapeHtml(text);
+            var escaped = escapeHtml(text);
+            var re = new RegExp('(' + escapeRe(escapeHtml(query)) + ')', 'gi');
+            return escaped.replace(re, '<span class="corpus-highlight">$1</span>');
+        }
+
+        function statsText(count) {
+            if (count === 1) return '1 ' + (T.corpus_result_singular || 'text');
+            return count + ' ' + (T.corpus_result_plural || 'texts');
+        }
+
+        function filterList() {
+            var query = searchInput.value.trim().toLowerCase();
+            currentQuery = query;
+
+            var filtered = allData.filter(function(item) {
+                if (!query) return true;
+                var hay = [item.title, item.description || '', item.content, item.language || '', item.filename || ''].join(' ').toLowerCase();
+                return hay.indexOf(query) !== -1;
+            });
+
+            statsEl.textContent = statsText(filtered.length);
+
+            var html = '';
+            if (filtered.length === 0) {
+                html = '<li class="corpus-no-results">' + (T.corpus_no_results || 'No texts found.') + '</li>';
+            } else {
+                filtered.forEach(function(item) {
+                    var isActive = item.id === activeId ? ' active' : '';
+                    html += '<li class="corpus-list-item' + isActive + '" data-id="' + escapeHtml(item.id) + '">';
+                    html += '<div class="corpus-list-item-title">' + escapeHtml(item.title) + '</div>';
+                    html += '<div class="corpus-list-item-meta">';
+                    if (item.language) html += '<span class="corpus-lang-tag">' + escapeHtml(item.language) + '</span> ';
+                    if (item.filename) html += escapeHtml(item.filename);
+                    html += '</div>';
+                    html += '</li>';
+                });
+            }
+            listEl.innerHTML = html;
+        }
+
+        function showDetail(id) {
+            activeId = id;
+            var item = null;
+            for (var i = 0; i < allData.length; i++) {
+                if (allData[i].id === id) { item = allData[i]; break; }
+            }
+            if (!item) return;
+
+            var query = currentQuery;
+            var html = '';
+            html += '<h2 class="corpus-detail-title">' + highlightText(item.title, query) + '</h2>';
+            html += '<div class="corpus-detail-meta">';
+            if (item.language) html += '<span class="corpus-lang-tag">' + escapeHtml(item.language) + '</span>';
+            if (item.filename) html += '<span>' + escapeHtml(item.filename) + '</span>';
+            html += '</div>';
+            if (item.description) {
+                html += '<div class="corpus-detail-desc">' + highlightText(item.description, query) + '</div>';
+            }
+            html += '<div class="corpus-detail-content">' + highlightText(item.content, query) + '</div>';
+            detailEl.innerHTML = html;
+
+            // Update active state in list
+            var items = listEl.querySelectorAll('.corpus-list-item');
+            items.forEach(function(li) {
+                li.classList.toggle('active', li.getAttribute('data-id') === id);
+            });
+        }
+
+        listEl.addEventListener('click', function(e) {
+            var li = e.target.closest('.corpus-list-item');
+            if (!li) return;
+            var id = li.getAttribute('data-id');
+            if (id) showDetail(id);
+        });
+
+        searchInput.addEventListener('input', debounce(function() {
+            filterList();
+            if (activeId) showDetail(activeId);
+        }, 200));
+
+        filterList();
+        searchInput.focus();
+    })();
+    </script>
+</body>
+</html>

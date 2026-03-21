@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.svg">
+    <title>Enciclopédia Enawenê-Nawê - Enawenê-Nawê</title>
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/terradoc.css">
+    <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+    <style>
+        :root {
+            --td-color-primary: #C9A030;
+            --td-color-accent: #A83220;
+            --td-color-accent-muted: #8B2A1A;
+            --td-color-bg: #FAF3E8;
+            --td-color-bg-light: #F5ECD7;
+            --td-color-bg-infobox: #F8F1E4;
+            --td-color-border: #E8DCC8;
+            --td-color-border-dark: #C4B8A0;
+            --td-color-text: #2C1810;
+            --td-color-text-muted: #6B5E4F;
+            --td-color-highlight: #FFF8E1;
+            --td-color-warning-bg: #FFF8E1;
+            --td-color-surface: #FFFFFF;
+            --td-color-border-light: #F0E8D8;
+            --td-color-text-secondary: #6B5E4F;
+            --td-color-accent-light: #FDEAE6;
+            --td-color-success: #4A7C59;
+            --td-color-error: #A83220;
+            --td-color-accent-ring: rgba(201, 160, 48, 0.2);
+            --td-radius: 28px;
+            --td-color-dark: #2C1810;
+            --td-radius-lg: 28px;
+            --td-radius-pill: 999px;
+            --td-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --td-font-headings: 'Sora', 'Inter', sans-serif;
+            --td-font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+            --td-term-color: #8B2A1A;
+            --td-term-weight: 600;
+            --td-color-gold: #D4A03A;
+        }
+.enc-welcome {
+    padding: 1.5rem 0 1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+.enc-welcome::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.5rem;
+    width: 4px;
+    height: 48px;
+    background: var(--td-color-primary);
+    border-radius: 2px;
+}
+.enc-welcome h1 {
+    color: var(--td-color-primary);
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+.enc-welcome-text {
+    max-width: 600px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--td-color-text-secondary);
+}
+.enc-stat {
+    font-size: 0.85rem;
+    color: var(--td-color-text-muted);
+    margin-top: 0.5rem;
+}
+.portal-section {
+    background: var(--td-color-surface);
+    border: 1px solid var(--td-color-border);
+    border-radius: var(--td-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--td-shadow-sm);
+}
+.portal-section h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: var(--td-color-primary);
+    padding-bottom: 0.5rem;
+    border-bottom: none;
+    position: relative;
+    padding-left: 1rem;
+}
+.portal-section h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    width: 3px;
+    height: 1.1em;
+    background: var(--td-color-primary);
+    border-radius: 2px;
+}
+.portal-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+.portal-columns .portal-section {
+    margin-bottom: 0;
+}
+.featured-card {
+    display: flex;
+    gap: 1.25rem;
+}
+.featured-image {
+    flex-shrink: 0;
+    width: 200px;
+}
+.featured-image img {
+    width: 100%;
+    border-radius: var(--td-radius);
+    object-fit: cover;
+}
+.featured-image .credit {
+    font-size: 0.75rem;
+    color: var(--td-color-text-muted);
+    margin-top: 0.25rem;
+}
+.featured-text h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+.featured-text h3 a {
+    color: var(--td-color-primary);
+    text-decoration: none;
+}
+.featured-text h3 a:hover {
+    color: var(--td-color-accent);
+}
+.featured-abstract {
+    font-style: italic;
+    color: var(--td-color-text-secondary);
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+.featured-excerpt {
+    color: var(--td-color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0 0 0.5rem 0;
+}
+.featured-readmore {
+    display: inline-block;
+    background: var(--td-color-primary);
+    color: white;
+    padding: 0.4rem 1.25rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.featured-readmore:hover {
+    background: var(--td-color-accent-muted);
+    text-decoration: none;
+}
+.cat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: calc(100vh - 16rem);
+    overflow-y: auto;
+}
+.cat-list > li {
+    padding: 0.3rem 0;
+}
+.cat-list a {
+    color: var(--td-color-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+.cat-list a:hover {
+    text-decoration: underline;
+}
+.cat-count {
+    font-size: 0.8rem;
+    color: var(--td-color-text-muted);
+}
+.cat-list ul {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0.15rem 0;
+}
+.cat-list ul li {
+    padding: 0.15rem 0;
+}
+.cat-list ul a {
+    font-size: 0.85rem;
+}
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 0.75rem;
+}
+.highlight-card {
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    transition: transform 0.2s;
+}
+.highlight-card:hover {
+    transform: translateY(-2px);
+}
+.highlight-card img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--td-radius);
+}
+.highlight-card span {
+    font-size: 0.8rem;
+    color: var(--td-color-primary);
+    display: block;
+    margin-top: 0.25rem;
+}
+.highlight-card:hover span {
+    color: var(--td-color-accent);
+}
+.entry {
+    transition: background 0.2s;
+}
+.entry:hover {
+    background: var(--td-color-bg-light);
+}
+.entry-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.25rem;
+}
+.entry-word {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--td-color-primary);
+}
+.entry-word a {
+    color: inherit;
+    text-decoration: none;
+}
+.entry-word a:hover {
+    color: var(--td-color-accent);
+    text-decoration: underline;
+}
+.entry-type-tag {
+    font-size: 0.7rem;
+    background: var(--td-color-accent-light);
+    color: var(--td-color-accent-muted);
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+}
+.entry-summary {
+    color: var(--td-color-text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+.entry-categories {
+    margin-top: 0.35rem;
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+}
+.entry-cat {
+    font-size: 0.72rem;
+    background: var(--td-color-accent-light);
+    color: var(--td-color-accent-muted);
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.entry-cat:hover {
+    background: var(--td-color-border-dark);
+    color: white;
+}
+.entry-variants {
+    font-size: 0.85rem;
+    color: var(--td-color-text-muted);
+    margin-top: 0.2rem;
+}
+.variant-tag {
+    background: var(--td-color-border);
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    margin-right: 0.3rem;
+    font-style: italic;
+}
+.enc-skeleton {
+    padding: 1.5rem;
+}
+@media (max-width: 900px) and (min-width: 701px) {
+    .portal-columns {
+        gap: 1rem;
+    }
+    .featured-card {
+        gap: 1rem;
+    }
+    .featured-image {
+        width: 140px;
+        min-width: 120px;
+    }
+}
+@media (max-width: 700px) {
+    .portal-columns {
+        grid-template-columns: 1fr;
+    }
+    .featured-card {
+        flex-direction: column;
+    }
+    .featured-image {
+        width: 100%;
+    }
+}
+
+/* ── Knowledge graph ── */
+.graph-section {
+    background: var(--td-color-surface);
+    border: 1px solid var(--td-color-border);
+    border-radius: var(--td-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--td-shadow-sm);
+}
+.graph-section h2 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.1rem;
+    color: var(--td-color-primary);
+    position: relative;
+    padding-left: 1rem;
+}
+.graph-section h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.15em;
+    width: 3px;
+    height: 1.1em;
+    background: var(--td-color-primary);
+    border-radius: 2px;
+}
+.graph-container {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    border: 1px solid var(--td-color-border);
+    border-radius: calc(var(--td-radius) - 4px);
+    overflow: hidden;
+    background: var(--td-color-bg);
+}
+.graph-container svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.graph-controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.graph-btn {
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--td-color-border);
+    background: var(--td-color-bg);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    font-family: var(--td-font-family);
+    color: var(--td-color-text);
+}
+.graph-btn:hover {
+    background: var(--td-color-bg-light);
+    border-color: var(--td-color-border-dark);
+}
+.graph-btn.active {
+    background: var(--td-color-primary);
+    color: white;
+    border-color: var(--td-color-primary);
+}
+.graph-legend {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    color: var(--td-color-text-muted);
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+.graph-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+.graph-legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.graph-tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--td-color-surface);
+    border: 1px solid var(--td-color-border-dark);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    max-width: 280px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+.graph-tooltip.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+.graph-tooltip-title {
+    font-weight: 700;
+    font-family: var(--td-font-headings);
+    color: var(--td-color-primary);
+    margin-bottom: 0.3rem;
+}
+.graph-tooltip-abstract {
+    font-size: 0.8rem;
+    color: var(--td-color-text-secondary);
+    line-height: 1.4;
+    margin-bottom: 0.4rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.graph-tooltip-link {
+    font-size: 0.75rem;
+    color: var(--td-color-accent);
+    text-decoration: none;
+}
+.graph-tooltip-link:hover {
+    text-decoration: underline;
+}
+.graph-tooltip-cats {
+    font-size: 0.72rem;
+    color: var(--td-color-text-muted);
+    margin-bottom: 0.3rem;
+}
+@media (max-width: 700px) {
+    .graph-container {
+        height: 380px;
+    }
+}
+    </style>
+</head>
+<body class="td-style-terra">
+    <a href="#main-content" class="skip-link">Pular para conteúdo</a>
+
+    <nav id="td-nav" aria-label="Navegação principal">
+        <div class="td-nav-inner">
+            <a href="index.html" class="brand">
+                <img src="../images/logo.svg" alt="" class="brand-logo">
+                <span>Enawenê-Nawê</span>
+            </a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+            <div class="nav-links">
+                <a href="dictionary.html">Dicionário</a>
+                <a href="encyclopedia.html" class="active" aria-current="page">Enciclopédia</a>
+                <a href="fauna.html">Fauna</a>
+                <a href="ethnobotany.html">Etnobotânica</a>
+                <a href="bibliography.html">Bibliografia</a>
+                <a href="corpus.html">Corpus</a>
+            </div>
+            <div class="lang-switch" aria-label="Seletor de idioma">
+                    <span class="lang-current" aria-current="true">PT</span>
+<span class="lang-sep">/</span>                    <a href="../en/encyclopedia.html" class="lang-link">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="td-container">
+    <div class="enc-welcome">
+        <h1>Enciclopédia Enawenê-Nawê <svg class="td-page-badge" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M12,1 A11,11 0 0,1 23,12 L1,12 A11,11 0 0,1 12,1 Z" fill="var(--td-color-primary)" opacity="0.2"/>
+    <path d="M12,23 A11,11 0 0,1 1,12 L23,12 A11,11 0 0,1 12,23 Z" fill="var(--td-color-dark, #0B0F17)" opacity="0.2"/>
+    <circle cx="12" cy="12" r="11" fill="none" stroke="var(--td-color-primary)" stroke-width="1.2" opacity="0.3"/>
+    <line x1="1" y1="12" x2="23" y2="12" stroke="var(--td-color-text-muted)" stroke-width="0.6" opacity="0.2"/>
+</svg></h1>
+        <p class="enc-welcome-text">Enciclopédia dedicada à preservação e documentação dos saberes culturais, linguísticos e etnográficos do povo Enawenê-Nawê.</p>
+        <p class="enc-stat"><span class="td-decor-badge" style="width:32px;height:32px;background:var(--td-color-accent-light);color:var(--td-color-accent);font-size:0.75rem;font-weight:600;" aria-hidden="true">25</span> 25 verbetes</p>
+    </div>
+
+    <div class="no-js-only results-container">
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/arquitetura.html">Arquitetura da Aldeia</a></span>
+            </div>
+<p class="entry-summary">A aldeia Enawenê-Nawê possui formato circular com malocas retangulares ao redor de uma praça central, onde se ergue a casa cerimonial Yãkwa.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/clas.html">Sistema de Clãs</a></span>
+            </div>
+<p class="entry-summary">Organização social baseada em clãs patrilineares e exogâmicos, com residência uxorilocal e categorias etárias que estruturam a vida comunitária.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/contato.html">História do Contato</a></span>
+            </div>
+<p class="entry-summary">O primeiro contato pacífico com os Enawenê-Nawê ocorreu em 1974, mediado por missionários jesuítas, com destaque para a figura de Vicente Canas (Kiwxi).</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/cosmologia.html">Estrutura Cosmológica</a></span>
+            </div>
+<p class="entry-summary">O cosmos Enawenê-Nawê é organizado em quatro níveis — celestial, terrestre, subterrâneo e um espaço infinito superior —, cujo equilíbrio é mantido pelo ciclo ritual.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/dieta.html">Proibições Alimentares</a></span>
+            </div>
+<p class="entry-summary">Os Enawenê-Nawê não consomem carne vermelha, mantendo uma dieta baseada em peixe, mandioca, milho, mel e sal vegetal, com origem mítica no clã Anihiare.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/enawene-nawe.html">O Povo Enawenê-Nawê</a></span>
+            </div>
+<p class="entry-summary">Povo de língua Arawak que habita o noroeste do Mato Grosso, com cerca de mil pessoas, conhecido por sua rica vida cerimonial e pela proibição do consumo de carne vermelha.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/enore-nawe.html">Enore Nawe: Espíritos Celestiais</a></span>
+            </div>
+<p class="entry-summary">Espíritos celestiais benevolentes que habitam o Eno, a aldeia perfeita no plano superior do cosmos, e são considerados os donos do mel.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/flautas-sagradas.html">As Flautas da Casa Yãkwa</a></span>
+            </div>
+<p class="entry-summary">Instrumentos musicais sagrados de bambu e cabaças, tocados na casa cerimonial Yãkwa durante os rituais, especialmente o Yaokwa.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/harikare-yaokwa.html">Rotação Harikare-Yaokwa</a></span>
+            </div>
+<p class="entry-summary">Sistema de rotação bianual no qual os clãs alternam entre os papéis de Harikare (anfitriões) e Yaokwa (pescadores), espelhando a reciprocidade cósmica.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/hidreletricas.html">Ameaças ao Território</a></span>
+            </div>
+<p class="entry-summary">A construção de dezenas de hidrelétricas na bacia do rio Juruena ameaça os recursos pesqueiros e o patrimônio cultural imaterial dos Enawenê-Nawê.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/kateoko.html">O Ritual Kateoko</a></span>
+            </div>
+<p class="entry-summary">Ritual dedicado aos espíritos celestiais Enore Nawe, associado à coleta de mel e marcado por festas de caráter descontraído.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/lerohi.html">O Ritual Lerohi</a></span>
+            </div>
+<p class="entry-summary">Ritual de abertura e plantio das roças coletivas de mandioca, associado aos espíritos Iakayreti e marcado por cânticos noturnos.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/mandioca.html">A Mandioca na Vida Enawenê-Nawê</a></span>
+            </div>
+<p class="entry-summary">Alimento básico dos Enawenê-Nawê, a mandioca possui dimensão simultaneamente nutricional, social e cosmológica.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/mel.html">A Coleta de Mel</a></span>
+            </div>
+<p class="entry-summary">Atividade econômica e ritual fundamental, sendo o mel a principal oferenda aos espíritos celestiais Enore Nawe.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/olokoiri.html">O Estojo Peniano</a></span>
+            </div>
+<p class="entry-summary">Estojo peniano confeccionado em palha de buriti, utilizado a partir da adolescência e de origem mítica vinculada ao clã Anihiare.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/pintura-corporal.html">Pintura Corporal</a></span>
+            </div>
+<p class="entry-summary">Sistema de pintura corporal que utiliza urucum para o uso diário e jenipapo para ocasiões cerimoniais, com padrões que mudam conforme as fases da vida.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/plumaria.html">Plumária e Tapiragem</a></span>
+            </div>
+<p class="entry-summary">Arte plumária elaborada com penas de arara, papagaio e mutum, incluindo a técnica de tapiragem que transforma penas verdes em douradas.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/sal-vegetal.html">O Sal Vegetal</a></span>
+            </div>
+<p class="entry-summary">Oferenda central aos espíritos Yakairiti, produzida por meio de um trabalhoso processo de queima e filtragem de plantas aquáticas.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/saluma.html">O Ritual Salumã</a></span>
+            </div>
+<p class="entry-summary">Ritual de transição entre estações dedicado aos espíritos celestiais Enore Nawe, historicamente associado ao nome pelo qual o povo foi conhecido até 1983.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/sotakatari-nawe.html">Os Mestres Cantadores</a></span>
+            </div>
+<p class="entry-summary">Especialistas rituais que detêm o conhecimento musical e cerimonial, fundamentais para a transmissão dos saberes tradicionais.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/sotayreti.html">Os Xamãs</a></span>
+            </div>
+<p class="entry-summary">Especialistas espirituais que viajam ao plano celestial por meio de sonhos e transes, atuando como mediadores entre os mundos humano e espiritual.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/terra-indigena.html">Terra Indígena Enawenê-Nawê</a></span>
+            </div>
+<p class="entry-summary">Território de 742.088 hectares no noroeste do Mato Grosso, abrangendo os rios Juruena e Ique, demarcado com exclusão de áreas sagradas importantes.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/waitiwina.html">Barragens de Pesca</a></span>
+            </div>
+<p class="entry-summary">Engenhosas barragens de pesca construídas com troncos entrecruzados e armadilhas cônicas, fundamentais para o ritual Yaokwa.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/yakairiti.html">Yakairiti: Espíritos Subterrâneos</a></span>
+            </div>
+<p class="entry-summary">Espíritos subterrâneos de fome insaciável que habitam o Ehatekoyoare e são considerados os verdadeiros donos dos recursos naturais.</p>        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word"><a href="encyclopedia/yaokwa.html">O Ritual Yaokwa</a></span>
+            </div>
+<p class="entry-summary">Principal ritual do ciclo cerimonial Enawenê-Nawê, com duração de aproximadamente sete meses, inscrito como Patrimônio Cultural Imaterial pela UNESCO em 2011.</p>        </div>
+    </div>
+
+    <div class="js-only">
+        <div class="search-container">
+            <div class="search-row">
+                <input type="text" id="search-input" class="search-input"
+                       placeholder="Pesquisar na enciclopédia..."
+                       autocomplete="off"
+                       aria-label="Pesquisar">
+                <select id="keyword-filter" class="filter-select"
+                        aria-label="Filtrar resultados">
+                    <option value="">Todas as categorias</option>
+                    <option value="__uncategorized__">Sem categoria</option>
+                </select>
+            </div>
+            <div class="stats" id="stats" aria-live="polite"></div>
+        </div>
+
+        <div class="td-decor-motif" aria-hidden="true"><svg width="120px" height="8" viewBox="0 0 120 8" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="4" x2="52" y2="4" stroke="var(--td-color-border)" stroke-width="1.5"/><circle cx="60" cy="4" r="3" fill="var(--td-color-border)"/><line x1="68" y1="4" x2="120" y2="4" stroke="var(--td-color-border)" stroke-width="1.5"/></svg></div>
+
+        <div id="portal">
+            <div id="featured-section" class="portal-section" style="display:none;"></div>
+            <div class="portal-columns">
+                <div id="categories-section" class="portal-section" style="display:none;"></div>
+                <div id="highlights-section" class="portal-section" style="display:none;"></div>
+            </div>
+        </div>
+
+        <div id="graph-section" class="graph-section js-only" style="display:none;">
+            <h2>Mapa de conexões</h2>
+            <div class="graph-controls">
+                <button class="graph-btn active" data-graph-filter="all">Todos</button>
+            </div>
+            <div class="graph-container" id="graph-container">
+                <div class="graph-tooltip" id="graph-tooltip">
+                    <div class="graph-tooltip-title" id="tooltip-title"></div>
+                    <div class="graph-tooltip-cats" id="tooltip-cats"></div>
+                    <div class="graph-tooltip-abstract" id="tooltip-abstract"></div>
+                    <a class="graph-tooltip-link" id="tooltip-link" href="#">Ler mais &rarr;</a>
+                </div>
+            </div>
+            <div class="graph-legend" id="graph-legend"></div>
+        </div>
+
+        <div class="results-container" id="results" style="display:none;">
+            <div class="enc-skeleton" id="loading">
+                <div class="skeleton skeleton-block"></div>
+                <div class="skeleton skeleton-line"></div>
+                <div class="skeleton skeleton-line"></div>
+                <div class="skeleton skeleton-line" style="width:60%"></div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <div class="footer-adugo-spine" aria-hidden="true">
+            <svg viewBox="0 0 1200 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="14" x2="1200" y2="14" stroke="var(--td-color-primary)" stroke-width="2" stroke-linecap="round" opacity="0.15"/>
+                <g stroke="var(--td-color-primary)" stroke-linecap="round" opacity="0.12">
+                    <line x1="45" y1="5" x2="45" y2="23" stroke-width="2.5"/>
+                    <line x1="68" y1="7" x2="68" y2="21" stroke-width="3.5"/>
+                    <line x1="105" y1="3" x2="105" y2="25" stroke-width="2"/>
+                    <line x1="120" y1="8" x2="120" y2="20" stroke-width="4"/>
+                    <line x1="160" y1="6" x2="160" y2="22" stroke-width="2.8"/>
+                    <line x1="195" y1="4" x2="195" y2="24" stroke-width="3.2"/>
+                    <line x1="265" y1="5" x2="265" y2="23" stroke-width="3"/>
+                    <line x1="298" y1="3" x2="298" y2="25" stroke-width="3.8"/>
+                    <line x1="335" y1="8" x2="335" y2="20" stroke-width="3.5"/>
+                    <line x1="372" y1="6" x2="372" y2="22" stroke-width="4"/>
+                    <line x1="408" y1="7" x2="408" y2="21" stroke-width="3.2"/>
+                    <line x1="468" y1="3" x2="468" y2="25" stroke-width="3.5"/>
+                    <line x1="498" y1="1" x2="498" y2="27" stroke-width="4.2"/>
+                    <line x1="528" y1="7" x2="528" y2="21" stroke-width="3.8"/>
+                    <line x1="558" y1="2" x2="558" y2="26" stroke-width="3.2"/>
+                    <line x1="590" y1="1" x2="590" y2="27" stroke-width="2.5"/>
+                    <line x1="615" y1="3" x2="615" y2="25" stroke-width="2.2"/>
+                    <line x1="645" y1="2" x2="645" y2="26" stroke-width="3"/>
+                    <line x1="672" y1="4" x2="672" y2="24" stroke-width="3.5"/>
+                    <line x1="705" y1="3" x2="705" y2="25" stroke-width="3.8"/>
+                    <line x1="738" y1="1" x2="738" y2="27" stroke-width="4"/>
+                    <line x1="790" y1="4" x2="790" y2="24" stroke-width="2.5"/>
+                    <line x1="828" y1="3" x2="828" y2="25" stroke-width="2.8"/>
+                    <line x1="865" y1="8" x2="865" y2="20" stroke-width="2.2"/>
+                    <line x1="900" y1="6" x2="900" y2="22" stroke-width="2.6"/>
+                    <line x1="980" y1="4" x2="980" y2="24" stroke-width="3.5"/>
+                    <line x1="1040" y1="6" x2="1040" y2="22" stroke-width="3.8"/>
+                    <line x1="1095" y1="7" x2="1095" y2="21" stroke-width="3.5"/>
+                    <line x1="1160" y1="9" x2="1160" y2="19" stroke-width="4"/>
+                </g>
+            </svg>
+        </div>
+        <div class="td-container">
+            <div class="footer-grid">
+                <div class="footer-brand-col">
+                    <a href="index.html" class="brand" style="color:white;text-decoration:none;font-family:var(--td-font-headings);font-weight:700;font-size:1.15rem;display:inline-flex;align-items:center;gap:0.6rem;">
+                        <img src="../images/logo.svg" alt="" class="brand-logo" style="width:56px;height:56px;">
+                        Enawenê-Nawê
+                    </a>
+                    <p class="footer-brand-desc">Plataforma dedicada à preservação, documentação e valorização dos saberes linguísticos e culturais do povo Enawenê-Nawê.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="dictionary.html">Dicionário</a></li>
+                        <li><a href="encyclopedia.html">Enciclopédia</a></li>
+                        <li><a href="fauna.html">Fauna</a></li>
+                        <li><a href="ethnobotany.html">Etnobotânica</a></li>
+                        <li><a href="bibliography.html">Bibliografia</a></li>
+                        <li><a href="corpus.html">Corpus</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contato</h4>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">&#9906;</span>
+                        <span>Mato Grosso, Brasil</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Gerado com <a href="https://pypi.org/project/terradoc/">terradoc</a>, <a href="https://pypi.org/project/aptoro/">aptoro</a> &amp; <a href="https://pypi.org/project/kodudo/">kodudo</a></p>
+                <p></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/common.js"></script>
+    <script>
+    var T = {"articles_label": "verbetes", "bib_empty_text": "Digite um autor, t\u00edtulo ou ano para come\u00e7ar", "bib_empty_title": "Pesquise a bibliografia", "bib_filter_all": "Todos os tipos", "bib_no_results": "Nenhum resultado", "bib_no_results_hint": "Tente um autor, t\u00edtulo ou ano diferente", "bib_overflow": "Mostrando 100 de {n} resultados. Refine sua busca.", "bib_result_plural": "refer\u00eancias encontradas", "bib_result_singular": "refer\u00eancia encontrada", "bib_search_placeholder": "Pesquisar (autor, t\u00edtulo, ano)...", "bib_title": "Bibliografia Enawen\u00ea-Naw\u00ea", "card_bibliography_desc": "Refer\u00eancias bibliogr\u00e1ficas sobre a l\u00edngua, cultura e hist\u00f3ria do povo Enawen\u00ea-Naw\u00ea.", "card_bibliography_label": "refer\u00eancias", "card_bibliography_title": "Bibliografia", "card_corpus_desc": "Corpus lingu\u00edstico com textos anotados e traduzidos na l\u00edngua Enawen\u00ea-Naw\u00ea.", "card_corpus_label": "textos", "card_corpus_title": "Corpus", "card_cta": "Explorar", "card_dictionary_desc": "Palavras e express\u00f5es da l\u00edngua Enawen\u00ea-Naw\u00ea com tradu\u00e7\u00e3o para Portugu\u00eas, transcri\u00e7\u00e3o fon\u00e9tica e exemplos.", "card_dictionary_label": "entradas", "card_dictionary_title": "Dicion\u00e1rio", "card_encyclopedia_desc": "Verbetes sobre cultura, rituais, organiza\u00e7\u00e3o social e conhecimentos tradicionais do povo Enawen\u00ea-Naw\u00ea.", "card_encyclopedia_label": "verbetes", "card_encyclopedia_title": "Enciclop\u00e9dia", "card_ethnobotany_desc": "Plantas utilizadas pelo povo Enawen\u00ea-Naw\u00ea com nomes na l\u00edngua, usos tradicionais, fam\u00edlias bot\u00e2nicas e imagens.", "card_ethnobotany_label": "plantas", "card_ethnobotany_title": "Etnobot\u00e2nica", "card_fauna_desc": "Nomes de animais na l\u00edngua Enawen\u00ea-Naw\u00ea com classifica\u00e7\u00e3o tradicional, nomes cient\u00edficos e imagens.", "card_fauna_label": "esp\u00e9cies", "card_fauna_title": "Fauna", "card_recordings_desc": "Corpus sonoro com grava\u00e7\u00f5es de palavras e express\u00f5es na l\u00edngua Enawen\u00ea-Naw\u00ea.", "card_recordings_label": "grava\u00e7\u00f5es", "card_recordings_title": "Grava\u00e7\u00f5es", "card_videos_desc": "Registros em v\u00eddeo de rituais, cerim\u00f4nias e pr\u00e1ticas culturais do povo Enawen\u00ea-Naw\u00ea hospedados no YouTube.", "card_videos_label": "v\u00eddeos", "card_videos_title": "V\u00eddeos", "corpus_no_results": "Nenhum resultado", "corpus_result_plural": "textos encontrados", "corpus_result_singular": "texto encontrado", "corpus_search_placeholder": "Pesquisar no corpus...", "corpus_select_hint": "Selecione um texto para ver os detalhes", "corpus_title": "Corpus Enawen\u00ea-Naw\u00ea", "dict_all_pos": "Todas as classes", "dict_browse_hint": "Selecione uma entrada para ver os detalhes", "dict_empty_text": "Digite uma palavra em Enawen\u00ea-Naw\u00ea ou Portugu\u00eas para come\u00e7ar", "dict_empty_title": "Pesquise no dicion\u00e1rio", "dict_filter_all": "Todas as classes", "dict_loading": "Carregando dicion\u00e1rio...", "dict_no_results": "Nenhum resultado", "dict_no_results_hint": "Tente uma palavra diferente ou altere o filtro", "dict_overflow": "Mostrando 100 de {n} resultados. Refine sua busca.", "dict_result_plural": "resultados encontrados", "dict_result_singular": "resultado encontrado", "dict_scientific_name": "Nome cient\u00edfico", "dict_search_placeholder": "Pesquisar (Enawen\u00ea-Naw\u00ea ou Portugu\u00eas)...", "dict_title": "Dicion\u00e1rio Enawen\u00ea-Naw\u00ea", "enc_back_to_index": "Voltar \u00e0 enciclop\u00e9dia", "enc_breadcrumb_label": "Navega\u00e7\u00e3o", "enc_browse_categories": "Navegar por categorias", "enc_categories": "Categorias", "enc_collapse": "Clique para recolher", "enc_empty_text": "Digite um termo para come\u00e7ar", "enc_empty_title": "Pesquise na enciclop\u00e9dia", "enc_entry_type": "Tipo", "enc_examples": "Exemplos", "enc_external_link": "Ver refer\u00eancia externa", "enc_featured_title": "Verbete em destaque", "enc_filter_all": "Todas as categorias", "enc_filter_uncategorized": "Sem categoria", "enc_graph_all": "Todos", "enc_graph_legend_category": "Categoria", "enc_graph_legend_entry": "Verbete", "enc_graph_title": "Mapa de conex\u00f5es", "enc_highlights_title": "Verbetes ilustrados", "enc_last_updated": "\u00daltima atualiza\u00e7\u00e3o", "enc_loading": "Carregando enciclop\u00e9dia...", "enc_more_images": "Mais imagens", "enc_no_results": "Nenhum resultado", "enc_no_results_hint": "Tente um termo diferente ou altere o filtro", "enc_overflow": "Mostrando 100 de {n} resultados. Refine sua busca.", "enc_read_more": "Ler mais", "enc_references": "Refer\u00eancias", "enc_result_plural": "verbetes encontrados", "enc_result_singular": "verbete encontrado", "enc_search_placeholder": "Pesquisar na enciclop\u00e9dia...", "enc_see_also": "Ver tamb\u00e9m", "enc_title": "Enciclop\u00e9dia Enawen\u00ea-Naw\u00ea", "enc_toc_title": "Conte\u00fado", "enc_variants": "Variantes", "enc_welcome_text": "Enciclop\u00e9dia dedicada \u00e0 preserva\u00e7\u00e3o e documenta\u00e7\u00e3o dos saberes culturais, lingu\u00edsticos e etnogr\u00e1ficos do povo Enawen\u00ea-Naw\u00ea.", "entries_label": "entradas", "ethnobotany_category_uncategorized": "Sem fam\u00edlia", "ethnobotany_detail_abundance": "Abund\u00e2ncia", "ethnobotany_detail_environment": "Ambiente", "ethnobotany_detail_family": "Fam\u00edlia bot\u00e2nica", "ethnobotany_detail_fruiting": "Frutifica\u00e7\u00e3o", "ethnobotany_detail_usage": "Uso (Enawen\u00ea-Naw\u00ea)", "ethnobotany_detail_usage_pt": "Descri\u00e7\u00e3o do uso", "ethnobotany_filter_all": "Todas as fam\u00edlias", "ethnobotany_no_results": "Nenhum resultado", "ethnobotany_no_results_hint": "Tente um nome diferente ou altere o filtro", "ethnobotany_result_plural": "plantas encontradas", "ethnobotany_result_singular": "planta encontrada", "ethnobotany_search_placeholder": "Pesquisar (Enawen\u00ea-Naw\u00ea, Portugu\u00eas ou nome cient\u00edfico)...", "ethnobotany_select_hint": "Clique em uma planta para ver os detalhes", "ethnobotany_title": "Etnobot\u00e2nica Enawen\u00ea-Naw\u00ea", "fauna_category_uncategorized": "Sem classifica\u00e7\u00e3o", "fauna_detail_classification": "Classifica\u00e7\u00e3o Enawen\u00ea-Naw\u00ea", "fauna_detail_family": "Fam\u00edlia", "fauna_empty_text": "Digite um nome em Enawen\u00ea-Naw\u00ea, Portugu\u00eas ou cient\u00edfico para come\u00e7ar", "fauna_empty_title": "Pesquise a fauna", "fauna_family": "Fam\u00edlia", "fauna_filter_all": "Todas as categorias", "fauna_no_results": "Nenhum resultado", "fauna_no_results_hint": "Tente um nome diferente ou altere o filtro", "fauna_overflow": "Mostrando 100 de {n} resultados. Refine sua busca.", "fauna_result_plural": "esp\u00e9cies encontradas", "fauna_result_singular": "esp\u00e9cie encontrada", "fauna_search_placeholder": "Pesquisar (Enawen\u00ea-Naw\u00ea, Portugu\u00eas ou nome cient\u00edfico)...", "fauna_select_hint": "Clique em um animal para ver os detalhes", "fauna_title": "Fauna Enawen\u00ea-Naw\u00ea", "filter_label": "Filtrar resultados", "footer_and": "e", "footer_contact_heading": "Contato", "footer_credits": "Gerado com aptoro \u0026 kodudo", "footer_description": "Plataforma dedicada \u00e0 preserva\u00e7\u00e3o, documenta\u00e7\u00e3o e valoriza\u00e7\u00e3o dos saberes lingu\u00edsticos e culturais do povo Enawen\u00ea-Naw\u00ea.", "footer_email": "", "footer_generated": "Gerado com", "footer_license": "", "footer_location": "Mato Grosso, Brasil", "footer_nav_heading": "Navega\u00e7\u00e3o", "footer_resources_heading": "Recursos", "footer_text": "", "html_lang": "pt-BR", "index_about_cite": "TRESOLDI, T. Enawen\u00ea-Naw\u00ea: Darakala Kakwali [plataforma digital]. 2025. Dispon\u00edvel em: https://plataformasindigenas.github.io/enawenenawe/", "index_about_cite_title": "Como citar", "index_about_p1": "\u003cstrong\u003eEnawen\u00ea-Naw\u00ea\u003c/strong\u003e \u00e9 uma plataforma dedicada \u00e0 preserva\u00e7\u00e3o, documenta\u00e7\u00e3o e valoriza\u00e7\u00e3o dos saberes lingu\u00edsticos e culturais do povo Enawen\u00ea-Naw\u00ea.", "index_about_p2": "Este reposit\u00f3rio re\u00fane uma variedade de recursos lingu\u00edsticos e etnogr\u00e1ficos, tanto hist\u00f3ricos quanto contempor\u00e2neos, com o objetivo de apoiar o ensino, a pesquisa e os esfor\u00e7os de revitaliza\u00e7\u00e3o da l\u00edngua Enawen\u00ea-Naw\u00ea. A plataforma oferece um conjunto de ferramentas voltadas para o estudo lingu\u00edstico e antropol\u00f3gico.", "index_about_partners_title": "Parceiros", "index_about_subtitle": "Conhe\u00e7a a plataforma", "index_about_title": "Sobre o Projeto", "index_about_who_title": "Quem somos", "index_gallery_subtitle": "Registros visuais e sonoros da cultura Enawen\u00ea-Naw\u00ea", "index_gallery_title": "Imagens \u0026 Sons", "index_hero_cta": "Explorar", "index_hero_subtitle": "Plataforma dedicada \u00e0 preserva\u00e7\u00e3o, documenta\u00e7\u00e3o e valoriza\u00e7\u00e3o dos saberes lingu\u00edsticos e culturais do povo Enawen\u00ea-Naw\u00ea.", "index_hero_tagline": "Darakala Kakwali", "index_hero_title": "Enawen\u00ea-Naw\u00ea", "index_quote": "A l\u00edngua \u00e9 o esp\u00edrito do povo. Preservar a l\u00edngua \u00e9 preservar a alma de uma cultura.", "index_quote_attribution": "", "index_sections_title": "Explorar", "index_title": "In\u00edcio", "index_view_all_dictionary": "Ver dicion\u00e1rio", "index_view_all_encyclopedia": "Ver enciclop\u00e9dia", "index_view_all_fauna": "Ver fauna", "index_view_all_videos": "Ver v\u00eddeos", "infobox_cl\u00e3": "Cl\u00e3", "infobox_coordenadas": "Coordenadas", "infobox_dura\u00e7\u00e3o": "Dura\u00e7\u00e3o", "infobox_esta\u00e7\u00e3o": "Esta\u00e7\u00e3o", "infobox_fam\u00edlia": "Fam\u00edlia", "infobox_fun\u00e7\u00e3o": "Fun\u00e7\u00e3o", "infobox_fun\u00e7\u00f5es": "Fun\u00e7\u00f5es", "infobox_habitat": "Habitat", "infobox_local": "Local", "infobox_material": "Material", "infobox_membros": "Membros", "infobox_nome_cient\u00edfico": "Nome cient\u00edfico", "infobox_papel": "Papel", "infobox_participantes": "Participantes", "infobox_per\u00edodo": "Per\u00edodo", "infobox_regi\u00e3o": "Regi\u00e3o", "infobox_rela\u00e7\u00f5es": "Rela\u00e7\u00f5es", "infobox_rio": "Rio", "infobox_tipo": "Tipo", "infobox_usos": "Usos", "lang_switch_label": "Seletor de idioma", "nav_bibliography": "Bibliografia", "nav_brand": "Enawen\u00ea-Naw\u00ea", "nav_corpus": "Corpus", "nav_dictionary": "Dicion\u00e1rio", "nav_encyclopedia": "Enciclop\u00e9dia", "nav_ethnobotany": "Etnobot\u00e2nica", "nav_fauna": "Fauna", "nav_label": "Navega\u00e7\u00e3o principal", "nav_menu_label": "Menu", "nav_recordings": "Grava\u00e7\u00f5es", "nav_videos": "V\u00eddeos", "pos_ADV": "Adv\u00e9rbio", "pos_CONJ": "Conjun\u00e7\u00e3o", "pos_DEM": "Demonstrativo", "pos_INTJ": "Interjei\u00e7\u00e3o", "pos_IP": "IP", "pos_LEX": "Lexema", "pos_NUM": "Numeral", "pos_POSP": "Posposi\u00e7\u00e3o", "pos_PPART": "Part\u00edcula", "pos_PPAS": "Part. Pass.", "pos_PPASS": "Part. Pass.", "pos_PRCL": "Part\u00edcula", "pos_PRON": "Pronome", "pos_PROPN": "Nome Pr\u00f3prio", "pos_S": "Substantivo", "pos_SUF": "Sufixo", "pos_V": "Verbo", "pos_VC": "Verbo Causativo", "pos_VT": "Verbo Trans.", "pos_X": "Outro", "rec_col_audio": "\u00c1udio", "rec_col_date": "Data", "rec_col_match": "Match", "rec_col_speaker": "Falante", "rec_col_word": "Palavra", "rec_count_label": "grava\u00e7\u00f5es", "rec_filter_format": "Formato", "rec_filter_match": "Tipo de match", "rec_filter_speaker": "Falante", "rec_filters_title": "Filtros", "rec_no_results": "Nenhuma grava\u00e7\u00e3o encontrada", "rec_overflow": "Mostrando 200 de {n} grava\u00e7\u00f5es. Refine sua busca.", "rec_search_placeholder": "Pesquisar grava\u00e7\u00f5es...", "rec_subtitle": "Registros sonoros da l\u00edngua Enawen\u00ea-Naw\u00ea", "rec_title": "Corpus de Grava\u00e7\u00f5es", "references_label": "refer\u00eancias", "search_label": "Pesquisar", "see_also": "Ver tamb\u00e9m", "see_in_dictionary": "Ver no Dicion\u00e1rio", "see_in_encyclopedia": "Ver na Enciclop\u00e9dia", "see_in_fauna": "Ver na Fauna", "skip_link": "Pular para conte\u00fado", "species_label": "esp\u00e9cies", "stat_bibliography_entries": "refer\u00eancias", "stat_corpus_entries": "textos", "stat_dictionary_entries": "entradas", "stat_encyclopedia_entries": "verbetes", "stat_ethnobotany_entries": "plantas", "stat_fauna_entries": "esp\u00e9cies", "stat_recordings_entries": "grava\u00e7\u00f5es", "stat_videos_entries": "v\u00eddeos", "vid_count_label": "v\u00eddeos", "vid_filter_all": "Todas as categorias", "vid_subtitle": "Registros em v\u00eddeo da cultura Enawen\u00ea-Naw\u00ea", "vid_title": "V\u00eddeos", "vid_watch": "Assistir no YouTube"};
+    var BASE_PATH = '../';
+
+    function hasCategory(entry, value) {
+        if (value === '__uncategorized__') return !entry.categories || entry.categories.length === 0;
+        return entry.categories && entry.categories.some(function(cat) {
+            return cat === value || cat.indexOf(value + '/') === 0;
+        });
+    }
+
+    function attachCategoryFilters() {
+        document.querySelectorAll('.entry-cat').forEach(function(el) {
+            el.addEventListener('click', function(e) {
+                e.stopPropagation();
+                var cat = this.getAttribute('data-category');
+                if (cat) {
+                    var kw = document.getElementById('keyword-filter');
+                    var found = false;
+                    for (var i = 0; i < kw.options.length; i++) {
+                        if (kw.options[i].value === cat) { found = true; break; }
+                    }
+                    if (!found) {
+                        var opt = document.createElement('option');
+                        opt.value = cat;
+                        opt.textContent = cat;
+                        kw.appendChild(opt);
+                    }
+                    kw.value = cat;
+                    kw.dispatchEvent(new Event('change'));
+                }
+            });
+        });
+    }
+
+    function addFilterOption(kwFilter, value) {
+        for (var i = 0; i < kwFilter.options.length; i++) {
+            if (kwFilter.options[i].value === value) return;
+        }
+        var opt = document.createElement('option');
+        opt.value = value;
+        opt.textContent = value;
+        kwFilter.appendChild(opt);
+    }
+
+    var json = {"category_tree": {"cosmologia": {"_count": 5}, "cultura-material": {"_count": 9}, "geral": {"_count": 1}, "organizacao-social": {"_count": 3}, "rituais": {"_count": 4}, "territorio": {"_count": 3}}, "data": [{"abstract": "A aldeia Enawen\u00ea-Naw\u00ea possui formato circular com malocas retangulares ao redor de uma pra\u00e7a central, onde se ergue a casa cerimonial Y\u00e3kwa.", "categories": ["cultura-material"], "entry_type": "", "has_content": true, "id": "arquitetura", "see_also": ["flautas-sagradas", "clas", "enawene-nawe"], "title": "Arquitetura da Aldeia", "variants": [], "wikilink_targets": []}, {"abstract": "Organiza\u00e7\u00e3o social baseada em cl\u00e3s patrilineares e exog\u00e2micos, com resid\u00eancia uxorilocal e categorias et\u00e1rias que estruturam a vida comunit\u00e1ria.", "categories": ["organizacao-social"], "entry_type": "", "has_content": true, "id": "clas", "see_also": ["harikare-yaokwa", "arquitetura", "olokoiri", "enawene-nawe"], "title": "Sistema de Cl\u00e3s", "variants": [], "wikilink_targets": []}, {"abstract": "O primeiro contato pac\u00edfico com os Enawen\u00ea-Naw\u00ea ocorreu em 1974, mediado por mission\u00e1rios jesu\u00edtas, com destaque para a figura de Vicente Canas (Kiwxi).", "categories": ["territorio"], "entry_type": "", "has_content": true, "id": "contato", "see_also": ["terra-indigena", "hidreletricas", "enawene-nawe"], "title": "Hist\u00f3ria do Contato", "variants": [], "wikilink_targets": []}, {"abstract": "O cosmos Enawen\u00ea-Naw\u00ea \u00e9 organizado em quatro n\u00edveis \u2014 celestial, terrestre, subterr\u00e2neo e um espa\u00e7o infinito superior \u2014, cujo equil\u00edbrio \u00e9 mantido pelo ciclo ritual.", "categories": ["cosmologia"], "entry_type": "", "has_content": true, "id": "cosmologia", "see_also": ["yakairiti", "enore-nawe", "sotayreti", "yaokwa", "enawene-nawe"], "title": "Estrutura Cosmol\u00f3gica", "variants": [], "wikilink_targets": []}, {"abstract": "Os Enawen\u00ea-Naw\u00ea n\u00e3o consomem carne vermelha, mantendo uma dieta baseada em peixe, mandioca, milho, mel e sal vegetal, com origem m\u00edtica no cl\u00e3 Anihiare.", "categories": ["organizacao-social"], "entry_type": "", "has_content": true, "id": "dieta", "see_also": ["mandioca", "mel", "sal-vegetal", "waitiwina", "hidreletricas"], "title": "Proibi\u00e7\u00f5es Alimentares", "variants": [], "wikilink_targets": []}, {"abstract": "Povo de l\u00edngua Arawak que habita o noroeste do Mato Grosso, com cerca de mil pessoas, conhecido por sua rica vida cerimonial e pela proibi\u00e7\u00e3o do consumo de carne vermelha.", "categories": ["geral"], "entry_type": "", "has_content": true, "id": "enawene-nawe", "see_also": ["yaokwa", "cosmologia", "clas", "dieta", "terra-indigena", "contato"], "title": "O Povo Enawen\u00ea-Naw\u00ea", "variants": [], "wikilink_targets": []}, {"abstract": "Esp\u00edritos celestiais benevolentes que habitam o Eno, a aldeia perfeita no plano superior do cosmos, e s\u00e3o considerados os donos do mel.", "categories": ["cosmologia"], "entry_type": "", "has_content": true, "id": "enore-nawe", "see_also": ["cosmologia", "kateoko", "saluma", "mel", "yakairiti"], "title": "Enore Nawe: Esp\u00edritos Celestiais", "variants": [], "wikilink_targets": []}, {"abstract": "Instrumentos musicais sagrados de bambu e caba\u00e7as, tocados na casa cerimonial Y\u00e3kwa durante os rituais, especialmente o Yaokwa.", "categories": ["cultura-material"], "entry_type": "", "has_content": true, "id": "flautas-sagradas", "see_also": ["yaokwa", "sotakatari-nawe", "arquitetura", "cosmologia"], "title": "As Flautas da Casa Y\u00e3kwa", "variants": [], "wikilink_targets": []}, {"abstract": "Sistema de rota\u00e7\u00e3o bianual no qual os cl\u00e3s alternam entre os pap\u00e9is de Harikare (anfitri\u00f5es) e Yaokwa (pescadores), espelhando a reciprocidade c\u00f3smica.", "categories": ["organizacao-social"], "entry_type": "", "has_content": true, "id": "harikare-yaokwa", "see_also": ["yaokwa", "clas", "sal-vegetal", "waitiwina"], "title": "Rota\u00e7\u00e3o Harikare-Yaokwa", "variants": [], "wikilink_targets": []}, {"abstract": "A constru\u00e7\u00e3o de dezenas de hidrel\u00e9tricas na bacia do rio Juruena amea\u00e7a os recursos pesqueiros e o patrim\u00f4nio cultural imaterial dos Enawen\u00ea-Naw\u00ea.", "categories": ["territorio"], "entry_type": "", "has_content": true, "id": "hidreletricas", "see_also": ["terra-indigena", "waitiwina", "yaokwa", "dieta", "contato"], "title": "Amea\u00e7as ao Territ\u00f3rio", "variants": [], "wikilink_targets": []}, {"abstract": "Ritual dedicado aos esp\u00edritos celestiais Enore Nawe, associado \u00e0 coleta de mel e marcado por festas de car\u00e1ter descontra\u00eddo.", "categories": ["rituais"], "entry_type": "", "has_content": true, "id": "kateoko", "see_also": ["enore-nawe", "mel", "saluma", "yaokwa"], "title": "O Ritual Kateoko", "variants": [], "wikilink_targets": []}, {"abstract": "Ritual de abertura e plantio das ro\u00e7as coletivas de mandioca, associado aos esp\u00edritos Iakayreti e marcado por c\u00e2nticos noturnos.", "categories": ["rituais"], "entry_type": "", "has_content": true, "id": "lerohi", "see_also": ["mandioca", "yaokwa", "cosmologia", "enawene-nawe"], "title": "O Ritual Lerohi", "variants": [], "wikilink_targets": []}, {"abstract": "Alimento b\u00e1sico dos Enawen\u00ea-Naw\u00ea, a mandioca possui dimens\u00e3o simultaneamente nutricional, social e cosmol\u00f3gica.", "categories": ["cultura-material"], "entry_type": "", "has_content": true, "id": "mandioca", "see_also": ["lerohi", "dieta", "sal-vegetal", "harikare-yaokwa"], "title": "A Mandioca na Vida Enawen\u00ea-Naw\u00ea", "variants": [], "wikilink_targets": []}, {"abstract": "Atividade econ\u00f4mica e ritual fundamental, sendo o mel a principal oferenda aos esp\u00edritos celestiais Enore Nawe.", "categories": ["cultura-material"], "entry_type": "", "has_content": true, "id": "mel", "see_also": ["enore-nawe", "kateoko", "saluma", "dieta"], "title": "A Coleta de Mel", "variants": [], "wikilink_targets": []}, {"abstract": "Estojo peniano confeccionado em palha de buriti, utilizado a partir da adolesc\u00eancia e de origem m\u00edtica vinculada ao cl\u00e3 Anihiare.", "categories": ["cultura-material"], "entry_type": "", "has_content": true, "id": "olokoiri", "see_also": ["clas", "pintura-corporal", "plumaria", "enawene-nawe"], "title": "O Estojo Peniano", "variants": [], "wikilink_targets": []}, {"abstract": "Sistema de pintura corporal que utiliza urucum para o uso di\u00e1rio e jenipapo para ocasi\u00f5es cerimoniais, com padr\u00f5es que mudam conforme as fases da vida.", "categories": ["cultura-material"], "entry_type": "", "has_content": true, "id": "pintura-corporal", "see_also": ["plumaria", "olokoiri", "clas", "enawene-nawe"], "title": "Pintura Corporal", "variants": [], "wikilink_targets": []}, {"abstract": "Arte plum\u00e1ria elaborada com penas de arara, papagaio e mutum, incluindo a t\u00e9cnica de tapiragem que transforma penas verdes em douradas.", "categories": ["cultura-material"], "entry_type": "", "has_content": true, "id": "plumaria", "see_also": ["pintura-corporal", "olokoiri", "enawene-nawe"], "title": "Plum\u00e1ria e Tapiragem", "variants": [], "wikilink_targets": []}, {"abstract": "Oferenda central aos esp\u00edritos Yakairiti, produzida por meio de um trabalhoso processo de queima e filtragem de plantas aqu\u00e1ticas.", "categories": ["cultura-material"], "entry_type": "", "has_content": true, "id": "sal-vegetal", "see_also": ["yakairiti", "yaokwa", "harikare-yaokwa", "dieta"], "title": "O Sal Vegetal", "variants": [], "wikilink_targets": []}, {"abstract": "Ritual de transi\u00e7\u00e3o entre esta\u00e7\u00f5es dedicado aos esp\u00edritos celestiais Enore Nawe, historicamente associado ao nome pelo qual o povo foi conhecido at\u00e9 1983.", "categories": ["rituais"], "entry_type": "", "has_content": true, "id": "saluma", "see_also": ["enore-nawe", "kateoko", "mel", "yaokwa", "enawene-nawe"], "title": "O Ritual Salum\u00e3", "variants": [], "wikilink_targets": []}, {"abstract": "Especialistas rituais que det\u00eam o conhecimento musical e cerimonial, fundamentais para a transmiss\u00e3o dos saberes tradicionais.", "categories": ["cosmologia"], "entry_type": "", "has_content": true, "id": "sotakatari-nawe", "see_also": ["flautas-sagradas", "yaokwa", "sotayreti", "cosmologia"], "title": "Os Mestres Cantadores", "variants": [], "wikilink_targets": []}, {"abstract": "Especialistas espirituais que viajam ao plano celestial por meio de sonhos e transes, atuando como mediadores entre os mundos humano e espiritual.", "categories": ["cosmologia"], "entry_type": "", "has_content": true, "id": "sotayreti", "see_also": ["cosmologia", "yakairiti", "enore-nawe", "sotakatari-nawe"], "title": "Os Xam\u00e3s", "variants": [], "wikilink_targets": []}, {"abstract": "Territ\u00f3rio de 742.088 hectares no noroeste do Mato Grosso, abrangendo os rios Juruena e Ique, demarcado com exclus\u00e3o de \u00e1reas sagradas importantes.", "categories": ["territorio"], "entry_type": "", "has_content": true, "id": "terra-indigena", "see_also": ["contato", "hidreletricas", "enawene-nawe"], "title": "Terra Ind\u00edgena Enawen\u00ea-Naw\u00ea", "variants": [], "wikilink_targets": []}, {"abstract": "Engenhosas barragens de pesca constru\u00eddas com troncos entrecruzados e armadilhas c\u00f4nicas, fundamentais para o ritual Yaokwa.", "categories": ["cultura-material"], "entry_type": "", "has_content": true, "id": "waitiwina", "see_also": ["yaokwa", "dieta", "hidreletricas", "harikare-yaokwa"], "title": "Barragens de Pesca", "variants": [], "wikilink_targets": []}, {"abstract": "Esp\u00edritos subterr\u00e2neos de fome insaci\u00e1vel que habitam o Ehatekoyoare e s\u00e3o considerados os verdadeiros donos dos recursos naturais.", "categories": ["cosmologia"], "entry_type": "", "has_content": true, "id": "yakairiti", "see_also": ["cosmologia", "yaokwa", "sal-vegetal", "enore-nawe", "sotayreti"], "title": "Yakairiti: Esp\u00edritos Subterr\u00e2neos", "variants": [], "wikilink_targets": []}, {"abstract": "Principal ritual do ciclo cerimonial Enawen\u00ea-Naw\u00ea, com dura\u00e7\u00e3o de aproximadamente sete meses, inscrito como Patrim\u00f4nio Cultural Imaterial pela UNESCO em 2011.", "categories": ["rituais"], "entry_type": "", "has_content": true, "id": "yaokwa", "see_also": ["yakairiti", "waitiwina", "harikare-yaokwa", "sal-vegetal", "flautas-sagradas", "enawene-nawe"], "title": "O Ritual Yaokwa", "variants": [], "wikilink_targets": []}], "featured": null, "highlights": [], "meta": {"description": "Enawen\u00ea-Naw\u00ea Encyclopedia Entries", "name": "enawenenawe_encyclopedia", "record_count": 25, "version": "2.0"}};
+    (function() {
+            var kwFilter = document.getElementById('keyword-filter');
+            var searchInput = document.getElementById('search-input');
+            var portal = document.getElementById('portal');
+            var resultsEl = document.getElementById('results');
+
+            // --- Render Featured Article ---
+            if (json.featured) {
+                var f = json.featured;
+                var html = '<h2>' + escapeHtml(T.enc_featured_title) + '</h2>';
+                html += '<div class="featured-card">';
+                if (f.image) {
+                    html += '<div class="featured-image">';
+                    html += '<a href="encyclopedia/' + encodeURIComponent(f.id) + '.html">';
+                    html += '<img src="' + BASE_PATH + escapeHtml(f.image.url) + '" alt="' + escapeHtml(f.image.alt || f.title) + '">';
+                    html += '</a>';
+                    if (f.image.credit) html += '<div class="credit">' + escapeHtml(f.image.credit) + '</div>';
+                    html += '</div>';
+                }
+                html += '<div class="featured-text">';
+                html += '<h3><a href="encyclopedia/' + encodeURIComponent(f.id) + '.html">' + escapeHtml(f.title) + '</a></h3>';
+                if (f.abstract) html += '<p class="featured-abstract">' + escapeHtml(f.abstract) + '</p>';
+                if (f.content_excerpt) html += '<p class="featured-excerpt">' + escapeHtml(f.content_excerpt) + '</p>';
+                html += '<a href="encyclopedia/' + encodeURIComponent(f.id) + '.html" class="featured-readmore">' + escapeHtml(T.enc_read_more) + ' &rarr;</a>';
+                html += '</div></div>';
+                document.getElementById('featured-section').innerHTML = html;
+                document.getElementById('featured-section').style.display = '';
+            }
+
+            // --- Render Category Tree (top two levels) ---
+            if (json.category_tree) {
+                var topKeys = Object.keys(json.category_tree).filter(function(k) { return k !== '_count'; }).sort();
+                if (topKeys.length > 0) {
+                    var catHtml = '<h2>' + escapeHtml(T.enc_browse_categories) + '</h2>';
+                    catHtml += '<ul class="cat-list">';
+                    topKeys.forEach(function(key) {
+                        var node = json.category_tree[key];
+                        var count = node._count || 0;
+                        catHtml += '<li><a href="#" data-cat-filter="' + escapeHtml(key) + '">' + escapeHtml(key) + '</a> <span class="cat-count">(' + count + ')</span>';
+                        var subKeys = Object.keys(node).filter(function(k) { return k !== '_count'; }).sort();
+                        if (subKeys.length > 0) {
+                            catHtml += '<ul>';
+                            subKeys.forEach(function(sub) {
+                                var subCount = (node[sub] || {})._count || 0;
+                                catHtml += '<li><a href="#" data-cat-filter="' + escapeHtml(key + '/' + sub) + '">' + escapeHtml(sub) + '</a> <span class="cat-count">(' + subCount + ')</span></li>';
+                            });
+                            catHtml += '</ul>';
+                        }
+                        catHtml += '</li>';
+                    });
+                    catHtml += '</ul>';
+                    document.getElementById('categories-section').innerHTML = catHtml;
+                    document.getElementById('categories-section').style.display = '';
+                }
+            }
+
+            // --- Render Highlights (entries with images) ---
+            if (json.highlights && json.highlights.length > 0) {
+                var hlHtml = '<h2>' + escapeHtml(T.enc_highlights_title) + '</h2>';
+                hlHtml += '<div class="highlights-grid">';
+                json.highlights.forEach(function(h) {
+                    hlHtml += '<a href="encyclopedia/' + encodeURIComponent(h.id) + '.html" class="highlight-card">';
+                    if (h.image) {
+                        hlHtml += '<img src="' + BASE_PATH + escapeHtml(h.image.url) + '" alt="' + escapeHtml(h.image.alt || h.title) + '" loading="lazy">';
+                    }
+                    hlHtml += '<span>' + escapeHtml(h.title) + '</span>';
+                    hlHtml += '</a>';
+                });
+                hlHtml += '</div>';
+                document.getElementById('highlights-section').innerHTML = hlHtml;
+                document.getElementById('highlights-section').style.display = '';
+            }
+
+            // --- Populate filter dropdown ---
+            var categories = {};
+            json.data.forEach(function(item) {
+                if (item.categories) item.categories.forEach(function(cat) { categories[cat] = true; });
+            });
+            Object.keys(categories).sort().forEach(function(cat) {
+                addFilterOption(kwFilter, cat);
+            });
+
+            // --- Setup search ---
+            initSearchPage({
+                data: json.data,
+                fuseKeys: [
+                    { name: 'title', weight: 2 },
+                    { name: 'abstract', weight: 1.5 },
+                    { name: 'categories', weight: 1 },
+                    { name: 'variants', weight: 0.5 }
+                ],
+                filterField: null,
+                filterElementId: 'keyword-filter',
+                filterFn: hasCategory,
+                renderEntry: function(entry, matchMap) {
+                    var html = '<div class="entry">';
+                    html += '<div class="entry-header">';
+                    html += '<span class="entry-word"><a href="encyclopedia/' + encodeURIComponent(entry.id) + '.html">' + highlightMatches(entry.title, matchMap['title']) + '</a></span>';
+                    if (entry.entry_type) {
+                        html += '<span class="entry-type-tag">' + escapeHtml(entry.entry_type) + '</span>';
+                    }
+                    html += '</div>';
+                    if (entry.abstract) {
+                        html += '<p class="entry-summary">' + highlightMatches(entry.abstract, matchMap['abstract']) + '</p>';
+                    }
+                    if (entry.variants && entry.variants.length > 0) {
+                        html += '<div class="entry-variants">';
+                        entry.variants.forEach(function(v) {
+                            html += '<span class="variant-tag">' + escapeHtml(v) + '</span>';
+                        });
+                        html += '</div>';
+                    }
+                    if (entry.categories && entry.categories.length > 0) {
+                        html += '<div class="entry-categories">';
+                        entry.categories.forEach(function(cat) {
+                            html += '<span class="entry-cat" data-category="' + escapeHtml(cat) + '">' + escapeHtml(cat) + '</span>';
+                        });
+                        html += '</div>';
+                    }
+                    html += '</div>';
+                    return html;
+                },
+                onResults: attachCategoryFilters,
+                labels: {
+                    results: function(n) { return n !== 1 ? T.enc_result_plural : T.enc_result_singular; },
+                    emptyTitle: T.enc_empty_title,
+                    emptyText: T.enc_empty_text,
+                    noResults: T.enc_no_results,
+                    noResultsHint: T.enc_no_results_hint,
+                    overflow: function(n) { return T.enc_overflow.replace('{n}', n); }
+                }
+            });
+
+            // --- Toggle portal/results visibility ---
+            function updateView() {
+                var q = searchInput.value.trim();
+                var f = kwFilter.value;
+                if (q.length >= 2 || f) {
+                    portal.style.display = 'none';
+                    resultsEl.style.display = '';
+                } else {
+                    portal.style.display = '';
+                    resultsEl.style.display = 'none';
+                }
+            }
+
+            searchInput.addEventListener('input', debounce(updateView, 210));
+            kwFilter.addEventListener('change', function() { setTimeout(updateView, 10); });
+
+            // --- Category tree click handlers ---
+            document.querySelectorAll('[data-cat-filter]').forEach(function(el) {
+                el.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var cat = this.getAttribute('data-cat-filter');
+                    addFilterOption(kwFilter, cat);
+                    kwFilter.value = cat;
+                    kwFilter.dispatchEvent(new Event('change'));
+                });
+            });
+
+            // --- Handle ?category= URL param ---
+            var urlParams = new URLSearchParams(window.location.search);
+            var catParam = urlParams.get('category');
+            if (catParam) {
+                addFilterOption(kwFilter, catParam);
+                kwFilter.value = catParam;
+                kwFilter.dispatchEvent(new Event('change'));
+            }
+
+            // Ensure correct initial visibility
+            updateView();
+    })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script>
+    (function() {
+        var GRAPH_DATA = null;
+        var CATEGORY_COLORS = {
+            'natureza': '#5B8C5A',
+            'cosmologia': '#7B5EA7',
+            'ritual': '#C81F2D',
+            'cultura-material': '#B7522C',
+            'sociedade': '#2E6B8A',
+            'linguística': '#8B7355',
+            'organização-social': '#D4A03A',
+            'nomes-próprios': '#6B8E6B',
+            'geografia': '#4A90A4',
+            'música': '#C06090',
+            'corpo': '#D2691E',
+            'etnografia': '#708090',
+            'saúde': '#3CB371',
+            'território': '#8FBC8F',
+            'tradição-oral': '#CD853F'
+        };
+        var DEFAULT_COLOR = '#999';
+
+        function catColor(cat) {
+            if (!cat) return DEFAULT_COLOR;
+            var top = cat.replace('cat:', '');
+            return CATEGORY_COLORS[top] || DEFAULT_COLOR;
+        }
+
+        function nodeColor(d) {
+            if (d.type === 'category') return catColor(d.id);
+            if (d.categories && d.categories.length > 0) {
+                return catColor(d.categories[0].split('/')[0]);
+            }
+            return DEFAULT_COLOR;
+        }
+
+        if (GRAPH_DATA && GRAPH_DATA.nodes) { initGraph(GRAPH_DATA); }
+
+        function initGraph(graph) {
+            var container = document.getElementById('graph-container');
+            var section = document.getElementById('graph-section');
+            if (!container || !section) return;
+            section.style.display = '';
+
+            var width = container.clientWidth;
+            var height = container.clientHeight;
+
+            // Build lookup maps
+            var nodeMap = {};
+            graph.nodes.forEach(function(n) { nodeMap[n.id] = n; });
+
+            // Build adjacency
+            var adj = {};
+            graph.edges.forEach(function(e) {
+                if (!adj[e.source]) adj[e.source] = [];
+                if (!adj[e.target]) adj[e.target] = [];
+                adj[e.source].push(e);
+                adj[e.target].push(e);
+            });
+
+            // State: which nodes are visible
+            var visibleNodes = new Set();
+            var visibleEdges = [];
+            var expandedCats = new Set();
+
+            // Start with category nodes only
+            graph.categories.forEach(function(c) { visibleNodes.add('cat:' + c); });
+
+            // Build filter buttons
+            var controlsEl = container.parentElement.querySelector('.graph-controls');
+            graph.categories.forEach(function(cat) {
+                var btn = document.createElement('button');
+                btn.className = 'graph-btn';
+                btn.setAttribute('data-graph-filter', cat);
+                btn.textContent = cat;
+                btn.style.borderColor = catColor(cat);
+                btn.addEventListener('click', function() {
+                    toggleCategory(cat);
+                });
+                controlsEl.appendChild(btn);
+            });
+
+            // Legend
+            var legendEl = document.getElementById('graph-legend');
+            var legendItems = [
+                { label: T.enc_graph_legend_category || 'Categoria', size: 14, color: 'var(--td-color-primary)' },
+                { label: T.enc_graph_legend_entry || 'Verbete', size: 8, color: 'var(--td-color-text-muted)' },
+            ];
+            legendItems.forEach(function(item) {
+                var el = document.createElement('span');
+                el.className = 'graph-legend-item';
+                el.innerHTML = '<span class="graph-legend-dot" style="width:' + item.size + 'px;height:' + item.size + 'px;background:' + item.color + ';"></span>' + item.label;
+                legendEl.appendChild(el);
+            });
+
+            // SVG setup
+            var svg = d3.select(container).append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            var g = svg.append('g');
+
+            // Zoom
+            var zoom = d3.zoom()
+                .scaleExtent([0.3, 4])
+                .on('zoom', function(event) {
+                    g.attr('transform', event.transform);
+                });
+            svg.call(zoom);
+
+            var linkGroup = g.append('g').attr('class', 'links');
+            var nodeGroup = g.append('g').attr('class', 'nodes');
+
+            // Tooltip
+            var tooltip = document.getElementById('graph-tooltip');
+            var tooltipTitle = document.getElementById('tooltip-title');
+            var tooltipCats = document.getElementById('tooltip-cats');
+            var tooltipAbstract = document.getElementById('tooltip-abstract');
+            var tooltipLink = document.getElementById('tooltip-link');
+
+            // Force simulation
+            var simulation = d3.forceSimulation()
+                .force('link', d3.forceLink().id(function(d) { return d.id; }).distance(function(d) {
+                    if (d.source.type === 'category' || d.target.type === 'category') return 120;
+                    return 60;
+                }))
+                .force('charge', d3.forceManyBody().strength(function(d) {
+                    return d.type === 'category' ? -400 : -80;
+                }))
+                .force('center', d3.forceCenter(width / 2, height / 2))
+                .force('collision', d3.forceCollide().radius(function(d) {
+                    return d.type === 'category' ? 30 : 8;
+                }))
+                .on('tick', ticked);
+
+            function getVisibleData() {
+                var nodes = [];
+                var nodeSet = new Set();
+                visibleNodes.forEach(function(id) {
+                    if (nodeMap[id]) {
+                        nodes.push(nodeMap[id]);
+                        nodeSet.add(id);
+                    }
+                });
+
+                var edges = [];
+                graph.edges.forEach(function(e) {
+                    var sid = typeof e.source === 'object' ? e.source.id : e.source;
+                    var tid = typeof e.target === 'object' ? e.target.id : e.target;
+                    if (nodeSet.has(sid) && nodeSet.has(tid)) {
+                        edges.push({ source: sid, target: tid, type: e.type });
+                    }
+                });
+
+                return { nodes: nodes, edges: edges };
+            }
+
+            function update() {
+                var data = getVisibleData();
+
+                // Links
+                var link = linkGroup.selectAll('line').data(data.edges, function(d) {
+                    return (d.source.id || d.source) + '-' + (d.target.id || d.target);
+                });
+                link.exit().remove();
+                var linkEnter = link.enter().append('line')
+                    .attr('stroke', function(d) {
+                        if (d.type === 'see_also') return 'var(--td-color-accent)';
+                        if (d.type === 'wikilink') return 'var(--td-color-gold)';
+                        return 'var(--td-color-border-dark)';
+                    })
+                    .attr('stroke-opacity', function(d) {
+                        return d.type === 'category' ? 0.3 : 0.6;
+                    })
+                    .attr('stroke-width', function(d) {
+                        return d.type === 'category' ? 1 : 1.5;
+                    });
+                link = linkEnter.merge(link);
+
+                // Nodes
+                var node = nodeGroup.selectAll('g.node').data(data.nodes, function(d) { return d.id; });
+                node.exit().remove();
+
+                var nodeEnter = node.enter().append('g')
+                    .attr('class', 'node')
+                    .style('cursor', 'pointer')
+                    .call(d3.drag()
+                        .on('start', dragstarted)
+                        .on('drag', dragged)
+                        .on('end', dragended));
+
+                nodeEnter.append('circle')
+                    .attr('r', function(d) { return d.type === 'category' ? 18 : 5; })
+                    .attr('fill', function(d) { return nodeColor(d); })
+                    .attr('stroke', function(d) { return d.type === 'category' ? 'white' : 'none'; })
+                    .attr('stroke-width', function(d) { return d.type === 'category' ? 2 : 0; })
+                    .attr('opacity', function(d) { return d.type === 'category' ? 1 : 0.85; });
+
+                nodeEnter.filter(function(d) { return d.type === 'category'; })
+                    .append('text')
+                    .text(function(d) { return d.title; })
+                    .attr('text-anchor', 'middle')
+                    .attr('dy', '0.35em')
+                    .attr('font-size', '7px')
+                    .attr('font-weight', '700')
+                    .attr('font-family', 'var(--td-font-headings)')
+                    .attr('fill', 'white')
+                    .attr('pointer-events', 'none');
+
+                nodeEnter.on('click', function(event, d) {
+                    event.stopPropagation();
+                    if (d.type === 'category') {
+                        toggleCategory(d.title);
+                    } else {
+                        showTooltip(d, event);
+                    }
+                });
+
+                nodeEnter.on('mouseenter', function(event, d) {
+                    if (d.type === 'entry') {
+                        showTooltip(d, event);
+                    }
+                });
+
+                node = nodeEnter.merge(node);
+
+                // Restart simulation
+                simulation.nodes(data.nodes);
+                simulation.force('link').links(data.edges);
+                simulation.alpha(0.6).restart();
+            }
+
+            function ticked() {
+                linkGroup.selectAll('line')
+                    .attr('x1', function(d) { return d.source.x; })
+                    .attr('y1', function(d) { return d.source.y; })
+                    .attr('x2', function(d) { return d.target.x; })
+                    .attr('y2', function(d) { return d.target.y; });
+
+                nodeGroup.selectAll('g.node')
+                    .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; });
+            }
+
+            function toggleCategory(cat) {
+                var catId = 'cat:' + cat;
+                if (expandedCats.has(cat)) {
+                    // Collapse: remove entry nodes that belong only to this category
+                    expandedCats.delete(cat);
+                    graph.edges.forEach(function(e) {
+                        var sid = typeof e.source === 'object' ? e.source.id : e.source;
+                        var tid = typeof e.target === 'object' ? e.target.id : e.target;
+                        if (e.type === 'category' && tid === catId) {
+                            // Check if this entry belongs to another expanded category
+                            var keepEntry = false;
+                            var entryNode = nodeMap[sid];
+                            if (entryNode && entryNode.categories) {
+                                entryNode.categories.forEach(function(c) {
+                                    if (expandedCats.has(c.split('/')[0])) keepEntry = true;
+                                });
+                            }
+                            if (!keepEntry) visibleNodes.delete(sid);
+                        }
+                    });
+                    // Update button
+                    var btns = controlsEl.querySelectorAll('[data-graph-filter="' + cat + '"]');
+                    btns.forEach(function(b) { b.classList.remove('active'); });
+                } else {
+                    // Expand: add entry nodes
+                    expandedCats.add(cat);
+                    graph.edges.forEach(function(e) {
+                        var sid = typeof e.source === 'object' ? e.source.id : e.source;
+                        var tid = typeof e.target === 'object' ? e.target.id : e.target;
+                        if (e.type === 'category' && tid === catId) {
+                            visibleNodes.add(sid);
+                        }
+                    });
+                    // Also add see_also/wikilink targets that are visible
+                    var newEntries = new Set();
+                    visibleNodes.forEach(function(id) { newEntries.add(id); });
+                    graph.edges.forEach(function(e) {
+                        var sid = typeof e.source === 'object' ? e.source.id : e.source;
+                        var tid = typeof e.target === 'object' ? e.target.id : e.target;
+                        if (e.type !== 'category') {
+                            if (newEntries.has(sid)) visibleNodes.add(tid);
+                            if (newEntries.has(tid)) visibleNodes.add(sid);
+                        }
+                    });
+                    // Update button
+                    var btns = controlsEl.querySelectorAll('[data-graph-filter="' + cat + '"]');
+                    btns.forEach(function(b) { b.classList.add('active'); });
+                }
+
+                // Update 'all' button
+                var allBtn = controlsEl.querySelector('[data-graph-filter="all"]');
+                if (expandedCats.size === graph.categories.length) {
+                    allBtn.classList.add('active');
+                } else if (expandedCats.size === 0) {
+                    allBtn.classList.add('active');
+                } else {
+                    allBtn.classList.remove('active');
+                }
+
+                update();
+            }
+
+            // 'All' button handler
+            controlsEl.querySelector('[data-graph-filter="all"]').addEventListener('click', function() {
+                if (expandedCats.size === graph.categories.length) {
+                    // Collapse all
+                    expandedCats.clear();
+                    visibleNodes.clear();
+                    graph.categories.forEach(function(c) { visibleNodes.add('cat:' + c); });
+                    controlsEl.querySelectorAll('.graph-btn').forEach(function(b) { b.classList.remove('active'); });
+                    controlsEl.querySelector('[data-graph-filter="all"]').classList.add('active');
+                } else {
+                    // Expand all
+                    graph.categories.forEach(function(cat) {
+                        if (!expandedCats.has(cat)) {
+                            expandedCats.add(cat);
+                            graph.edges.forEach(function(e) {
+                                var sid = typeof e.source === 'object' ? e.source.id : e.source;
+                                var tid = typeof e.target === 'object' ? e.target.id : e.target;
+                                if (e.type === 'category' && tid === 'cat:' + cat) {
+                                    visibleNodes.add(sid);
+                                }
+                            });
+                        }
+                    });
+                    // Add see_also/wikilink connections
+                    var allEntries = new Set(visibleNodes);
+                    graph.edges.forEach(function(e) {
+                        var sid = typeof e.source === 'object' ? e.source.id : e.source;
+                        var tid = typeof e.target === 'object' ? e.target.id : e.target;
+                        if (e.type !== 'category') {
+                            if (allEntries.has(sid)) visibleNodes.add(tid);
+                            if (allEntries.has(tid)) visibleNodes.add(sid);
+                        }
+                    });
+                    controlsEl.querySelectorAll('.graph-btn').forEach(function(b) { b.classList.add('active'); });
+                }
+                update();
+            });
+
+            function showTooltip(d, event) {
+                tooltipTitle.textContent = d.title || d.id;
+                tooltipCats.textContent = (d.categories || []).join(' · ');
+                tooltipAbstract.textContent = d.abstract || '';
+                tooltipAbstract.style.display = d.abstract ? '' : 'none';
+
+                if (d.has_content) {
+                    tooltipLink.href = 'encyclopedia/' + encodeURIComponent(d.id) + '.html';
+                    tooltipLink.style.display = '';
+                } else {
+                    tooltipLink.style.display = 'none';
+                }
+
+                tooltip.classList.add('visible');
+
+                // Position
+                var rect = container.getBoundingClientRect();
+                var x = event.clientX - rect.left + 15;
+                var y = event.clientY - rect.top - 10;
+
+                // Prevent overflow
+                if (x + 290 > rect.width) x = x - 310;
+                if (y + 150 > rect.height) y = y - 150;
+                if (x < 0) x = 10;
+                if (y < 0) y = 10;
+
+                tooltip.style.left = x + 'px';
+                tooltip.style.top = y + 'px';
+            }
+
+            // Hide tooltip on click outside
+            svg.on('click', function() {
+                tooltip.classList.remove('visible');
+            });
+
+            function dragstarted(event, d) {
+                if (!event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+
+            function dragged(event, d) {
+                d.fx = event.x;
+                d.fy = event.y;
+            }
+
+            function dragended(event, d) {
+                if (!event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+
+            // Handle resize
+            window.addEventListener('resize', function() {
+                width = container.clientWidth;
+                height = container.clientHeight;
+                svg.attr('width', width).attr('height', height);
+                simulation.force('center', d3.forceCenter(width / 2, height / 2));
+                simulation.alpha(0.3).restart();
+            });
+
+            // Initial render
+            update();
+        }
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+{
+  "meta": {
+    "name": "enawenenawe_encyclopedia",
+    "description": "Enawenê-Nawê Encyclopedia Entries",
+    "version": "2.0",
+    "record_count": 25
+  },
+  "data": [
+    {
+      "id": "arquitetura",
+      "title": "Arquitetura da Aldeia",
+      "abstract": "A aldeia Enawenê-Nawê possui formato circular com malocas retangulares ao redor de uma praça central, onde se ergue a casa cerimonial Yãkwa.",
+      "categories": [
+        "cultura-material"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "flautas-sagradas",
+        "clas",
+        "enawene-nawe"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "clas",
+      "title": "Sistema de Clãs",
+      "abstract": "Organização social baseada em clãs patrilineares e exogâmicos, com residência uxorilocal e categorias etárias que estruturam a vida comunitária.",
+      "categories": [
+        "organizacao-social"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "harikare-yaokwa",
+        "arquitetura",
+        "olokoiri",
+        "enawene-nawe"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "contato",
+      "title": "História do Contato",
+      "abstract": "O primeiro contato pacífico com os Enawenê-Nawê ocorreu em 1974, mediado por missionários jesuítas, com destaque para a figura de Vicente Canas (Kiwxi).",
+      "categories": [
+        "territorio"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "terra-indigena",
+        "hidreletricas",
+        "enawene-nawe"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "cosmologia",
+      "title": "Estrutura Cosmológica",
+      "abstract": "O cosmos Enawenê-Nawê é organizado em quatro níveis — celestial, terrestre, subterrâneo e um espaço infinito superior —, cujo equilíbrio é mantido pelo ciclo ritual.",
+      "categories": [
+        "cosmologia"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "yakairiti",
+        "enore-nawe",
+        "sotayreti",
+        "yaokwa",
+        "enawene-nawe"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "dieta",
+      "title": "Proibições Alimentares",
+      "abstract": "Os Enawenê-Nawê não consomem carne vermelha, mantendo uma dieta baseada em peixe, mandioca, milho, mel e sal vegetal, com origem mítica no clã Anihiare.",
+      "categories": [
+        "organizacao-social"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "mandioca",
+        "mel",
+        "sal-vegetal",
+        "waitiwina",
+        "hidreletricas"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "enawene-nawe",
+      "title": "O Povo Enawenê-Nawê",
+      "abstract": "Povo de língua Arawak que habita o noroeste do Mato Grosso, com cerca de mil pessoas, conhecido por sua rica vida cerimonial e pela proibição do consumo de carne vermelha.",
+      "categories": [
+        "geral"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "yaokwa",
+        "cosmologia",
+        "clas",
+        "dieta",
+        "terra-indigena",
+        "contato"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "enore-nawe",
+      "title": "Enore Nawe: Espíritos Celestiais",
+      "abstract": "Espíritos celestiais benevolentes que habitam o Eno, a aldeia perfeita no plano superior do cosmos, e são considerados os donos do mel.",
+      "categories": [
+        "cosmologia"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "cosmologia",
+        "kateoko",
+        "saluma",
+        "mel",
+        "yakairiti"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "flautas-sagradas",
+      "title": "As Flautas da Casa Yãkwa",
+      "abstract": "Instrumentos musicais sagrados de bambu e cabaças, tocados na casa cerimonial Yãkwa durante os rituais, especialmente o Yaokwa.",
+      "categories": [
+        "cultura-material"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "yaokwa",
+        "sotakatari-nawe",
+        "arquitetura",
+        "cosmologia"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "harikare-yaokwa",
+      "title": "Rotação Harikare-Yaokwa",
+      "abstract": "Sistema de rotação bianual no qual os clãs alternam entre os papéis de Harikare (anfitriões) e Yaokwa (pescadores), espelhando a reciprocidade cósmica.",
+      "categories": [
+        "organizacao-social"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "yaokwa",
+        "clas",
+        "sal-vegetal",
+        "waitiwina"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "hidreletricas",
+      "title": "Ameaças ao Território",
+      "abstract": "A construção de dezenas de hidrelétricas na bacia do rio Juruena ameaça os recursos pesqueiros e o patrimônio cultural imaterial dos Enawenê-Nawê.",
+      "categories": [
+        "territorio"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "terra-indigena",
+        "waitiwina",
+        "yaokwa",
+        "dieta",
+        "contato"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "kateoko",
+      "title": "O Ritual Kateoko",
+      "abstract": "Ritual dedicado aos espíritos celestiais Enore Nawe, associado à coleta de mel e marcado por festas de caráter descontraído.",
+      "categories": [
+        "rituais"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "enore-nawe",
+        "mel",
+        "saluma",
+        "yaokwa"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "lerohi",
+      "title": "O Ritual Lerohi",
+      "abstract": "Ritual de abertura e plantio das roças coletivas de mandioca, associado aos espíritos Iakayreti e marcado por cânticos noturnos.",
+      "categories": [
+        "rituais"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "mandioca",
+        "yaokwa",
+        "cosmologia",
+        "enawene-nawe"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "mandioca",
+      "title": "A Mandioca na Vida Enawenê-Nawê",
+      "abstract": "Alimento básico dos Enawenê-Nawê, a mandioca possui dimensão simultaneamente nutricional, social e cosmológica.",
+      "categories": [
+        "cultura-material"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "lerohi",
+        "dieta",
+        "sal-vegetal",
+        "harikare-yaokwa"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "mel",
+      "title": "A Coleta de Mel",
+      "abstract": "Atividade econômica e ritual fundamental, sendo o mel a principal oferenda aos espíritos celestiais Enore Nawe.",
+      "categories": [
+        "cultura-material"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "enore-nawe",
+        "kateoko",
+        "saluma",
+        "dieta"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "olokoiri",
+      "title": "O Estojo Peniano",
+      "abstract": "Estojo peniano confeccionado em palha de buriti, utilizado a partir da adolescência e de origem mítica vinculada ao clã Anihiare.",
+      "categories": [
+        "cultura-material"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "clas",
+        "pintura-corporal",
+        "plumaria",
+        "enawene-nawe"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "pintura-corporal",
+      "title": "Pintura Corporal",
+      "abstract": "Sistema de pintura corporal que utiliza urucum para o uso diário e jenipapo para ocasiões cerimoniais, com padrões que mudam conforme as fases da vida.",
+      "categories": [
+        "cultura-material"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "plumaria",
+        "olokoiri",
+        "clas",
+        "enawene-nawe"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "plumaria",
+      "title": "Plumária e Tapiragem",
+      "abstract": "Arte plumária elaborada com penas de arara, papagaio e mutum, incluindo a técnica de tapiragem que transforma penas verdes em douradas.",
+      "categories": [
+        "cultura-material"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "pintura-corporal",
+        "olokoiri",
+        "enawene-nawe"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "sal-vegetal",
+      "title": "O Sal Vegetal",
+      "abstract": "Oferenda central aos espíritos Yakairiti, produzida por meio de um trabalhoso processo de queima e filtragem de plantas aquáticas.",
+      "categories": [
+        "cultura-material"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "yakairiti",
+        "yaokwa",
+        "harikare-yaokwa",
+        "dieta"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "saluma",
+      "title": "O Ritual Salumã",
+      "abstract": "Ritual de transição entre estações dedicado aos espíritos celestiais Enore Nawe, historicamente associado ao nome pelo qual o povo foi conhecido até 1983.",
+      "categories": [
+        "rituais"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "enore-nawe",
+        "kateoko",
+        "mel",
+        "yaokwa",
+        "enawene-nawe"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "sotakatari-nawe",
+      "title": "Os Mestres Cantadores",
+      "abstract": "Especialistas rituais que detêm o conhecimento musical e cerimonial, fundamentais para a transmissão dos saberes tradicionais.",
+      "categories": [
+        "cosmologia"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "flautas-sagradas",
+        "yaokwa",
+        "sotayreti",
+        "cosmologia"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "sotayreti",
+      "title": "Os Xamãs",
+      "abstract": "Especialistas espirituais que viajam ao plano celestial por meio de sonhos e transes, atuando como mediadores entre os mundos humano e espiritual.",
+      "categories": [
+        "cosmologia"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "cosmologia",
+        "yakairiti",
+        "enore-nawe",
+        "sotakatari-nawe"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "terra-indigena",
+      "title": "Terra Indígena Enawenê-Nawê",
+      "abstract": "Território de 742.088 hectares no noroeste do Mato Grosso, abrangendo os rios Juruena e Ique, demarcado com exclusão de áreas sagradas importantes.",
+      "categories": [
+        "territorio"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "contato",
+        "hidreletricas",
+        "enawene-nawe"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "waitiwina",
+      "title": "Barragens de Pesca",
+      "abstract": "Engenhosas barragens de pesca construídas com troncos entrecruzados e armadilhas cônicas, fundamentais para o ritual Yaokwa.",
+      "categories": [
+        "cultura-material"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "yaokwa",
+        "dieta",
+        "hidreletricas",
+        "harikare-yaokwa"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "yakairiti",
+      "title": "Yakairiti: Espíritos Subterrâneos",
+      "abstract": "Espíritos subterrâneos de fome insaciável que habitam o Ehatekoyoare e são considerados os verdadeiros donos dos recursos naturais.",
+      "categories": [
+        "cosmologia"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "cosmologia",
+        "yaokwa",
+        "sal-vegetal",
+        "enore-nawe",
+        "sotayreti"
+      ],
+      "wikilink_targets": []
+    },
+    {
+      "id": "yaokwa",
+      "title": "O Ritual Yaokwa",
+      "abstract": "Principal ritual do ciclo cerimonial Enawenê-Nawê, com duração de aproximadamente sete meses, inscrito como Patrimônio Cultural Imaterial pela UNESCO em 2011.",
+      "categories": [
+        "rituais"
+      ],
+      "variants": [],
+      "entry_type": "",
+      "has_content": true,
+      "see_also": [
+        "yakairiti",
+        "waitiwina",
+        "harikare-yaokwa",
+        "sal-vegetal",
+        "flautas-sagradas",
+        "enawene-nawe"
+      ],
+      "wikilink_targets": []
+    }
+  ],
+  "category_tree": {
+    "cultura-material": {
+      "_count": 9
+    },
+    "organizacao-social": {
+      "_count": 3
+    },
+    "territorio": {
+      "_count": 3
+    },
+    "cosmologia": {
+      "_count": 5
+    },
+    "geral": {
+      "_count": 1
+    },
+    "rituais": {
+      "_count": 4
+    }
+  },
+  "featured": null,
+  "highlights": []
+}

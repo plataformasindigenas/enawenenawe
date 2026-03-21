@@ -1,0 +1,18 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Generated JSON (rebuilt by terradoc build)
+data/*.json
+
+# uv
+uv.lock
+.python-version
+main.py

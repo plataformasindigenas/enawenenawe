@@ -1,0 +1,304 @@
+# Portuguese (Brazilian) locale for Enawenê-Nawê
+
+# HTML lang attribute
+html_lang: "pt-BR"
+
+# Accessibility
+skip_link: "Pular para conteúdo"
+nav_label: "Navegação principal"
+search_label: "Pesquisar"
+filter_label: "Filtrar resultados"
+
+# Navigation
+nav_brand: "Enawenê-Nawê"
+nav_dictionary: "Dicionário"
+nav_encyclopedia: "Enciclopédia"
+nav_fauna: "Fauna"
+nav_ethnobotany: "Etnobotânica"
+nav_bibliography: "Bibliografia"
+nav_corpus: "Corpus"
+
+# Footer
+footer_generated: "Gerado com"
+footer_and: "e"
+
+# Index page
+index_title: "Início"
+index_hero_title: "Enawenê-Nawê"
+index_hero_tagline: "Darakala Kakwali"
+index_hero_subtitle: >-
+  Plataforma dedicada à preservação, documentação e valorização dos saberes linguísticos e culturais do povo Enawenê-Nawê.
+index_about_title: "Sobre o Projeto"
+index_about_p1: >-
+  <strong>Enawenê-Nawê</strong> é uma plataforma dedicada à preservação,
+  documentação e valorização dos saberes linguísticos e culturais do povo Enawenê-Nawê.
+index_about_p2: >-
+  Este repositório reúne uma variedade de recursos linguísticos e etnográficos, tanto
+  históricos quanto contemporâneos, com o objetivo de apoiar o ensino, a pesquisa e os
+  esforços de revitalização da língua Enawenê-Nawê. A plataforma oferece um conjunto de
+  ferramentas voltadas para o estudo linguístico e antropológico.
+
+# Platform cards
+card_dictionary_title: "Dicionário"
+card_dictionary_desc: "Palavras e expressões da língua Enawenê-Nawê com tradução para Português, transcrição fonética e exemplos."
+card_dictionary_label: "entradas"
+card_encyclopedia_title: "Enciclopédia"
+card_encyclopedia_desc: "Verbetes sobre cultura, rituais, organização social e conhecimentos tradicionais do povo Enawenê-Nawê."
+card_encyclopedia_label: "verbetes"
+card_fauna_title: "Fauna"
+card_fauna_desc: "Nomes de animais na língua Enawenê-Nawê com classificação tradicional, nomes científicos e imagens."
+card_fauna_label: "espécies"
+card_ethnobotany_title: "Etnobotânica"
+card_ethnobotany_desc: "Plantas utilizadas pelo povo Enawenê-Nawê com nomes na língua, usos tradicionais, famílias botânicas e imagens."
+card_ethnobotany_label: "plantas"
+card_bibliography_title: "Bibliografia"
+card_bibliography_desc: "Referências bibliográficas sobre a língua, cultura e história do povo Enawenê-Nawê."
+card_bibliography_label: "referências"
+card_corpus_title: "Corpus"
+card_corpus_desc: "Corpus linguístico com textos anotados e traduzidos na língua Enawenê-Nawê."
+card_corpus_label: "textos"
+card_recordings_title: "Gravações"
+card_recordings_desc: "Corpus sonoro com gravações de palavras e expressões na língua Enawenê-Nawê."
+card_recordings_label: "gravações"
+card_videos_title: "Vídeos"
+card_videos_desc: "Registros em vídeo de rituais, cerimônias e práticas culturais do povo Enawenê-Nawê hospedados no YouTube."
+card_videos_label: "vídeos"
+
+# Dictionary page
+dict_title: "Dicionário Enawenê-Nawê"
+dict_search_placeholder: "Pesquisar (Enawenê-Nawê ou Português)..."
+dict_filter_all: "Todas as classes"
+dict_empty_title: "Pesquise no dicionário"
+dict_empty_text: "Digite uma palavra em Enawenê-Nawê ou Português para começar"
+dict_loading: "Carregando dicionário..."
+dict_no_results: "Nenhum resultado"
+dict_no_results_hint: "Tente uma palavra diferente ou altere o filtro"
+dict_overflow: "Mostrando 100 de {n} resultados. Refine sua busca."
+dict_result_singular: "resultado encontrado"
+dict_result_plural: "resultados encontrados"
+dict_scientific_name: "Nome científico"
+dict_browse_hint: "Selecione uma entrada para ver os detalhes"
+dict_all_pos: "Todas as classes"
+
+# Ethnobotany page
+ethnobotany_title: "Etnobotânica Enawenê-Nawê"
+ethnobotany_search_placeholder: "Pesquisar (Enawenê-Nawê, Português ou nome científico)..."
+ethnobotany_filter_all: "Todas as famílias"
+ethnobotany_no_results: "Nenhum resultado"
+ethnobotany_no_results_hint: "Tente um nome diferente ou altere o filtro"
+ethnobotany_select_hint: "Clique em uma planta para ver os detalhes"
+ethnobotany_result_singular: "planta encontrada"
+ethnobotany_result_plural: "plantas encontradas"
+ethnobotany_detail_family: "Família botânica"
+ethnobotany_detail_usage: "Uso (Enawenê-Nawê)"
+ethnobotany_detail_usage_pt: "Descrição do uso"
+ethnobotany_detail_fruiting: "Frutificação"
+ethnobotany_detail_environment: "Ambiente"
+ethnobotany_detail_abundance: "Abundância"
+ethnobotany_category_uncategorized: "Sem família"
+
+# Fauna page
+fauna_title: "Fauna Enawenê-Nawê"
+fauna_search_placeholder: "Pesquisar (Enawenê-Nawê, Português ou nome científico)..."
+fauna_filter_all: "Todas as categorias"
+fauna_empty_title: "Pesquise a fauna"
+fauna_empty_text: "Digite um nome em Enawenê-Nawê, Português ou científico para começar"
+fauna_no_results: "Nenhum resultado"
+fauna_no_results_hint: "Tente um nome diferente ou altere o filtro"
+fauna_overflow: "Mostrando 100 de {n} resultados. Refine sua busca."
+fauna_result_singular: "espécie encontrada"
+fauna_result_plural: "espécies encontradas"
+fauna_family: "Família"
+fauna_category_uncategorized: "Sem classificação"
+fauna_detail_family: "Família"
+fauna_detail_classification: "Classificação Enawenê-Nawê"
+fauna_select_hint: "Clique em um animal para ver os detalhes"
+
+# Encyclopedia page
+enc_title: "Enciclopédia Enawenê-Nawê"
+enc_search_placeholder: "Pesquisar na enciclopédia..."
+enc_filter_all: "Todas as categorias"
+enc_filter_uncategorized: "Sem categoria"
+enc_empty_title: "Pesquise na enciclopédia"
+enc_empty_text: "Digite um termo para começar"
+enc_loading: "Carregando enciclopédia..."
+enc_no_results: "Nenhum resultado"
+enc_no_results_hint: "Tente um termo diferente ou altere o filtro"
+enc_overflow: "Mostrando 100 de {n} resultados. Refine sua busca."
+enc_result_singular: "verbete encontrado"
+enc_result_plural: "verbetes encontrados"
+enc_toc_title: "Conteúdo"
+enc_variants: "Variantes"
+enc_categories: "Categorias"
+enc_external_link: "Ver referência externa"
+enc_more_images: "Mais imagens"
+enc_examples: "Exemplos"
+enc_collapse: "Clique para recolher"
+enc_entry_type: "Tipo"
+enc_references: "Referências"
+enc_last_updated: "Última atualização"
+enc_back_to_index: "Voltar à enciclopédia"
+enc_see_also: "Ver também"
+enc_breadcrumb_label: "Navegação"
+enc_welcome_text: "Enciclopédia dedicada à preservação e documentação dos saberes culturais, linguísticos e etnográficos do povo Enawenê-Nawê."
+enc_featured_title: "Verbete em destaque"
+enc_browse_categories: "Navegar por categorias"
+enc_highlights_title: "Verbetes ilustrados"
+enc_read_more: "Ler mais"
+enc_graph_title: "Mapa de conexões"
+enc_graph_all: "Todos"
+enc_graph_legend_category: "Categoria"
+enc_graph_legend_entry: "Verbete"
+
+# Infobox field labels
+infobox_participantes: "Participantes"
+infobox_estação: "Estação"
+infobox_duração: "Duração"
+infobox_local: "Local"
+infobox_tipo: "Tipo"
+infobox_nome_científico: "Nome científico"
+infobox_família: "Família"
+infobox_habitat: "Habitat"
+infobox_usos: "Usos"
+infobox_membros: "Membros"
+infobox_funções: "Funções"
+infobox_relações: "Relações"
+infobox_região: "Região"
+infobox_rio: "Rio"
+infobox_coordenadas: "Coordenadas"
+infobox_clã: "Clã"
+infobox_papel: "Papel"
+infobox_período: "Período"
+infobox_material: "Material"
+infobox_função: "Função"
+
+# Bibliography page
+bib_title: "Bibliografia Enawenê-Nawê"
+bib_search_placeholder: "Pesquisar (autor, título, ano)..."
+bib_filter_all: "Todos os tipos"
+bib_empty_title: "Pesquise a bibliografia"
+bib_empty_text: "Digite um autor, título ou ano para começar"
+bib_no_results: "Nenhum resultado"
+bib_no_results_hint: "Tente um autor, título ou ano diferente"
+bib_overflow: "Mostrando 100 de {n} resultados. Refine sua busca."
+bib_result_singular: "referência encontrada"
+bib_result_plural: "referências encontradas"
+
+# Corpus page
+corpus_title: "Corpus Enawenê-Nawê"
+corpus_search_placeholder: "Pesquisar no corpus..."
+corpus_no_results: "Nenhum resultado"
+corpus_select_hint: "Selecione um texto para ver os detalhes"
+corpus_result_singular: "texto encontrado"
+corpus_result_plural: "textos encontrados"
+
+# POS labels
+pos_LEX: "Lexema"
+pos_S: "Substantivo"
+pos_VC: "Verbo Causativo"
+pos_ADV: "Advérbio"
+pos_PPASS: "Part. Pass."
+pos_POSP: "Posposição"
+pos_SUF: "Sufixo"
+pos_INTJ: "Interjeição"
+pos_VT: "Verbo Trans."
+pos_PRON: "Pronome"
+pos_V: "Verbo"
+pos_PRCL: "Partícula"
+pos_PPAS: "Part. Pass."
+pos_PPART: "Partícula"
+pos_NUM: "Numeral"
+pos_IP: "IP"
+pos_DEM: "Demonstrativo"
+pos_CONJ: "Conjunção"
+pos_X: "Outro"
+pos_PROPN: "Nome Próprio"
+
+# Cross-linking
+see_also: "Ver também"
+see_in_fauna: "Ver na Fauna"
+see_in_dictionary: "Ver no Dicionário"
+see_in_encyclopedia: "Ver na Enciclopédia"
+
+# Common labels
+entries_label: "entradas"
+species_label: "espécies"
+articles_label: "verbetes"
+references_label: "referências"
+
+# Navigation (recordings/videos)
+nav_recordings: "Gravações"
+nav_videos: "Vídeos"
+
+# Terradoc UI
+nav_menu_label: "Menu"
+lang_switch_label: "Seletor de idioma"
+card_cta: "Explorar"
+
+# Footer
+footer_description: >-
+  Plataforma dedicada à preservação, documentação e valorização dos saberes
+  linguísticos e culturais do povo Enawenê-Nawê.
+footer_nav_heading: "Navegação"
+footer_resources_heading: "Recursos"
+footer_contact_heading: "Contato"
+footer_email: ""
+footer_location: "Mato Grosso, Brasil"
+footer_credits: "Gerado com aptoro & kodudo"
+footer_license: ""
+footer_text: ""
+
+# Index page - hero & teasers
+index_hero_cta: "Explorar"
+index_sections_title: "Explorar"
+index_view_all_dictionary: "Ver dicionário"
+index_view_all_encyclopedia: "Ver enciclopédia"
+index_view_all_fauna: "Ver fauna"
+index_view_all_videos: "Ver vídeos"
+index_gallery_title: "Imagens & Sons"
+index_gallery_subtitle: "Registros visuais e sonoros da cultura Enawenê-Nawê"
+index_about_subtitle: "Conheça a plataforma"
+index_about_who_title: "Quem somos"
+index_about_cite_title: "Como citar"
+index_about_cite: >-
+  TRESOLDI, T. Enawenê-Nawê: Darakala Kakwali [plataforma digital]. 2025.
+  Disponível em: https://plataformasindigenas.github.io/enawenenawe/
+index_about_partners_title: "Parceiros"
+index_quote: >-
+  A língua é o espírito do povo. Preservar a língua é preservar a alma de uma cultura.
+index_quote_attribution: ""
+
+# Statistics labels
+stat_dictionary_entries: "entradas"
+stat_encyclopedia_entries: "verbetes"
+stat_fauna_entries: "espécies"
+stat_ethnobotany_entries: "plantas"
+stat_bibliography_entries: "referências"
+stat_recordings_entries: "gravações"
+stat_videos_entries: "vídeos"
+stat_corpus_entries: "textos"
+
+# Recordings page
+# Videos page
+vid_title: "Vídeos"
+vid_subtitle: "Registros em vídeo da cultura Enawenê-Nawê"
+vid_count_label: "vídeos"
+vid_watch: "Assistir no YouTube"
+vid_filter_all: "Todas as categorias"
+
+# Recordings page
+rec_title: "Corpus de Gravações"
+rec_subtitle: "Registros sonoros da língua Enawenê-Nawê"
+rec_count_label: "gravações"
+rec_search_placeholder: "Pesquisar gravações..."
+rec_filters_title: "Filtros"
+rec_filter_format: "Formato"
+rec_filter_speaker: "Falante"
+rec_filter_match: "Tipo de match"
+rec_col_word: "Palavra"
+rec_col_speaker: "Falante"
+rec_col_date: "Data"
+rec_col_match: "Match"
+rec_col_audio: "Áudio"
+rec_no_results: "Nenhuma gravação encontrada"
+rec_overflow: "Mostrando 200 de {n} gravações. Refine sua busca."

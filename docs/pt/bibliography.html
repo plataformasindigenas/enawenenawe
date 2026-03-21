@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../images/favicon.svg">
+    <title>Bibliografia Enawenê-Nawê - Enawenê-Nawê</title>
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/terradoc.css">
+    <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+    <style>
+        :root {
+            --td-color-primary: #C9A030;
+            --td-color-accent: #A83220;
+            --td-color-accent-muted: #8B2A1A;
+            --td-color-bg: #FAF3E8;
+            --td-color-bg-light: #F5ECD7;
+            --td-color-bg-infobox: #F8F1E4;
+            --td-color-border: #E8DCC8;
+            --td-color-border-dark: #C4B8A0;
+            --td-color-text: #2C1810;
+            --td-color-text-muted: #6B5E4F;
+            --td-color-highlight: #FFF8E1;
+            --td-color-warning-bg: #FFF8E1;
+            --td-color-surface: #FFFFFF;
+            --td-color-border-light: #F0E8D8;
+            --td-color-text-secondary: #6B5E4F;
+            --td-color-accent-light: #FDEAE6;
+            --td-color-success: #4A7C59;
+            --td-color-error: #A83220;
+            --td-color-accent-ring: rgba(201, 160, 48, 0.2);
+            --td-radius: 28px;
+            --td-color-dark: #2C1810;
+            --td-radius-lg: 28px;
+            --td-radius-pill: 999px;
+            --td-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --td-font-headings: 'Sora', 'Inter', sans-serif;
+            --td-font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+            --td-term-color: #8B2A1A;
+            --td-term-weight: 600;
+            --td-color-gold: #D4A03A;
+        }
+        .bib-header {
+            padding: 1.5rem 0 1rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .bib-header::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1.5rem;
+            width: 4px;
+            height: 48px;
+            background: var(--td-color-primary);
+            border-radius: 2px;
+        }
+        .bib-header h1 {
+            margin: 0 0 0.5rem 0;
+        }
+    </style>
+</head>
+<body class="td-style-terra">
+    <a href="#main-content" class="skip-link">Pular para conteúdo</a>
+
+    <nav id="td-nav" aria-label="Navegação principal">
+        <div class="td-nav-inner">
+            <a href="index.html" class="brand">
+                <img src="../images/logo.svg" alt="" class="brand-logo">
+                <span>Enawenê-Nawê</span>
+            </a>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+            <div class="nav-links">
+                <a href="dictionary.html">Dicionário</a>
+                <a href="encyclopedia.html">Enciclopédia</a>
+                <a href="fauna.html">Fauna</a>
+                <a href="ethnobotany.html">Etnobotânica</a>
+                <a href="bibliography.html" class="active" aria-current="page">Bibliografia</a>
+                <a href="corpus.html">Corpus</a>
+            </div>
+            <div class="lang-switch" aria-label="Seletor de idioma">
+                    <span class="lang-current" aria-current="true">PT</span>
+<span class="lang-sep">/</span>                    <a href="../en/bibliography.html" class="lang-link">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="td-container">
+    <div class="bib-header">
+        <h1>Bibliografia Enawenê-Nawê <svg class="td-page-badge" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M12,1 A11,11 0 0,1 23,12 L1,12 A11,11 0 0,1 12,1 Z" fill="var(--td-color-primary)" opacity="0.2"/>
+    <path d="M12,23 A11,11 0 0,1 1,12 L23,12 A11,11 0 0,1 12,23 Z" fill="var(--td-color-dark, #0B0F17)" opacity="0.2"/>
+    <circle cx="12" cy="12" r="11" fill="none" stroke="var(--td-color-primary)" stroke-width="1.2" opacity="0.3"/>
+    <line x1="1" y1="12" x2="23" y2="12" stroke="var(--td-color-text-muted)" stroke-width="0.6" opacity="0.2"/>
+</svg></h1>
+        <p class="subtitle">Enawenê-Nawê Bibliography References &mdash; 33 referências</p>
+    </div>
+
+    <div class="js-only">
+        <div class="search-container">
+            <div class="search-row">
+                <input type="text" id="search-input" class="search-input" placeholder="Pesquisar (autor, título, ano)..." autocomplete="off" aria-label="Pesquisar">
+                <select id="type-filter" class="filter-select" aria-label="Filtrar resultados">
+                    <option value="">Todos os tipos</option>
+                    <option value="article">article</option>
+                    <option value="book">book</option>
+                    <option value="incollection">incollection</option>
+                    <option value="mastersthesis">mastersthesis</option>
+                    <option value="misc">misc</option>
+                    <option value="phdthesis">phdthesis</option>
+                    <option value="techreport">techreport</option>
+                </select>
+            </div>
+            <div class="stats" id="stats" aria-live="polite"></div>
+        </div>
+
+        <div class="td-decor-motif" aria-hidden="true"><svg width="120px" height="8" viewBox="0 0 120 8" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><line x1="0" y1="4" x2="52" y2="4" stroke="var(--td-color-border)" stroke-width="1.5"/><circle cx="60" cy="4" r="3" fill="var(--td-color-border)"/><line x1="68" y1="4" x2="120" y2="4" stroke="var(--td-color-border)" stroke-width="1.5"/></svg></div>
+
+        <div class="results-container" id="results" aria-live="polite">
+            <div class="empty-state">
+                <h2>Pesquise a bibliografia</h2>
+                <p>Digite um autor, título ou ano para começar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="no-js-only results-container">
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Rezende2003</span>
+<span class="entry-tag">mastersthesis</span>            </div>
+<p class="entry-definition">Rezende, Uiara Barros</p><p class="entry-example">Fonética e fonologia da língua {Enawene-Nawe} ({Aruák})</p>            <p class="entry-scientific">
+2003            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Rezende2013</span>
+<span class="entry-tag">phdthesis</span>            </div>
+<p class="entry-definition">Rezende, Uiara Barros</p><p class="entry-example">Aspectos da gramática da língua {Enawene-Nawe} ({Aruák})</p>            <p class="entry-scientific">
+2013            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Brandao2020</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Brandão, Ana Paula Barros</p><p class="entry-example">Gênero gramatical em {Enawene Nawe} ({Aruak})?</p>            <p class="entry-scientific">
+2020, <em>Revista de Letras Norte@mentos</em>            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Brandao2022</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Brandão, Ana Paula Barros</p><p class="entry-example">Sistemas de Classificação Nominal em {Enawene Nawe} ({Aruak})</p>            <p class="entry-scientific">
+2022, <em>Cadernos de Etnolinguística</em>            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Brandao2018</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Brandão, Ana Paula Barros and Zezokiware</p><p class="entry-example">A documentação participativa: o caso das línguas {Paresi-Haliti} e {Enawene Nawe}</p>            <p class="entry-scientific">
+2018, <em>MOARA</em>            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Brandao2023</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Brandão, Ana Paula Barros and Epps, Patience and Kung, Susan Smythe and Moore, Denny and O'Hagan, Zachary and Roses Labrada, Jorge Emilio</p><p class="entry-example">Archiving and Language Documentation</p>            <p class="entry-scientific">
+2023, <em>Cadernos de Linguística</em>            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Brandao2019</span>
+<span class="entry-tag">misc</span>            </div>
+<p class="entry-definition">Brandão, Ana Paula Barros</p><p class="entry-example">Language documentation of the {Enawene Nawe} ({Arawak})</p>            <p class="entry-scientific">
+2019            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">NahumClaudel2018</span>
+<span class="entry-tag">book</span>            </div>
+<p class="entry-definition">Nahum-Claudel, Chloe</p><p class="entry-example">Vital Diplomacy: The Ritual Everyday on a Dammed River in {Amazonia}</p>            <p class="entry-scientific">
+2018, Berghahn Books            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">NahumClaudel2012</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Nahum-Claudel, Chloe</p><p class="entry-example">{Enawene-nawe} ``potlatch against the state''</p>            <p class="entry-scientific">
+2012, <em>Social Anthropology</em>            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">NahumClaudel2016</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Nahum-Claudel, Chloe</p><p class="entry-example">The To and Fro of Documents</p>            <p class="entry-scientific">
+2016, <em>Journal of Latin American and Caribbean Anthropology</em>            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">NahumClaudel2019a</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Nahum-Claudel, Chloe</p><p class="entry-example">From Mastery to Subjection</p>            <p class="entry-scientific">
+2019, <em>Journal of Material Culture</em>            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">NahumClaudel2019b</span>
+<span class="entry-tag">incollection</span>            </div>
+<p class="entry-definition">Nahum-Claudel, Chloe</p><p class="entry-example">The Curse of Souw among the {Amazonian} {Enawene-nawe}</p>            <p class="entry-scientific">
+2019, Sean Kingston Publishing            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">NahumClaudel2017</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Nahum-Claudel, Chloe and Petesch, Nathalie and Yvinec, Cédric</p><p class="entry-example">Pourquoi filmer sa culture?</p>            <p class="entry-scientific">
+2017, <em>Journal de la Société des américanistes</em>            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Silva1998a</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Silva, Marcio Ferreira da</p><p class="entry-example">Tempo e espaço entre os {Enawene Nawe}</p>            <p class="entry-scientific">
+1998, <em>Revista de Antropologia</em>, Universidade de São Paulo            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Silva1998b</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Silva, Marcio Ferreira da</p><p class="entry-example">Masculino e feminino entre os {Enewene-Nawe}</p>            <p class="entry-scientific">
+1998, <em>Sexta Feira</em>            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Silva2016</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Silva, Marcio Ferreira da</p><p class="entry-example">Demografia e antropologia em contraponto</p>            <p class="entry-scientific">
+2016, <em>Revista Brasileira de Estudos de População</em>            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Silva2022</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Silva, Marcio Ferreira da</p><p class="entry-example">Um sistema iroquês amazônico</p>            <p class="entry-scientific">
+2022, <em>Revista de Antropologia</em>            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Santos2008</span>
+<span class="entry-tag">article</span>            </div>
+<p class="entry-definition">Santos, Gilton Mendes dos and Antonini, Yasmine</p><p class="entry-example">Traditional knowledge on stingless bees used by the {Enawene-Nawe}</p>            <p class="entry-scientific">
+2008, <em>Journal of Ethnobiology and Ethnomedicine</em>            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Santos2001</span>
+<span class="entry-tag">mastersthesis</span>            </div>
+<p class="entry-definition">Santos, Gilton Mendes dos</p><p class="entry-example">Seara de homens e deuses</p>            <p class="entry-scientific">
+2001            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Santos2006</span>
+<span class="entry-tag">phdthesis</span>            </div>
+<p class="entry-definition">Santos, Gilton Mendes dos</p><p class="entry-example">Da cultura à natureza</p>            <p class="entry-scientific">
+2006            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Weiss1998</span>
+<span class="entry-tag">phdthesis</span>            </div>
+<p class="entry-definition">Weiss, Marcos Cesar Lopes</p><p class="entry-example">Contato interétnico, perfil de saúde e doença</p>            <p class="entry-scientific">
+1998            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Jakubaszko2003</span>
+<span class="entry-tag">mastersthesis</span>            </div>
+<p class="entry-definition">Jakubaszko, Andrea</p><p class="entry-example">Imagens da alteridade</p>            <p class="entry-scientific">
+2003            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Zorthea2006</span>
+<span class="entry-tag">mastersthesis</span>            </div>
+<p class="entry-definition">Zorthêa, Kátia Silene</p><p class="entry-example">Daraiti aha: Escrita alfabética entre os {Enawene Nawe}</p>            <p class="entry-scientific">
+2006            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Souza2011</span>
+<span class="entry-tag">mastersthesis</span>            </div>
+<p class="entry-definition">Souza, Ivanilton José de</p><p class="entry-example">Sociocosmologia do Espaço {Enawene Nawe}</p>            <p class="entry-scientific">
+2011            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Carvalho2014</span>
+<span class="entry-tag">mastersthesis</span>            </div>
+<p class="entry-definition">Carvalho, Luciana Aparecida de</p><p class="entry-example">O ensino de Ciências e a Educação em Saúde na escolarização dos {Enawene Nawe}</p>            <p class="entry-scientific">
+2014            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Lisboa1985</span>
+<span class="entry-tag">book</span>            </div>
+<p class="entry-definition">Lisboa, Thomaz de Aquino</p><p class="entry-example">Os {Enauene-Naue}: primeiros contatos</p>            <p class="entry-scientific">
+1985, Loyola            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Santos1995</span>
+<span class="entry-tag">techreport</span>            </div>
+<p class="entry-definition">Santos, Gilton Mendes dos and Silva, Marcio Ferreira da and Costa Junior, Plácido Lopes da</p><p class="entry-example">Estudo das potencialidades e do manejo dos recursos naturais na {Área Indígena Enawene-Nawe}</p>            <p class="entry-scientific">
+1995            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">UNESCO2011</span>
+<span class="entry-tag">misc</span>            </div>
+<p class="entry-definition">{UNESCO}</p><p class="entry-example">Yaokwa, the {Enawene Nawe} people's ritual</p>            <p class="entry-scientific">
+2011            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">IPHAN2018</span>
+<span class="entry-tag">book</span>            </div>
+<p class="entry-definition">{IPHAN}</p><p class="entry-example">Dossiê {IPHAN} 18 -- Ritual {Yaokwa} do Povo Indígena {Enawene Nawe}</p>            <p class="entry-scientific">
+2018, IPHAN            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Valadao1995</span>
+<span class="entry-tag">misc</span>            </div>
+<p class="entry-definition">Valadão, Virgínia</p><p class="entry-example">Yãkwa: o banquete dos espíritos</p>            <p class="entry-scientific">
+1995            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Carelli2009</span>
+<span class="entry-tag">misc</span>            </div>
+<p class="entry-definition">Carelli, Vincent and Campoli, Fausto</p><p class="entry-example">Yaokwa -- Um patrimônio ameaçado</p>            <p class="entry-scientific">
+2009            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Carelli2020</span>
+<span class="entry-tag">misc</span>            </div>
+<p class="entry-definition">Carelli, Vincent and Carelli, Ernesto de</p><p class="entry-example">Yaokwa: Imagem e Memória</p>            <p class="entry-scientific">
+2020            </p>
+        </div>
+        <div class="entry">
+            <div class="entry-header">
+                <span class="entry-word">Fernandez1995</span>
+<span class="entry-tag">misc</span>            </div>
+<p class="entry-definition">Fernandez, Rosália</p><p class="entry-example">Brésil: {Enauene-Naue} et {Nhambiquara} du {Mato Grosso}</p>            <p class="entry-scientific">
+1995            </p>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <div class="footer-adugo-spine" aria-hidden="true">
+            <svg viewBox="0 0 1200 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="14" x2="1200" y2="14" stroke="var(--td-color-primary)" stroke-width="2" stroke-linecap="round" opacity="0.15"/>
+                <g stroke="var(--td-color-primary)" stroke-linecap="round" opacity="0.12">
+                    <line x1="45" y1="5" x2="45" y2="23" stroke-width="2.5"/>
+                    <line x1="68" y1="7" x2="68" y2="21" stroke-width="3.5"/>
+                    <line x1="105" y1="3" x2="105" y2="25" stroke-width="2"/>
+                    <line x1="120" y1="8" x2="120" y2="20" stroke-width="4"/>
+                    <line x1="160" y1="6" x2="160" y2="22" stroke-width="2.8"/>
+                    <line x1="195" y1="4" x2="195" y2="24" stroke-width="3.2"/>
+                    <line x1="265" y1="5" x2="265" y2="23" stroke-width="3"/>
+                    <line x1="298" y1="3" x2="298" y2="25" stroke-width="3.8"/>
+                    <line x1="335" y1="8" x2="335" y2="20" stroke-width="3.5"/>
+                    <line x1="372" y1="6" x2="372" y2="22" stroke-width="4"/>
+                    <line x1="408" y1="7" x2="408" y2="21" stroke-width="3.2"/>
+                    <line x1="468" y1="3" x2="468" y2="25" stroke-width="3.5"/>
+                    <line x1="498" y1="1" x2="498" y2="27" stroke-width="4.2"/>
+                    <line x1="528" y1="7" x2="528" y2="21" stroke-width="3.8"/>
+                    <line x1="558" y1="2" x2="558" y2="26" stroke-width="3.2"/>
+                    <line x1="590" y1="1" x2="590" y2="27" stroke-width="2.5"/>
+                    <line x1="615" y1="3" x2="615" y2="25" stroke-width="2.2"/>
+                    <line x1="645" y1="2" x2="645" y2="26" stroke-width="3"/>
+                    <line x1="672" y1="4" x2="672" y2="24" stroke-width="3.5"/>
+                    <line x1="705" y1="3" x2="705" y2="25" stroke-width="3.8"/>
+                    <line x1="738" y1="1" x2="738" y2="27" stroke-width="4"/>
+                    <line x1="790" y1="4" x2="790" y2="24" stroke-width="2.5"/>
+                    <line x1="828" y1="3" x2="828" y2="25" stroke-width="2.8"/>
+                    <line x1="865" y1="8" x2="865" y2="20" stroke-width="2.2"/>
+                    <line x1="900" y1="6" x2="900" y2="22" stroke-width="2.6"/>
+                    <line x1="980" y1="4" x2="980" y2="24" stroke-width="3.5"/>
+                    <line x1="1040" y1="6" x2="1040" y2="22" stroke-width="3.8"/>
+                    <line x1="1095" y1="7" x2="1095" y2="21" stroke-width="3.5"/>
+                    <line x1="1160" y1="9" x2="1160" y2="19" stroke-width="4"/>
+                </g>
+            </svg>
+        </div>
+        <div class="td-container">
+            <div class="footer-grid">
+                <div class="footer-brand-col">
+                    <a href="index.html" class="brand" style="color:white;text-decoration:none;font-family:var(--td-font-headings);font-weight:700;font-size:1.15rem;display:inline-flex;align-items:center;gap:0.6rem;">
+                        <img src="../images/logo.svg" alt="" class="brand-logo" style="width:56px;height:56px;">
+                        Enawenê-Nawê
+                    </a>
+                    <p class="footer-brand-desc">Plataforma dedicada à preservação, documentação e valorização dos saberes linguísticos e culturais do povo Enawenê-Nawê.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Navegação</h4>
+                    <ul class="footer-links">
+                        <li><a href="dictionary.html">Dicionário</a></li>
+                        <li><a href="encyclopedia.html">Enciclopédia</a></li>
+                        <li><a href="fauna.html">Fauna</a></li>
+                        <li><a href="ethnobotany.html">Etnobotânica</a></li>
+                        <li><a href="bibliography.html">Bibliografia</a></li>
+                        <li><a href="corpus.html">Corpus</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contato</h4>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">&#9906;</span>
+                        <span>Mato Grosso, Brasil</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Gerado com <a href="https://pypi.org/project/terradoc/">terradoc</a>, <a href="https://pypi.org/project/aptoro/">aptoro</a> &amp; <a href="https://pypi.org/project/kodudo/">kodudo</a></p>
+                <p></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/common.js"></script>
+    <script>
+    var T = {"articles_label": "verbetes", "bib_empty_text": "Digite um autor, t\u00edtulo ou ano para come\u00e7ar", "bib_empty_title": "Pesquise a bibliografia", "bib_filter_all": "Todos os tipos", "bib_no_results": "Nenhum resultado", "bib_no_results_hint": "Tente um autor, t\u00edtulo ou ano diferente", "bib_overflow": "Mostrando 100 de {n} resultados. Refine sua busca.", "bib_result_plural": "refer\u00eancias encontradas", "bib_result_singular": "refer\u00eancia encontrada", "bib_search_placeholder": "Pesquisar (autor, t\u00edtulo, ano)...", "bib_title": "Bibliografia Enawen\u00ea-Naw\u00ea", "card_bibliography_desc": "Refer\u00eancias bibliogr\u00e1ficas sobre a l\u00edngua, cultura e hist\u00f3ria do povo Enawen\u00ea-Naw\u00ea.", "card_bibliography_label": "refer\u00eancias", "card_bibliography_title": "Bibliografia", "card_corpus_desc": "Corpus lingu\u00edstico com textos anotados e traduzidos na l\u00edngua Enawen\u00ea-Naw\u00ea.", "card_corpus_label": "textos", "card_corpus_title": "Corpus", "card_cta": "Explorar", "card_dictionary_desc": "Palavras e express\u00f5es da l\u00edngua Enawen\u00ea-Naw\u00ea com tradu\u00e7\u00e3o para Portugu\u00eas, transcri\u00e7\u00e3o fon\u00e9tica e exemplos.", "card_dictionary_label": "entradas", "card_dictionary_title": "Dicion\u00e1rio", "card_encyclopedia_desc": "Verbetes sobre cultura, rituais, organiza\u00e7\u00e3o social e conhecimentos tradicionais do povo Enawen\u00ea-Naw\u00ea.", "card_encyclopedia_label": "verbetes", "card_encyclopedia_title": "Enciclop\u00e9dia", "card_ethnobotany_desc": "Plantas utilizadas pelo povo Enawen\u00ea-Naw\u00ea com nomes na l\u00edngua, usos tradicionais, fam\u00edlias bot\u00e2nicas e imagens.", "card_ethnobotany_label": "plantas", "card_ethnobotany_title": "Etnobot\u00e2nica", "card_fauna_desc": "Nomes de animais na l\u00edngua Enawen\u00ea-Naw\u00ea com classifica\u00e7\u00e3o tradicional, nomes cient\u00edficos e imagens.", "card_fauna_label": "esp\u00e9cies", "card_fauna_title": "Fauna", "card_recordings_desc": "Corpus sonoro com grava\u00e7\u00f5es de palavras e express\u00f5es na l\u00edngua Enawen\u00ea-Naw\u00ea.", "card_recordings_label": "grava\u00e7\u00f5es", "card_recordings_title": "Grava\u00e7\u00f5es", "card_videos_desc": "Registros em v\u00eddeo de rituais, cerim\u00f4nias e pr\u00e1ticas culturais do povo Enawen\u00ea-Naw\u00ea hospedados no YouTube.", "card_videos_label": "v\u00eddeos", "card_videos_title": "V\u00eddeos", "corpus_no_results": "Nenhum resultado", "corpus_result_plural": "textos encontrados", "corpus_result_singular": "texto encontrado", "corpus_search_placeholder": "Pesquisar no corpus...", "corpus_select_hint": "Selecione um texto para ver os detalhes", "corpus_title": "Corpus Enawen\u00ea-Naw\u00ea", "dict_all_pos": "Todas as classes", "dict_browse_hint": "Selecione uma entrada para ver os detalhes", "dict_empty_text": "Digite uma palavra em Enawen\u00ea-Naw\u00ea ou Portugu\u00eas para come\u00e7ar", "dict_empty_title": "Pesquise no dicion\u00e1rio", "dict_filter_all": "Todas as classes", "dict_loading": "Carregando dicion\u00e1rio...", "dict_no_results": "Nenhum resultado", "dict_no_results_hint": "Tente uma palavra diferente ou altere o filtro", "dict_overflow": "Mostrando 100 de {n} resultados. Refine sua busca.", "dict_result_plural": "resultados encontrados", "dict_result_singular": "resultado encontrado", "dict_scientific_name": "Nome cient\u00edfico", "dict_search_placeholder": "Pesquisar (Enawen\u00ea-Naw\u00ea ou Portugu\u00eas)...", "dict_title": "Dicion\u00e1rio Enawen\u00ea-Naw\u00ea", "enc_back_to_index": "Voltar \u00e0 enciclop\u00e9dia", "enc_breadcrumb_label": "Navega\u00e7\u00e3o", "enc_browse_categories": "Navegar por categorias", "enc_categories": "Categorias", "enc_collapse": "Clique para recolher", "enc_empty_text": "Digite um termo para come\u00e7ar", "enc_empty_title": "Pesquise na enciclop\u00e9dia", "enc_entry_type": "Tipo", "enc_examples": "Exemplos", "enc_external_link": "Ver refer\u00eancia externa", "enc_featured_title": "Verbete em destaque", "enc_filter_all": "Todas as categorias", "enc_filter_uncategorized": "Sem categoria", "enc_graph_all": "Todos", "enc_graph_legend_category": "Categoria", "enc_graph_legend_entry": "Verbete", "enc_graph_title": "Mapa de conex\u00f5es", "enc_highlights_title": "Verbetes ilustrados", "enc_last_updated": "\u00daltima atualiza\u00e7\u00e3o", "enc_loading": "Carregando enciclop\u00e9dia...", "enc_more_images": "Mais imagens", "enc_no_results": "Nenhum resultado", "enc_no_results_hint": "Tente um termo diferente ou altere o filtro", "enc_overflow": "Mostrando 100 de {n} resultados. Refine sua busca.", "enc_read_more": "Ler mais", "enc_references": "Refer\u00eancias", "enc_result_plural": "verbetes encontrados", "enc_result_singular": "verbete encontrado", "enc_search_placeholder": "Pesquisar na enciclop\u00e9dia...", "enc_see_also": "Ver tamb\u00e9m", "enc_title": "Enciclop\u00e9dia Enawen\u00ea-Naw\u00ea", "enc_toc_title": "Conte\u00fado", "enc_variants": "Variantes", "enc_welcome_text": "Enciclop\u00e9dia dedicada \u00e0 preserva\u00e7\u00e3o e documenta\u00e7\u00e3o dos saberes culturais, lingu\u00edsticos e etnogr\u00e1ficos do povo Enawen\u00ea-Naw\u00ea.", "entries_label": "entradas", "ethnobotany_category_uncategorized": "Sem fam\u00edlia", "ethnobotany_detail_abundance": "Abund\u00e2ncia", "ethnobotany_detail_environment": "Ambiente", "ethnobotany_detail_family": "Fam\u00edlia bot\u00e2nica", "ethnobotany_detail_fruiting": "Frutifica\u00e7\u00e3o", "ethnobotany_detail_usage": "Uso (Enawen\u00ea-Naw\u00ea)", "ethnobotany_detail_usage_pt": "Descri\u00e7\u00e3o do uso", "ethnobotany_filter_all": "Todas as fam\u00edlias", "ethnobotany_no_results": "Nenhum resultado", "ethnobotany_no_results_hint": "Tente um nome diferente ou altere o filtro", "ethnobotany_result_plural": "plantas encontradas", "ethnobotany_result_singular": "planta encontrada", "ethnobotany_search_placeholder": "Pesquisar (Enawen\u00ea-Naw\u00ea, Portugu\u00eas ou nome cient\u00edfico)...", "ethnobotany_select_hint": "Clique em uma planta para ver os detalhes", "ethnobotany_title": "Etnobot\u00e2nica Enawen\u00ea-Naw\u00ea", "fauna_category_uncategorized": "Sem classifica\u00e7\u00e3o", "fauna_detail_classification": "Classifica\u00e7\u00e3o Enawen\u00ea-Naw\u00ea", "fauna_detail_family": "Fam\u00edlia", "fauna_empty_text": "Digite um nome em Enawen\u00ea-Naw\u00ea, Portugu\u00eas ou cient\u00edfico para come\u00e7ar", "fauna_empty_title": "Pesquise a fauna", "fauna_family": "Fam\u00edlia", "fauna_filter_all": "Todas as categorias", "fauna_no_results": "Nenhum resultado", "fauna_no_results_hint": "Tente um nome diferente ou altere o filtro", "fauna_overflow": "Mostrando 100 de {n} resultados. Refine sua busca.", "fauna_result_plural": "esp\u00e9cies encontradas", "fauna_result_singular": "esp\u00e9cie encontrada", "fauna_search_placeholder": "Pesquisar (Enawen\u00ea-Naw\u00ea, Portugu\u00eas ou nome cient\u00edfico)...", "fauna_select_hint": "Clique em um animal para ver os detalhes", "fauna_title": "Fauna Enawen\u00ea-Naw\u00ea", "filter_label": "Filtrar resultados", "footer_and": "e", "footer_contact_heading": "Contato", "footer_credits": "Gerado com aptoro \u0026 kodudo", "footer_description": "Plataforma dedicada \u00e0 preserva\u00e7\u00e3o, documenta\u00e7\u00e3o e valoriza\u00e7\u00e3o dos saberes lingu\u00edsticos e culturais do povo Enawen\u00ea-Naw\u00ea.", "footer_email": "", "footer_generated": "Gerado com", "footer_license": "", "footer_location": "Mato Grosso, Brasil", "footer_nav_heading": "Navega\u00e7\u00e3o", "footer_resources_heading": "Recursos", "footer_text": "", "html_lang": "pt-BR", "index_about_cite": "TRESOLDI, T. Enawen\u00ea-Naw\u00ea: Darakala Kakwali [plataforma digital]. 2025. Dispon\u00edvel em: https://plataformasindigenas.github.io/enawenenawe/", "index_about_cite_title": "Como citar", "index_about_p1": "\u003cstrong\u003eEnawen\u00ea-Naw\u00ea\u003c/strong\u003e \u00e9 uma plataforma dedicada \u00e0 preserva\u00e7\u00e3o, documenta\u00e7\u00e3o e valoriza\u00e7\u00e3o dos saberes lingu\u00edsticos e culturais do povo Enawen\u00ea-Naw\u00ea.", "index_about_p2": "Este reposit\u00f3rio re\u00fane uma variedade de recursos lingu\u00edsticos e etnogr\u00e1ficos, tanto hist\u00f3ricos quanto contempor\u00e2neos, com o objetivo de apoiar o ensino, a pesquisa e os esfor\u00e7os de revitaliza\u00e7\u00e3o da l\u00edngua Enawen\u00ea-Naw\u00ea. A plataforma oferece um conjunto de ferramentas voltadas para o estudo lingu\u00edstico e antropol\u00f3gico.", "index_about_partners_title": "Parceiros", "index_about_subtitle": "Conhe\u00e7a a plataforma", "index_about_title": "Sobre o Projeto", "index_about_who_title": "Quem somos", "index_gallery_subtitle": "Registros visuais e sonoros da cultura Enawen\u00ea-Naw\u00ea", "index_gallery_title": "Imagens \u0026 Sons", "index_hero_cta": "Explorar", "index_hero_subtitle": "Plataforma dedicada \u00e0 preserva\u00e7\u00e3o, documenta\u00e7\u00e3o e valoriza\u00e7\u00e3o dos saberes lingu\u00edsticos e culturais do povo Enawen\u00ea-Naw\u00ea.", "index_hero_tagline": "Darakala Kakwali", "index_hero_title": "Enawen\u00ea-Naw\u00ea", "index_quote": "A l\u00edngua \u00e9 o esp\u00edrito do povo. Preservar a l\u00edngua \u00e9 preservar a alma de uma cultura.", "index_quote_attribution": "", "index_sections_title": "Explorar", "index_title": "In\u00edcio", "index_view_all_dictionary": "Ver dicion\u00e1rio", "index_view_all_encyclopedia": "Ver enciclop\u00e9dia", "index_view_all_fauna": "Ver fauna", "index_view_all_videos": "Ver v\u00eddeos", "infobox_cl\u00e3": "Cl\u00e3", "infobox_coordenadas": "Coordenadas", "infobox_dura\u00e7\u00e3o": "Dura\u00e7\u00e3o", "infobox_esta\u00e7\u00e3o": "Esta\u00e7\u00e3o", "infobox_fam\u00edlia": "Fam\u00edlia", "infobox_fun\u00e7\u00e3o": "Fun\u00e7\u00e3o", "infobox_fun\u00e7\u00f5es": "Fun\u00e7\u00f5es", "infobox_habitat": "Habitat", "infobox_local": "Local", "infobox_material": "Material", "infobox_membros": "Membros", "infobox_nome_cient\u00edfico": "Nome cient\u00edfico", "infobox_papel": "Papel", "infobox_participantes": "Participantes", "infobox_per\u00edodo": "Per\u00edodo", "infobox_regi\u00e3o": "Regi\u00e3o", "infobox_rela\u00e7\u00f5es": "Rela\u00e7\u00f5es", "infobox_rio": "Rio", "infobox_tipo": "Tipo", "infobox_usos": "Usos", "lang_switch_label": "Seletor de idioma", "nav_bibliography": "Bibliografia", "nav_brand": "Enawen\u00ea-Naw\u00ea", "nav_corpus": "Corpus", "nav_dictionary": "Dicion\u00e1rio", "nav_encyclopedia": "Enciclop\u00e9dia", "nav_ethnobotany": "Etnobot\u00e2nica", "nav_fauna": "Fauna", "nav_label": "Navega\u00e7\u00e3o principal", "nav_menu_label": "Menu", "nav_recordings": "Grava\u00e7\u00f5es", "nav_videos": "V\u00eddeos", "pos_ADV": "Adv\u00e9rbio", "pos_CONJ": "Conjun\u00e7\u00e3o", "pos_DEM": "Demonstrativo", "pos_INTJ": "Interjei\u00e7\u00e3o", "pos_IP": "IP", "pos_LEX": "Lexema", "pos_NUM": "Numeral", "pos_POSP": "Posposi\u00e7\u00e3o", "pos_PPART": "Part\u00edcula", "pos_PPAS": "Part. Pass.", "pos_PPASS": "Part. Pass.", "pos_PRCL": "Part\u00edcula", "pos_PRON": "Pronome", "pos_PROPN": "Nome Pr\u00f3prio", "pos_S": "Substantivo", "pos_SUF": "Sufixo", "pos_V": "Verbo", "pos_VC": "Verbo Causativo", "pos_VT": "Verbo Trans.", "pos_X": "Outro", "rec_col_audio": "\u00c1udio", "rec_col_date": "Data", "rec_col_match": "Match", "rec_col_speaker": "Falante", "rec_col_word": "Palavra", "rec_count_label": "grava\u00e7\u00f5es", "rec_filter_format": "Formato", "rec_filter_match": "Tipo de match", "rec_filter_speaker": "Falante", "rec_filters_title": "Filtros", "rec_no_results": "Nenhuma grava\u00e7\u00e3o encontrada", "rec_overflow": "Mostrando 200 de {n} grava\u00e7\u00f5es. Refine sua busca.", "rec_search_placeholder": "Pesquisar grava\u00e7\u00f5es...", "rec_subtitle": "Registros sonoros da l\u00edngua Enawen\u00ea-Naw\u00ea", "rec_title": "Corpus de Grava\u00e7\u00f5es", "references_label": "refer\u00eancias", "search_label": "Pesquisar", "see_also": "Ver tamb\u00e9m", "see_in_dictionary": "Ver no Dicion\u00e1rio", "see_in_encyclopedia": "Ver na Enciclop\u00e9dia", "see_in_fauna": "Ver na Fauna", "skip_link": "Pular para conte\u00fado", "species_label": "esp\u00e9cies", "stat_bibliography_entries": "refer\u00eancias", "stat_corpus_entries": "textos", "stat_dictionary_entries": "entradas", "stat_encyclopedia_entries": "verbetes", "stat_ethnobotany_entries": "plantas", "stat_fauna_entries": "esp\u00e9cies", "stat_recordings_entries": "grava\u00e7\u00f5es", "stat_videos_entries": "v\u00eddeos", "vid_count_label": "v\u00eddeos", "vid_filter_all": "Todas as categorias", "vid_subtitle": "Registros em v\u00eddeo da cultura Enawen\u00ea-Naw\u00ea", "vid_title": "V\u00eddeos", "vid_watch": "Assistir no YouTube"};
+
+    function formatAuthors(author) {
+        if (!author) return '';
+        return author.replace(/\s+and\s+/g, ', ');
+    }
+
+    initSearchPage({
+        data: [{"address": "Rio de Janeiro", "author": "Rezende, Uiara Barros", "booktitle": null, "doi": null, "editor": null, "id": "Rezende2003", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": "Universidade Federal do Rio de Janeiro", "title": "Fon\u00e9tica e fonologia da l\u00edngua {Enawene-Nawe} ({Aru\u00e1k})", "type": "mastersthesis", "url": null, "volume": null, "year": "2003"}, {"address": "Rio de Janeiro", "author": "Rezende, Uiara Barros", "booktitle": null, "doi": null, "editor": null, "id": "Rezende2013", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": "Universidade Federal do Rio de Janeiro", "title": "Aspectos da gram\u00e1tica da l\u00edngua {Enawene-Nawe} ({Aru\u00e1k})", "type": "phdthesis", "url": null, "volume": null, "year": "2013"}, {"address": null, "author": "Brand\u00e3o, Ana Paula Barros", "booktitle": null, "doi": null, "editor": null, "id": "Brandao2020", "journal": "Revista de Letras Norte@mentos", "note": null, "number": "33", "pages": "208--227", "publisher": null, "school": null, "title": "G\u00eanero gramatical em {Enawene Nawe} ({Aruak})?", "type": "article", "url": null, "volume": "13", "year": "2020"}, {"address": null, "author": "Brand\u00e3o, Ana Paula Barros", "booktitle": null, "doi": null, "editor": null, "id": "Brandao2022", "journal": "Cadernos de Etnolingu\u00edstica", "note": null, "number": "1", "pages": null, "publisher": null, "school": null, "title": "Sistemas de Classifica\u00e7\u00e3o Nominal em {Enawene Nawe} ({Aruak})", "type": "article", "url": null, "volume": "10", "year": "2022"}, {"address": null, "author": "Brand\u00e3o, Ana Paula Barros and Zezokiware", "booktitle": null, "doi": null, "editor": null, "id": "Brandao2018", "journal": "MOARA", "note": null, "number": "1", "pages": "87ff", "publisher": null, "school": null, "title": "A documenta\u00e7\u00e3o participativa: o caso das l\u00ednguas {Paresi-Haliti} e {Enawene Nawe}", "type": "article", "url": null, "volume": null, "year": "2018"}, {"address": null, "author": "Brand\u00e3o, Ana Paula Barros and Epps, Patience and Kung, Susan Smythe and Moore, Denny and O\u0027Hagan, Zachary and Roses Labrada, Jorge Emilio", "booktitle": null, "doi": "10.25189/2675-4916.2023.v4.n1.id666", "editor": null, "id": "Brandao2023", "journal": "Cadernos de Lingu\u00edstica", "note": null, "number": "1", "pages": null, "publisher": null, "school": null, "title": "Archiving and Language Documentation", "type": "article", "url": null, "volume": "4", "year": "2023"}, {"address": null, "author": "Brand\u00e3o, Ana Paula Barros", "booktitle": null, "doi": null, "editor": null, "id": "Brandao2019", "journal": null, "note": "2019--2020", "number": null, "pages": null, "publisher": null, "school": null, "title": "Language documentation of the {Enawene Nawe} ({Arawak})", "type": "misc", "url": null, "volume": null, "year": "2019"}, {"address": null, "author": "Nahum-Claudel, Chloe", "booktitle": null, "doi": null, "editor": null, "id": "NahumClaudel2018", "journal": null, "note": null, "number": null, "pages": null, "publisher": "Berghahn Books", "school": null, "title": "Vital Diplomacy: The Ritual Everyday on a Dammed River in {Amazonia}", "type": "book", "url": null, "volume": null, "year": "2018"}, {"address": null, "author": "Nahum-Claudel, Chloe", "booktitle": null, "doi": "10.1111/j.1469-8676.2012.00220.x", "editor": null, "id": "NahumClaudel2012", "journal": "Social Anthropology", "note": null, "number": "4", "pages": null, "publisher": null, "school": null, "title": "{Enawene-nawe} ``potlatch against the state\u0027\u0027", "type": "article", "url": null, "volume": "20", "year": "2012"}, {"address": null, "author": "Nahum-Claudel, Chloe", "booktitle": null, "doi": null, "editor": null, "id": "NahumClaudel2016", "journal": "Journal of Latin American and Caribbean Anthropology", "note": null, "number": "3", "pages": "478--496", "publisher": null, "school": null, "title": "The To and Fro of Documents", "type": "article", "url": null, "volume": "21", "year": "2016"}, {"address": null, "author": "Nahum-Claudel, Chloe", "booktitle": null, "doi": "10.1177/1359183519828767", "editor": null, "id": "NahumClaudel2019a", "journal": "Journal of Material Culture", "note": null, "number": "4", "pages": "473--490", "publisher": null, "school": null, "title": "From Mastery to Subjection", "type": "article", "url": null, "volume": "24", "year": "2019"}, {"address": null, "author": "Nahum-Claudel, Chloe", "booktitle": "The Culture of Invention in the Americas", "doi": null, "editor": "Pitarch, Pedro and Kelly, Jos\u00e9 Antonio", "id": "NahumClaudel2019b", "journal": null, "note": null, "number": null, "pages": "211--233", "publisher": "Sean Kingston Publishing", "school": null, "title": "The Curse of Souw among the {Amazonian} {Enawene-nawe}", "type": "incollection", "url": null, "volume": null, "year": "2019"}, {"address": null, "author": "Nahum-Claudel, Chloe and Petesch, Nathalie and Yvinec, C\u00e9dric", "booktitle": null, "doi": null, "editor": null, "id": "NahumClaudel2017", "journal": "Journal de la Soci\u00e9t\u00e9 des am\u00e9ricanistes", "note": null, "number": "2", "pages": "47--80", "publisher": null, "school": null, "title": "Pourquoi filmer sa culture?", "type": "article", "url": null, "volume": "103", "year": "2017"}, {"address": null, "author": "Silva, Marcio Ferreira da", "booktitle": null, "doi": null, "editor": null, "id": "Silva1998a", "journal": "Revista de Antropologia", "note": null, "number": "2", "pages": "21--52", "publisher": "Universidade de S\u00e3o Paulo", "school": null, "title": "Tempo e espa\u00e7o entre os {Enawene Nawe}", "type": "article", "url": null, "volume": "41", "year": "1998"}, {"address": null, "author": "Silva, Marcio Ferreira da", "booktitle": null, "doi": null, "editor": null, "id": "Silva1998b", "journal": "Sexta Feira", "note": null, "number": "2", "pages": "162--173", "publisher": null, "school": null, "title": "Masculino e feminino entre os {Enewene-Nawe}", "type": "article", "url": null, "volume": null, "year": "1998"}, {"address": null, "author": "Silva, Marcio Ferreira da", "booktitle": null, "doi": "10.20947/S0102-30982016a0030", "editor": null, "id": "Silva2016", "journal": "Revista Brasileira de Estudos de Popula\u00e7\u00e3o", "note": null, "number": "2", "pages": "349--373", "publisher": null, "school": null, "title": "Demografia e antropologia em contraponto", "type": "article", "url": null, "volume": "33", "year": "2016"}, {"address": null, "author": "Silva, Marcio Ferreira da", "booktitle": null, "doi": "10.11606/1678-9857.ra.2022.195922", "editor": null, "id": "Silva2022", "journal": "Revista de Antropologia", "note": null, "number": "3", "pages": "e195922", "publisher": null, "school": null, "title": "Um sistema iroqu\u00eas amaz\u00f4nico", "type": "article", "url": null, "volume": "65", "year": "2022"}, {"address": null, "author": "Santos, Gilton Mendes dos and Antonini, Yasmine", "booktitle": null, "doi": "10.1186/1746-4269-4-19", "editor": null, "id": "Santos2008", "journal": "Journal of Ethnobiology and Ethnomedicine", "note": null, "number": null, "pages": "19", "publisher": null, "school": null, "title": "Traditional knowledge on stingless bees used by the {Enawene-Nawe}", "type": "article", "url": null, "volume": "4", "year": "2008"}, {"address": "Campinas", "author": "Santos, Gilton Mendes dos", "booktitle": null, "doi": null, "editor": null, "id": "Santos2001", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": "Universidade Estadual de Campinas", "title": "Seara de homens e deuses", "type": "mastersthesis", "url": null, "volume": null, "year": "2001"}, {"address": "S\u00e3o Paulo", "author": "Santos, Gilton Mendes dos", "booktitle": null, "doi": null, "editor": null, "id": "Santos2006", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": "Universidade de S\u00e3o Paulo", "title": "Da cultura \u00e0 natureza", "type": "phdthesis", "url": null, "volume": null, "year": "2006"}, {"address": "Rio de Janeiro", "author": "Weiss, Marcos Cesar Lopes", "booktitle": null, "doi": null, "editor": null, "id": "Weiss1998", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": "Escola Nacional de Sa\u00fade P\u00fablica, Fiocruz", "title": "Contato inter\u00e9tnico, perfil de sa\u00fade e doen\u00e7a", "type": "phdthesis", "url": null, "volume": null, "year": "1998"}, {"address": "S\u00e3o Paulo", "author": "Jakubaszko, Andrea", "booktitle": null, "doi": null, "editor": null, "id": "Jakubaszko2003", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": "Pontif\u00edcia Universidade Cat\u00f3lica de S\u00e3o Paulo", "title": "Imagens da alteridade", "type": "mastersthesis", "url": null, "volume": null, "year": "2003"}, {"address": "Cuiab\u00e1", "author": "Zorth\u00eaa, K\u00e1tia Silene", "booktitle": null, "doi": null, "editor": null, "id": "Zorthea2006", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": "Universidade Federal de Mato Grosso", "title": "Daraiti aha: Escrita alfab\u00e9tica entre os {Enawene Nawe}", "type": "mastersthesis", "url": null, "volume": null, "year": "2006"}, {"address": "Salvador", "author": "Souza, Ivanilton Jos\u00e9 de", "booktitle": null, "doi": null, "editor": null, "id": "Souza2011", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": "Universidade Federal da Bahia", "title": "Sociocosmologia do Espa\u00e7o {Enawene Nawe}", "type": "mastersthesis", "url": null, "volume": null, "year": "2011"}, {"address": null, "author": "Carvalho, Luciana Aparecida de", "booktitle": null, "doi": null, "editor": null, "id": "Carvalho2014", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": "Universidade Estadual de Mato Grosso do Sul", "title": "O ensino de Ci\u00eancias e a Educa\u00e7\u00e3o em Sa\u00fade na escolariza\u00e7\u00e3o dos {Enawene Nawe}", "type": "mastersthesis", "url": null, "volume": null, "year": "2014"}, {"address": "S\u00e3o Paulo", "author": "Lisboa, Thomaz de Aquino", "booktitle": null, "doi": null, "editor": null, "id": "Lisboa1985", "journal": null, "note": null, "number": null, "pages": null, "publisher": "Loyola", "school": null, "title": "Os {Enauene-Naue}: primeiros contatos", "type": "book", "url": null, "volume": null, "year": "1985"}, {"address": "Cuiab\u00e1", "author": "Santos, Gilton Mendes dos and Silva, Marcio Ferreira da and Costa Junior, Pl\u00e1cido Lopes da", "booktitle": null, "doi": null, "editor": null, "id": "Santos1995", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": null, "title": "Estudo das potencialidades e do manejo dos recursos naturais na {\u00c1rea Ind\u00edgena Enawene-Nawe}", "type": "techreport", "url": null, "volume": null, "year": "1995"}, {"address": null, "author": "{UNESCO}", "booktitle": null, "doi": null, "editor": null, "id": "UNESCO2011", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": null, "title": "Yaokwa, the {Enawene Nawe} people\u0027s ritual", "type": "misc", "url": null, "volume": null, "year": "2011"}, {"address": "Bras\u00edlia", "author": "{IPHAN}", "booktitle": null, "doi": null, "editor": null, "id": "IPHAN2018", "journal": null, "note": null, "number": null, "pages": null, "publisher": "IPHAN", "school": null, "title": "Dossi\u00ea {IPHAN} 18 -- Ritual {Yaokwa} do Povo Ind\u00edgena {Enawene Nawe}", "type": "book", "url": null, "volume": null, "year": "2018"}, {"address": null, "author": "Valad\u00e3o, Virg\u00ednia", "booktitle": null, "doi": null, "editor": null, "id": "Valadao1995", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": null, "title": "Y\u00e3kwa: o banquete dos esp\u00edritos", "type": "misc", "url": null, "volume": null, "year": "1995"}, {"address": null, "author": "Carelli, Vincent and Campoli, Fausto", "booktitle": null, "doi": null, "editor": null, "id": "Carelli2009", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": null, "title": "Yaokwa -- Um patrim\u00f4nio amea\u00e7ado", "type": "misc", "url": null, "volume": null, "year": "2009"}, {"address": null, "author": "Carelli, Vincent and Carelli, Ernesto de", "booktitle": null, "doi": null, "editor": null, "id": "Carelli2020", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": null, "title": "Yaokwa: Imagem e Mem\u00f3ria", "type": "misc", "url": null, "volume": null, "year": "2020"}, {"address": null, "author": "Fernandez, Ros\u00e1lia", "booktitle": null, "doi": null, "editor": null, "id": "Fernandez1995", "journal": null, "note": null, "number": null, "pages": null, "publisher": null, "school": null, "title": "Br\u00e9sil: {Enauene-Naue} et {Nhambiquara} du {Mato Grosso}", "type": "misc", "url": null, "volume": null, "year": "1995"}],
+        fuseKeys: [
+            { name: 'author', weight: 2 },
+            { name: 'title', weight: 1.5 },
+            { name: 'year', weight: 1 },
+            { name: 'journal', weight: 0.5 },
+            { name: 'booktitle', weight: 0.5 },
+            { name: 'publisher', weight: 0.3 },
+            { name: 'note', weight: 0.3 }
+        ],
+        filterField: 'type',
+        filterElementId: 'type-filter',
+        renderEntry: function(entry, matchMap) {
+            var html = '<div class="entry">';
+
+            html += '<div class="entry-header">';
+            html += '<span class="entry-word">' + escapeHtml(entry.id) + '</span>';
+            if (entry.type) {
+                html += '<span class="entry-tag">' + escapeHtml(entry.type) + '</span>';
+            }
+            html += '</div>';
+
+            if (entry.author) {
+                html += '<p class="entry-definition">' + highlightMatches(formatAuthors(entry.author), matchMap['author']) + '</p>';
+            }
+            if (entry.title) {
+                html += '<p class="entry-example">' + highlightMatches(entry.title, matchMap['title']) + '</p>';
+            }
+
+            var metaParts = [];
+            if (entry.year) metaParts.push(highlightMatches(entry.year, matchMap['year']));
+            if (entry.journal) metaParts.push('<em>' + highlightMatches(entry.journal, matchMap['journal']) + '</em>');
+            if (entry.volume && entry.number) metaParts.push('v. ' + highlightMatches(entry.volume, matchMap['volume']) + ', n. ' + highlightMatches(entry.number, matchMap['number']));
+            if (entry.pages) metaParts.push('p. ' + highlightMatches(entry.pages, matchMap['pages']));
+            if (entry.publisher) metaParts.push(highlightMatches(entry.publisher, matchMap['publisher']));
+            if (entry.address) metaParts.push(highlightMatches(entry.address, matchMap['address']));
+
+            if (metaParts.length > 0) {
+                html += '<p class="entry-scientific">' + metaParts.join(', ') + '</p>';
+            }
+
+            if (entry.doi) {
+                html += '<div class="entry-links">';
+                html += '<a href="https://doi.org/' + escapeHtml(entry.doi) + '" target="_blank" rel="noopener">DOI: ' + escapeHtml(entry.doi) + '</a>';
+                html += '</div>';
+            } else if (entry.url) {
+                html += '<div class="entry-links">';
+                html += '<a href="' + escapeHtml(entry.url) + '" target="_blank" rel="noopener">' + escapeHtml(entry.url) + '</a>';
+                html += '</div>';
+            }
+
+            if (entry.note && !entry.note.includes('Source list item')) {
+                html += '<div class="entry-comment">' + highlightMatches(entry.note, matchMap['note']) + '</div>';
+            }
+            if (entry.note && entry.note.includes('Source list item')) {
+                html += '<p class="entry-scientific">' + escapeHtml(entry.note) + '</p>';
+            }
+
+            html += '</div>';
+            return html;
+        },
+        labels: {
+            results: function(n) { return n !== 1 ? T.bib_result_plural : T.bib_result_singular; },
+            emptyTitle: T.bib_empty_title,
+            emptyText: T.bib_empty_text,
+            noResults: T.bib_no_results,
+            noResultsHint: T.bib_no_results_hint,
+            overflow: function(n) { return T.bib_overflow.replace('{n}', n); }
+        }
+    });
+    </script>
+</body>
+</html>
