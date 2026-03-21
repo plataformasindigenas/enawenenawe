@@ -1,34 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
   <defs>
-    <clipPath id="c">
-      <circle cx="100" cy="100" r="92"/>
-    </clipPath>
+    <clipPath id="c"><circle cx="50" cy="50" r="44"/></clipPath>
   </defs>
 
   <!-- Dark brown background -->
-  <circle cx="100" cy="100" r="95" fill="#2C1810"/>
+  <circle cx="50" cy="50" r="48" fill="#2C1810"/>
 
-  <!-- Golden border -->
-  <circle cx="100" cy="100" r="95" fill="none" stroke="#B8941A" stroke-width="5"/>
+  <!-- Gold border ring -->
+  <circle cx="50" cy="50" r="48" fill="none" stroke="#B8941A" stroke-width="7"/>
 
-  <!-- Waitiwina lattice: diagonal lines evoking the woven fishing dams -->
+  <!-- Waitiwina lattice: bold diagonal X -->
   <g clip-path="url(#c)">
-    <line x1="30" y1="30" x2="170" y2="170" stroke="#B8941A" stroke-width="2.5" opacity="0.7"/>
-    <line x1="70" y1="15" x2="190" y2="135" stroke="#B8941A" stroke-width="2.5" opacity="0.6"/>
-    <line x1="15" y1="70" x2="135" y2="190" stroke="#B8941A" stroke-width="2.5" opacity="0.6"/>
-    <line x1="110" y1="10" x2="195" y2="95" stroke="#B8941A" stroke-width="2.5" opacity="0.45"/>
-    <line x1="10" y1="110" x2="95" y2="195" stroke="#B8941A" stroke-width="2.5" opacity="0.45"/>
-
-    <line x1="170" y1="30" x2="30" y2="170" stroke="#B8941A" stroke-width="2.5" opacity="0.7"/>
-    <line x1="190" y1="70" x2="70" y2="190" stroke="#B8941A" stroke-width="2.5" opacity="0.6"/>
-    <line x1="135" y1="15" x2="15" y2="135" stroke="#B8941A" stroke-width="2.5" opacity="0.6"/>
-    <line x1="195" y1="110" x2="110" y2="190" stroke="#B8941A" stroke-width="2.5" opacity="0.45"/>
-    <line x1="95" y1="10" x2="10" y2="95" stroke="#B8941A" stroke-width="2.5" opacity="0.45"/>
+    <line x1="10" y1="10" x2="90" y2="90" stroke="#B8941A" stroke-width="5" opacity="0.7"/>
+    <line x1="90" y1="10" x2="10" y2="90" stroke="#B8941A" stroke-width="5" opacity="0.7"/>
   </g>
 
-  <!-- Yãkwa house: red triangle at center, larger -->
-  <path d="M100,48 L65,135 L135,135 Z" fill="#A83220"/>
-
-  <!-- Golden dot at peak -->
-  <circle cx="100" cy="48" r="5" fill="#B8941A"/>
+  <!-- Yãkwa house — red triangle -->
+  <path d="M50,24 L34,68 L66,68 Z" fill="#A83220"/>
 </svg>
