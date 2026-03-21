@@ -9,28 +9,26 @@
   <circle cx="100" cy="100" r="95" fill="#2C1810"/>
 
   <!-- Golden border -->
-  <circle cx="100" cy="100" r="95" fill="none" stroke="#C9A030" stroke-width="5"/>
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#D4B030" stroke-width="5"/>
 
   <!-- Waitiwina lattice: diagonal lines evoking the woven fishing dams -->
   <g clip-path="url(#c)">
-    <!-- Lines going top-left to bottom-right -->
-    <line x1="30" y1="30" x2="170" y2="170" stroke="#C9A030" stroke-width="2.5" opacity="0.7"/>
-    <line x1="70" y1="15" x2="190" y2="135" stroke="#C9A030" stroke-width="2.5" opacity="0.6"/>
-    <line x1="15" y1="70" x2="135" y2="190" stroke="#C9A030" stroke-width="2.5" opacity="0.6"/>
-    <line x1="110" y1="10" x2="195" y2="95" stroke="#C9A030" stroke-width="2.5" opacity="0.45"/>
-    <line x1="10" y1="110" x2="95" y2="195" stroke="#C9A030" stroke-width="2.5" opacity="0.45"/>
+    <line x1="30" y1="30" x2="170" y2="170" stroke="#D4B030" stroke-width="2.5" opacity="0.7"/>
+    <line x1="70" y1="15" x2="190" y2="135" stroke="#D4B030" stroke-width="2.5" opacity="0.6"/>
+    <line x1="15" y1="70" x2="135" y2="190" stroke="#D4B030" stroke-width="2.5" opacity="0.6"/>
+    <line x1="110" y1="10" x2="195" y2="95" stroke="#D4B030" stroke-width="2.5" opacity="0.45"/>
+    <line x1="10" y1="110" x2="95" y2="195" stroke="#D4B030" stroke-width="2.5" opacity="0.45"/>
 
-    <!-- Lines going top-right to bottom-left -->
-    <line x1="170" y1="30" x2="30" y2="170" stroke="#C9A030" stroke-width="2.5" opacity="0.7"/>
-    <line x1="190" y1="70" x2="70" y2="190" stroke="#C9A030" stroke-width="2.5" opacity="0.6"/>
-    <line x1="135" y1="15" x2="15" y2="135" stroke="#C9A030" stroke-width="2.5" opacity="0.6"/>
-    <line x1="195" y1="110" x2="110" y2="190" stroke="#C9A030" stroke-width="2.5" opacity="0.45"/>
-    <line x1="95" y1="10" x2="10" y2="95" stroke="#C9A030" stroke-width="2.5" opacity="0.45"/>
+    <line x1="170" y1="30" x2="30" y2="170" stroke="#D4B030" stroke-width="2.5" opacity="0.7"/>
+    <line x1="190" y1="70" x2="70" y2="190" stroke="#D4B030" stroke-width="2.5" opacity="0.6"/>
+    <line x1="135" y1="15" x2="15" y2="135" stroke="#D4B030" stroke-width="2.5" opacity="0.6"/>
+    <line x1="195" y1="110" x2="110" y2="190" stroke="#D4B030" stroke-width="2.5" opacity="0.45"/>
+    <line x1="95" y1="10" x2="10" y2="95" stroke="#D4B030" stroke-width="2.5" opacity="0.45"/>
   </g>
 
-  <!-- Yãkwa house: red triangle at center -->
-  <path d="M100,68 L78,120 L122,120 Z" fill="#A83220"/>
+  <!-- Yãkwa house: red triangle at center, larger -->
+  <path d="M100,48 L65,135 L135,135 Z" fill="#A83220"/>
 
   <!-- Golden dot at peak -->
-  <circle cx="100" cy="68" r="4" fill="#C9A030"/>
+  <circle cx="100" cy="48" r="5" fill="#D4B030"/>
 </svg>
