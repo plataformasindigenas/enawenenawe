@@ -49,7 +49,7 @@ theme:
   page_badge: "lattice"
   grain_pattern: "lattice"
   colors:
-    primary: "#B8941A"
+    primary: "#D4A81E"
     accent: "#A83220"
     accent_muted: "#8B2A1A"
     accent_light: "#FDEAE6"

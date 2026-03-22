@@ -302,3 +302,36 @@ rec_col_match: "Match"
 rec_col_audio: "Audio"
 rec_no_results: "No recordings found"
 rec_overflow: "Showing 200 of {n} recordings. Refine your search."
+
+# About page
+nav_about: "About"
+about_title: "Enawenê-Nawê"
+about_subtitle: "Digital platform for documentation and revitalization of the Enawenê-Nawê language and culture"
+about_mission_heading: "Mission"
+about_mission: >
+  <p>This platform is an initiative of the
+  <a href="https://portal.plataformasindigenas.org">Indigenous Languages Platform</a>
+  dedicated to the documentation, preservation, and revitalization of the language and
+  culture of the Enawenê-Nawê people, speakers of an Arawak family language in
+  northwestern Mato Grosso, Brazil.</p>
+  <p>Our goal is to make linguistic, ethnographic, and cultural materials available
+  in accessible digital formats, contributing to the strengthening of Enawenê-Nawê
+  identity and to research on Brazilian indigenous languages.</p>
+about_partners_heading: "Team & Partners"
+about_partners: >
+  <p>This project is developed in collaboration with:</p>
+  <p><strong>Unifacc</strong> — University center, institutional partner<br>
+  <strong>Salesian Mission of Mato Grosso</strong> — Historic partnership with indigenous peoples of the region<br>
+  <strong>Uppsala University</strong> — Support in computational linguistics and technology</p>
+about_contact_heading: "Contact"
+about_contact: >
+  <p>For more information about the project, collaborations, or contributions:</p>
+  <p><strong>Email:</strong> <a href="mailto:info@plataformasindigenas.org">info@plataformasindigenas.org</a><br>
+  <strong>Portal:</strong> <a href="https://portal.plataformasindigenas.org">portal.plataformasindigenas.org</a></p>
+about_citation_heading: "How to Cite"
+about_citation: "Indigenous Languages Platform. Digital Platform of the Enawenê-Nawê Language and Culture. Available at: https://enawenenawe.onrender.com. Accessed: 2026."
+about_tools_heading: "Technology"
+about_tools: "<p>This platform was built with open-source tools developed specifically for indigenous language documentation:</p>"
+about_tool_terradoc: "Site generation framework for indigenous language documentation"
+about_tool_aptoro: "Data conversion and processing pipeline"
+about_tool_kodudo: "Template rendering engine"
