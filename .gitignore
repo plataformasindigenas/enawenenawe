@@ -16,3 +16,9 @@ data/*.json
 uv.lock
 .python-version
 main.py
+
+# Build output
+docs/
+
+# Distribution
+*.egg-info/

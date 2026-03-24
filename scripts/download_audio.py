@@ -10,7 +10,7 @@ from pathlib import Path
 
 RAW_TSV = Path(__file__).resolve().parent.parent.parent / "boeenomoto" / "raw_dicionario.tsv"
 AUDIO_DIR = Path(__file__).resolve().parent.parent / "docs" / "audio"
-BASE_URL = "https://enawenenawe.pythonanywhere.com/dicionario/audio"
+BASE_URL = "https://enawenenawe.terradoc.org/dicionario/audio"
 
 
 def main():
