@@ -5,12 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../images/favicon.svg">
     <title>Home - Enawenê-Nawê</title>
+    <meta name="description" content="Língua, conhecimento e memória">
+    <meta property="og:title" content="Enawenê-Nawê - Enawenê-Nawê">
+    <meta property="og:description" content="Língua, conhecimento e memória">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/hero.jpeg">
+    <meta property="og:locale" content="en">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="../css/fonts.css">
     <link rel="stylesheet" href="../css/terradoc.css">
     <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
     <style>
         :root {
-            --td-color-primary: #C9A030;
+            --td-color-primary: #D4A81E;
             --td-color-accent: #A83220;
             --td-color-accent-muted: #8B2A1A;
             --td-color-bg: #FAF3E8;
@@ -20,7 +27,7 @@
             --td-color-border-dark: #C4B8A0;
             --td-color-text: #2C1810;
             --td-color-text-muted: #6B5E4F;
-            --td-color-highlight: #FFF8E1;
+            --td-color-highlight: #FFFAE5;
             --td-color-warning-bg: #FFF8E1;
             --td-color-surface: #FFFFFF;
             --td-color-border-light: #F0E8D8;
@@ -28,7 +35,7 @@
             --td-color-accent-light: #FDEAE6;
             --td-color-success: #4A7C59;
             --td-color-error: #A83220;
-            --td-color-accent-ring: rgba(201, 160, 48, 0.2);
+            --td-color-accent-ring: rgba(184, 148, 26, 0.25);
             --td-radius: 28px;
             --td-color-dark: #2C1810;
             --td-radius-lg: 28px;
@@ -39,6 +46,9 @@
             --td-term-color: #8B2A1A;
             --td-term-weight: 600;
             --td-color-gold: #D4A03A;
+        }
+        .td-style-terra::before {
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='0' y1='0' x2='24' y2='24' stroke='%23B8AFA2' stroke-width='0.4' opacity='0.3'/%3E%3Cline x1='24' y1='0' x2='0' y2='24' stroke='%23B8AFA2' stroke-width='0.4' opacity='0.3'/%3E%3C/svg%3E");
         }
         /* ── Hero ── */
         .index-hero {
@@ -195,59 +205,6 @@
             height: 100%;
         }
 
-        /* ── Hero background animations ── */
-        .hero-rings-bg-anim {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            shape-rendering: geometricPrecision;
-        }
-        .hero-rings-bg-anim circle,
-        .hero-rings-bg-anim rect {
-            fill: none;
-            vector-effect: non-scaling-stroke;
-            stroke-linecap: square;
-            stroke-linejoin: miter;
-            stroke-miterlimit: 2;
-            paint-order: stroke;
-        }
-        .hero-rings-bg-anim circle { stroke-width: 3; }
-        .hero-rings-bg-anim rect { stroke-width: 2.6; }
-        .hr-red { stroke: var(--td-color-primary); }
-        .hr-dark { stroke: var(--td-color-dark, #0B0F17); }
-        .hr-dash-bead {
-            stroke-dasharray: 4 18 2 26 6 20 3 30;
-            stroke-linecap: square;
-            stroke-dashoffset: 5;
-        }
-        .hr-dash-feather {
-            stroke-dasharray: 26 30 12 44 18 28;
-            stroke-linecap: round;
-            stroke-dashoffset: 11;
-        }
-        .hr-dash-trace {
-            stroke-dasharray: 14 40 4 22 10 48 6 34;
-            stroke-linecap: round;
-            stroke-dashoffset: 17;
-        }
-        .hr-dash-marks {
-            stroke-dasharray: 3 16 5 26 2 38 7 22 4 30;
-            stroke-linecap: square;
-            stroke-dashoffset: 9;
-        }
-        /* Subtle moiety rhythm contrast: red denser, dark more spacious */
-        .hr-red.hr-dash-bead { stroke-dasharray: 4 14 2 20 6 16 3 24; }
-        .hr-dark.hr-dash-bead { stroke-dasharray: 5 22 3 30 7 20 4 34; }
-        .hr-red.hr-dash-feather { stroke-dasharray: 22 24 10 36 14 22; }
-        .hr-dark.hr-dash-feather { stroke-dasharray: 28 34 12 50 20 30; }
-        .hr-red.hr-dash-trace { stroke-dasharray: 12 32 4 18 8 36 6 26; }
-        .hr-dark.hr-dash-trace { stroke-dasharray: 16 44 5 26 12 54 7 38; }
-        .hr-red.hr-dash-marks { stroke-dasharray: 3 12 5 20 2 30 7 18 4 24; }
-        .hr-dark.hr-dash-marks { stroke-dasharray: 4 20 6 32 3 44 8 26 5 36; }
-
         /* ── Hero ambient animations ── */
         @keyframes hero-sat-orbit-1 {
             0% { translate: 0 0; }
@@ -281,30 +238,13 @@
             86% { translate: 5px -5px; }
             100% { translate: 0 0; }
         }
-        @keyframes hero-baito-pulse {
-            0%, 100% { opacity: 0.12; }
-            50% { opacity: 0.20; }
-        }
-        @keyframes hero-moiety-shimmer {
-            0%, 100% { opacity: 0.42; }
-            50% { opacity: 0.48; }
-        }
         .hero-photo-sat-1 { animation: hero-sat-orbit-1 10.8s linear -1.3s infinite; }
         .hero-photo-sat-2 { animation: hero-sat-orbit-2 9.4s linear -3.8s infinite; }
         .hero-photo-sat-3 { animation: hero-sat-orbit-3 11.6s linear -6.1s infinite; }
         .hero-photo-sat-4 { animation: hero-sat-orbit-4 8.9s linear -2.7s infinite; }
-        .hero-baito-pulse { animation: hero-baito-pulse 4s ease-in-out infinite; }
-        .hero-moiety-top { animation: hero-moiety-shimmer 7s ease-in-out infinite; }
-        .hero-moiety-bot { animation: hero-moiety-shimmer 7s ease-in-out -3.5s infinite; }
         @media (prefers-reduced-motion: reduce) {
-            .hero-photo-sat-1, .hero-photo-sat-2, .hero-photo-sat-3, .hero-photo-sat-4,
-            .hero-baito-pulse, .hero-moiety-top, .hero-moiety-bot,
-            .hero-rings-bg-anim circle,
-            .hero-rings-bg-anim rect {
+            .hero-photo-sat-1, .hero-photo-sat-2, .hero-photo-sat-3, .hero-photo-sat-4 {
                 animation: none;
-            }
-            .hero-rings-bg-anim {
-                display: none;
             }
         }
 
@@ -683,6 +623,7 @@
                 <a href="ethnobotany.html">Ethnobotany</a>
                 <a href="bibliography.html">Bibliography</a>
                 <a href="corpus.html">Corpus</a>
+                <a href="about.html">About</a>
             </div>
             <div class="lang-switch" aria-label="Language selector">
                     <a href="../pt/index.html" class="lang-link">PT</a>
@@ -693,143 +634,327 @@
 
     <main id="main-content" class="td-container">
     <section class="index-hero">
-        <svg class="hero-rings-bg-anim" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle class="hr-red hr-dash-bead" cx="180" cy="200" r="14" opacity="0">
-                <animate attributeName="r" values="14;100" dur="10s" begin="0s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="10s" begin="0s" repeatCount="indefinite"/>
-            </circle>
-            <circle class="hr-red hr-dash-bead" cx="180" cy="200" r="14" opacity="0">
-                <animate attributeName="r" values="14;130" dur="10s" begin="-1s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="10s" begin="-1s" repeatCount="indefinite"/>
-            </circle>
-            <circle class="hr-red hr-dash-bead" cx="180" cy="200" r="14" opacity="0">
-                <animate attributeName="r" values="14;160" dur="10s" begin="-2s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="10s" begin="-2s" repeatCount="indefinite"/>
-            </circle>
-            <g transform="translate(900,150)">
-                <rect class="hr-dark hr-dash-trace" x="-7" y="-7" width="14" height="14" rx="1" transform="rotate(45)" opacity="0">
-                    <animate attributeName="width" values="14;80" dur="12s" begin="-3s" repeatCount="indefinite"/>
-                    <animate attributeName="height" values="14;80" dur="12s" begin="-3s" repeatCount="indefinite"/>
-                    <animate attributeName="x" values="-7;-40" dur="12s" begin="-3s" repeatCount="indefinite"/>
-                    <animate attributeName="y" values="-7;-40" dur="12s" begin="-3s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="12s" begin="-3s" repeatCount="indefinite"/>
-                </rect>
-            </g>
-            <g transform="translate(900,150)">
-                <rect class="hr-dark hr-dash-trace" x="-7" y="-7" width="14" height="14" rx="1" transform="rotate(45)" opacity="0">
-                    <animate attributeName="width" values="14;110" dur="12s" begin="-4s" repeatCount="indefinite"/>
-                    <animate attributeName="height" values="14;110" dur="12s" begin="-4s" repeatCount="indefinite"/>
-                    <animate attributeName="x" values="-7;-55" dur="12s" begin="-4s" repeatCount="indefinite"/>
-                    <animate attributeName="y" values="-7;-55" dur="12s" begin="-4s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="12s" begin="-4s" repeatCount="indefinite"/>
-                </rect>
-            </g>
-            <g transform="translate(900,150)">
-                <rect class="hr-dark hr-dash-trace" x="-7" y="-7" width="14" height="14" rx="1" transform="rotate(45)" opacity="0">
-                    <animate attributeName="width" values="14;140" dur="12s" begin="-5s" repeatCount="indefinite"/>
-                    <animate attributeName="height" values="14;140" dur="12s" begin="-5s" repeatCount="indefinite"/>
-                    <animate attributeName="x" values="-7;-70" dur="12s" begin="-5s" repeatCount="indefinite"/>
-                    <animate attributeName="y" values="-7;-70" dur="12s" begin="-5s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="12s" begin="-5s" repeatCount="indefinite"/>
-                </rect>
-            </g>
-            <circle class="hr-red hr-dash-marks" cx="550" cy="500" r="14" opacity="0">
-                <animate attributeName="r" values="14;90" dur="11s" begin="-6s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="11s" begin="-6s" repeatCount="indefinite"/>
-            </circle>
-            <circle class="hr-red hr-dash-marks" cx="550" cy="500" r="14" opacity="0">
-                <animate attributeName="r" values="14;120" dur="11s" begin="-7s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="11s" begin="-7s" repeatCount="indefinite"/>
-            </circle>
-            <circle class="hr-red hr-dash-marks" cx="550" cy="500" r="14" opacity="0">
-                <animate attributeName="r" values="14;150" dur="11s" begin="-8s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="11s" begin="-8s" repeatCount="indefinite"/>
-            </circle>
-            <circle class="hr-dark hr-dash-feather" cx="1050" cy="550" r="14" opacity="0">
-                <animate attributeName="r" values="14;90" dur="13s" begin="-2s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="13s" begin="-2s" repeatCount="indefinite"/>
-            </circle>
-            <circle class="hr-dark hr-dash-feather" cx="1050" cy="550" r="14" opacity="0">
-                <animate attributeName="r" values="14;120" dur="13s" begin="-3s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="13s" begin="-3s" repeatCount="indefinite"/>
-            </circle>
-            <circle class="hr-dark hr-dash-feather" cx="1050" cy="550" r="14" opacity="0">
-                <animate attributeName="r" values="14;150" dur="13s" begin="-4s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="13s" begin="-4s" repeatCount="indefinite"/>
-            </circle>
-            <g transform="translate(350,600)">
-                <rect class="hr-red hr-dash-feather" x="-7" y="-7" width="14" height="14" rx="1" transform="rotate(45)" opacity="0">
-                    <animate attributeName="width" values="14;80" dur="10s" begin="-8s" repeatCount="indefinite"/>
-                    <animate attributeName="height" values="14;80" dur="10s" begin="-8s" repeatCount="indefinite"/>
-                    <animate attributeName="x" values="-7;-40" dur="10s" begin="-8s" repeatCount="indefinite"/>
-                    <animate attributeName="y" values="-7;-40" dur="10s" begin="-8s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="10s" begin="-8s" repeatCount="indefinite"/>
-                </rect>
-            </g>
-            <g transform="translate(350,600)">
-                <rect class="hr-red hr-dash-feather" x="-7" y="-7" width="14" height="14" rx="1" transform="rotate(45)" opacity="0">
-                    <animate attributeName="width" values="14;110" dur="10s" begin="-9s" repeatCount="indefinite"/>
-                    <animate attributeName="height" values="14;110" dur="10s" begin="-9s" repeatCount="indefinite"/>
-                    <animate attributeName="x" values="-7;-55" dur="10s" begin="-9s" repeatCount="indefinite"/>
-                    <animate attributeName="y" values="-7;-55" dur="10s" begin="-9s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="10s" begin="-9s" repeatCount="indefinite"/>
-                </rect>
-            </g>
-            <g transform="translate(350,600)">
-                <rect class="hr-red hr-dash-feather" x="-7" y="-7" width="14" height="14" rx="1" transform="rotate(45)" opacity="0">
-                    <animate attributeName="width" values="14;140" dur="10s" begin="-10s" repeatCount="indefinite"/>
-                    <animate attributeName="height" values="14;140" dur="10s" begin="-10s" repeatCount="indefinite"/>
-                    <animate attributeName="x" values="-7;-70" dur="10s" begin="-10s" repeatCount="indefinite"/>
-                    <animate attributeName="y" values="-7;-70" dur="10s" begin="-10s" repeatCount="indefinite"/>
-                    <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="10s" begin="-10s" repeatCount="indefinite"/>
-                </rect>
-            </g>
-            <circle class="hr-dark hr-dash-bead" cx="750" cy="100" r="14" opacity="0">
-                <animate attributeName="r" values="14;110" dur="12s" begin="-5s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="12s" begin="-5s" repeatCount="indefinite"/>
-            </circle>
-            <circle class="hr-dark hr-dash-bead" cx="750" cy="100" r="14" opacity="0">
-                <animate attributeName="r" values="14;140" dur="12s" begin="-6s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="12s" begin="-6s" repeatCount="indefinite"/>
-            </circle>
-            <circle class="hr-dark hr-dash-bead" cx="750" cy="100" r="14" opacity="0">
-                <animate attributeName="r" values="14;170" dur="12s" begin="-7s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0;0.25;0.2;0" keyTimes="0;0.16;0.72;1" dur="12s" begin="-7s" repeatCount="indefinite"/>
-            </circle>
-        </svg>
-        <div class="index-hero-inner">
+<style>
+    .hero-lattice-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        shape-rendering: geometricPrecision;
+    }
+    .hero-lattice-bg line {
+        fill: none;
+        vector-effect: non-scaling-stroke;
+        stroke-linecap: round;
+    }
+    .hl-primary { stroke: var(--td-color-primary); }
+    .hl-accent { stroke: var(--td-color-accent, var(--td-color-primary)); }
+    .hl-dash-weave {
+        stroke-dasharray: 8 20 4 28 12 16;
+        stroke-dashoffset: 7;
+    }
+    .hl-dash-trap {
+        stroke-dasharray: 18 24 6 32 10 20;
+        stroke-dashoffset: 13;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .hero-lattice-bg { display: none; }
+    }
+</style>
+<svg class="hero-lattice-bg" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <line class="hl-primary hl-dash-weave" x1="200" y1="180" x2="200" y2="180" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="200;120" dur="11s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="180;100" dur="11s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="200;280" dur="11s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="180;260" dur="11s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.22;0.18;0" keyTimes="0;0.16;0.72;1" dur="11s" begin="0s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="200" y1="180" x2="200" y2="180" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="200;280" dur="11s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="180;100" dur="11s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="200;120" dur="11s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="180;260" dur="11s" begin="0s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.22;0.18;0" keyTimes="0;0.16;0.72;1" dur="11s" begin="0s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="200" y1="180" x2="200" y2="180" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="200;70" dur="11s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="180;50" dur="11s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="200;330" dur="11s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="180;310" dur="11s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.22;0.18;0" keyTimes="0;0.16;0.72;1" dur="11s" begin="-2s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="200" y1="180" x2="200" y2="180" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="200;330" dur="11s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="180;50" dur="11s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="200;70" dur="11s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="180;310" dur="11s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.22;0.18;0" keyTimes="0;0.16;0.72;1" dur="11s" begin="-2s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="200" y1="180" x2="200" y2="180" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="200;20" dur="11s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="180;0" dur="11s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="200;380" dur="11s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="180;360" dur="11s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.22;0.18;0" keyTimes="0;0.16;0.72;1" dur="11s" begin="-4s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="200" y1="180" x2="200" y2="180" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="200;380" dur="11s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="180;0" dur="11s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="200;20" dur="11s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="180;360" dur="11s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.22;0.18;0" keyTimes="0;0.16;0.72;1" dur="11s" begin="-4s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-accent hl-dash-trap" x1="900" y1="160" x2="900" y2="160" stroke-width="2" opacity="0">
+        <animate attributeName="x1" values="900;830" dur="13s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="160;90" dur="13s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="900;970" dur="13s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="160;230" dur="13s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.15;0" keyTimes="0;0.16;0.72;1" dur="13s" begin="-3s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-accent hl-dash-trap" x1="900" y1="160" x2="900" y2="160" stroke-width="2" opacity="0">
+        <animate attributeName="x1" values="900;970" dur="13s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="160;90" dur="13s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="900;830" dur="13s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="160;230" dur="13s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.15;0" keyTimes="0;0.16;0.72;1" dur="13s" begin="-3s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-accent hl-dash-trap" x1="900" y1="160" x2="900" y2="160" stroke-width="2" opacity="0">
+        <animate attributeName="x1" values="900;780" dur="13s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="160;40" dur="13s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="900;1020" dur="13s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="160;280" dur="13s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.15;0" keyTimes="0;0.16;0.72;1" dur="13s" begin="-5s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-accent hl-dash-trap" x1="900" y1="160" x2="900" y2="160" stroke-width="2" opacity="0">
+        <animate attributeName="x1" values="900;1020" dur="13s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="160;40" dur="13s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="900;780" dur="13s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="160;280" dur="13s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.15;0" keyTimes="0;0.16;0.72;1" dur="13s" begin="-5s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-accent hl-dash-trap" x1="900" y1="160" x2="900" y2="160" stroke-width="2" opacity="0">
+        <animate attributeName="x1" values="900;740" dur="13s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="160;0" dur="13s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="900;1060" dur="13s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="160;320" dur="13s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.15;0" keyTimes="0;0.16;0.72;1" dur="13s" begin="-7s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-accent hl-dash-trap" x1="900" y1="160" x2="900" y2="160" stroke-width="2" opacity="0">
+        <animate attributeName="x1" values="900;1060" dur="13s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="160;0" dur="13s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="900;740" dur="13s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="160;320" dur="13s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.15;0" keyTimes="0;0.16;0.72;1" dur="13s" begin="-7s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="550" y1="480" x2="550" y2="480" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="550;460" dur="12s" begin="-1s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="480;390" dur="12s" begin="-1s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="550;640" dur="12s" begin="-1s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="480;570" dur="12s" begin="-1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.16;0" keyTimes="0;0.16;0.72;1" dur="12s" begin="-1s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="550" y1="480" x2="550" y2="480" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="550;640" dur="12s" begin="-1s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="480;390" dur="12s" begin="-1s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="550;460" dur="12s" begin="-1s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="480;570" dur="12s" begin="-1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.16;0" keyTimes="0;0.16;0.72;1" dur="12s" begin="-1s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="550" y1="480" x2="550" y2="480" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="550;410" dur="12s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="480;340" dur="12s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="550;690" dur="12s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="480;620" dur="12s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.16;0" keyTimes="0;0.16;0.72;1" dur="12s" begin="-3s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="550" y1="480" x2="550" y2="480" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="550;690" dur="12s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="480;340" dur="12s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="550;410" dur="12s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="480;620" dur="12s" begin="-3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.16;0" keyTimes="0;0.16;0.72;1" dur="12s" begin="-3s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="550" y1="480" x2="550" y2="480" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="550;360" dur="12s" begin="-6s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="480;290" dur="12s" begin="-6s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="550;740" dur="12s" begin="-6s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="480;670" dur="12s" begin="-6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.16;0" keyTimes="0;0.16;0.72;1" dur="12s" begin="-6s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="550" y1="480" x2="550" y2="480" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="550;740" dur="12s" begin="-6s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="480;290" dur="12s" begin="-6s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="550;360" dur="12s" begin="-6s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="480;670" dur="12s" begin="-6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.16;0" keyTimes="0;0.16;0.72;1" dur="12s" begin="-6s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-accent hl-dash-trap" x1="1000" y1="520" x2="1000" y2="520" stroke-width="2" opacity="0">
+        <animate attributeName="x1" values="1000;925" dur="10s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="520;445" dur="10s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="1000;1075" dur="10s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="520;595" dur="10s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.18;0.14;0" keyTimes="0;0.16;0.72;1" dur="10s" begin="-2s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-accent hl-dash-trap" x1="1000" y1="520" x2="1000" y2="520" stroke-width="2" opacity="0">
+        <animate attributeName="x1" values="1000;1075" dur="10s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="520;445" dur="10s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="1000;925" dur="10s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="520;595" dur="10s" begin="-2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.18;0.14;0" keyTimes="0;0.16;0.72;1" dur="10s" begin="-2s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-accent hl-dash-trap" x1="1000" y1="520" x2="1000" y2="520" stroke-width="2" opacity="0">
+        <animate attributeName="x1" values="1000;885" dur="10s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="520;405" dur="10s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="1000;1115" dur="10s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="520;635" dur="10s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.18;0.14;0" keyTimes="0;0.16;0.72;1" dur="10s" begin="-4s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-accent hl-dash-trap" x1="1000" y1="520" x2="1000" y2="520" stroke-width="2" opacity="0">
+        <animate attributeName="x1" values="1000;1115" dur="10s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="520;405" dur="10s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="1000;885" dur="10s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="520;635" dur="10s" begin="-4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.18;0.14;0" keyTimes="0;0.16;0.72;1" dur="10s" begin="-4s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-accent hl-dash-trap" x1="1000" y1="520" x2="1000" y2="520" stroke-width="2" opacity="0">
+        <animate attributeName="x1" values="1000;845" dur="10s" begin="-8s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="520;365" dur="10s" begin="-8s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="1000;1155" dur="10s" begin="-8s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="520;675" dur="10s" begin="-8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.18;0.14;0" keyTimes="0;0.16;0.72;1" dur="10s" begin="-8s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-accent hl-dash-trap" x1="1000" y1="520" x2="1000" y2="520" stroke-width="2" opacity="0">
+        <animate attributeName="x1" values="1000;1155" dur="10s" begin="-8s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="520;365" dur="10s" begin="-8s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="1000;845" dur="10s" begin="-8s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="520;675" dur="10s" begin="-8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.18;0.14;0" keyTimes="0;0.16;0.72;1" dur="10s" begin="-8s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="700" y1="120" x2="700" y2="120" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="700;615" dur="14s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="120;35" dur="14s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="700;785" dur="14s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="120;205" dur="14s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.15;0" keyTimes="0;0.16;0.72;1" dur="14s" begin="-5s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="700" y1="120" x2="700" y2="120" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="700;785" dur="14s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="120;35" dur="14s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="700;615" dur="14s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="120;205" dur="14s" begin="-5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.15;0" keyTimes="0;0.16;0.72;1" dur="14s" begin="-5s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="700" y1="120" x2="700" y2="120" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="700;565" dur="14s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="120;-15" dur="14s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="700;835" dur="14s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="120;255" dur="14s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.15;0" keyTimes="0;0.16;0.72;1" dur="14s" begin="-7s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="700" y1="120" x2="700" y2="120" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="700;835" dur="14s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="120;-15" dur="14s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="700;565" dur="14s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="120;255" dur="14s" begin="-7s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.15;0" keyTimes="0;0.16;0.72;1" dur="14s" begin="-7s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="700" y1="120" x2="700" y2="120" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="700;525" dur="14s" begin="-9s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="120;-55" dur="14s" begin="-9s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="700;875" dur="14s" begin="-9s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="120;295" dur="14s" begin="-9s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.15;0" keyTimes="0;0.16;0.72;1" dur="14s" begin="-9s" repeatCount="indefinite"/>
+    </line>
+    <line class="hl-primary hl-dash-weave" x1="700" y1="120" x2="700" y2="120" stroke-width="2.5" opacity="0">
+        <animate attributeName="x1" values="700;875" dur="14s" begin="-9s" repeatCount="indefinite"/>
+        <animate attributeName="y1" values="120;-55" dur="14s" begin="-9s" repeatCount="indefinite"/>
+        <animate attributeName="x2" values="700;525" dur="14s" begin="-9s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="120;295" dur="14s" begin="-9s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;0.2;0.15;0" keyTimes="0;0.16;0.72;1" dur="14s" begin="-9s" repeatCount="indefinite"/>
+    </line>
+</svg>        <div class="index-hero-inner">
             <div class="index-hero-text">
                 <h1>Enawenê-Nawê</h1>
                 <p class="hero-tagline">Darakala Kakwali</p>
                 <p class="hero-subtitle">A platform dedicated to the preservation, documentation, and appreciation of the linguistic and cultural knowledge of the Enawenê-Nawê people.</p>
                 <a href="#sections" class="td-pill td-pill-red">Explore &rarr;</a>
 
+                <div style="width:60px;height:2px;background:var(--td-color-gold, #D4A03A);opacity:0.5;margin-top:2rem;border-radius:1px;" aria-hidden="true"></div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">461</span>
+                        <span class="hero-stat-label">entries</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">25</span>
+                        <span class="hero-stat-label">articles</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">115</span>
+                        <span class="hero-stat-label">species</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">38</span>
+                        <span class="hero-stat-label">plants</span>
+                    </div>
+                </div>
             </div>
 
             <div class="index-hero-visual">
-                <svg class="hero-village-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <defs>
-                        <clipPath id="vh-top"><rect x="0" y="0" width="500" height="250"/></clipPath>
-                        <clipPath id="vh-bot"><rect x="0" y="250" width="500" height="250"/></clipPath>
-                        <filter id="vh-soft" x="-10%" y="-10%" width="120%" height="120%">
-                            <feGaussianBlur stdDeviation="6"/>
-                        </filter>
-                    </defs>
-                    <circle class="hero-moiety-top" cx="250" cy="250" r="230" style="fill:var(--td-color-primary)" opacity="0.3" clip-path="url(#vh-top)" filter="url(#vh-soft)"/>
-                    <circle class="hero-moiety-bot" cx="250" cy="250" r="230" style="fill:var(--td-color-dark, #0B0F17)" opacity="0.3" clip-path="url(#vh-bot)" filter="url(#vh-soft)"/>
-                    <g>
-                        <path d="M480,250 A230,230 0 0,0 20,250" fill="none" style="stroke:var(--td-color-primary)" stroke-width="4" opacity="0.16"/>
-                        <path d="M480,250 A230,230 0 0,1 20,250" fill="none" style="stroke:var(--td-color-dark, #0B0F17)" stroke-width="4" opacity="0.16"/>
-                        <line x1="20" y1="250" x2="480" y2="250" style="stroke:var(--td-color-text-muted, #6B6F5A)" stroke-width="1" opacity="0.12"/>
-                        <circle cx="250" cy="250" r="165" fill="none" style="stroke:var(--td-color-primary)" stroke-width="1" opacity="0.06"/>
-                    </g>
-                    <g>
-                        <circle cx="250" cy="250" r="50" fill="none" style="stroke:var(--td-color-border-dark, #B8AFA2)" stroke-width="4" opacity="0.15"/>
-                        <circle class="hero-baito-pulse" cx="250" cy="250" r="35" style="fill:var(--td-color-accent)" opacity="0.15"/>
-                        <circle cx="250" cy="250" r="18" style="fill:var(--td-color-dark, #0B0F17)" opacity="0.18"/>
-                    </g>
-                </svg>
-
+<style>
+    @keyframes hero-center-pulse {
+        0%, 100% { opacity: 0.14; }
+        50% { opacity: 0.24; }
+    }
+    @keyframes hero-ring-shimmer {
+        0%, 100% { opacity: 0.12; }
+        50% { opacity: 0.18; }
+    }
+    @keyframes hero-lattice-drift {
+        0%, 100% { stroke-dashoffset: 0; }
+        50% { stroke-dashoffset: 12; }
+    }
+    .hero-center-pulse { animation: hero-center-pulse 5s ease-in-out infinite; }
+    .hero-ring-outer { animation: hero-ring-shimmer 8s ease-in-out infinite; }
+    .hero-ring-middle { animation: hero-ring-shimmer 8s ease-in-out -4s infinite; }
+    .hero-lattice-lines line { animation: hero-lattice-drift 12s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+        .hero-center-pulse, .hero-ring-outer, .hero-ring-middle { animation: none; }
+        .hero-lattice-lines line { animation: none; }
+    }
+</style>
+<svg class="hero-village-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+        <clipPath id="vh-inner"><circle cx="250" cy="250" r="228"/></clipPath>
+        <filter id="vh-soft" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur stdDeviation="6"/>
+        </filter>
+    </defs>
+    <circle class="hero-ring-outer" cx="250" cy="250" r="230" fill="none" style="stroke:var(--td-color-primary)" stroke-width="4" opacity="0.12"/>
+    <g class="hero-lattice-lines" clip-path="url(#vh-inner)">
+        <line x1="50" y1="50" x2="450" y2="450" style="stroke:var(--td-color-primary)" stroke-width="1.5" stroke-dasharray="6 10" opacity="0.1"/>
+        <line x1="450" y1="50" x2="50" y2="450" style="stroke:var(--td-color-primary)" stroke-width="1.5" stroke-dasharray="6 10" opacity="0.1"/>
+        <line x1="150" y1="20" x2="480" y2="350" style="stroke:var(--td-color-primary)" stroke-width="1.2" stroke-dasharray="4 12" opacity="0.07"/>
+        <line x1="20" y1="150" x2="350" y2="480" style="stroke:var(--td-color-primary)" stroke-width="1.2" stroke-dasharray="4 12" opacity="0.07"/>
+        <line x1="350" y1="20" x2="20" y2="350" style="stroke:var(--td-color-primary)" stroke-width="1.2" stroke-dasharray="4 12" opacity="0.07"/>
+        <line x1="480" y1="150" x2="150" y2="480" style="stroke:var(--td-color-primary)" stroke-width="1.2" stroke-dasharray="4 12" opacity="0.07"/>
+        <line x1="180" y1="100" x2="420" y2="340" style="stroke:var(--td-color-primary)" stroke-width="0.8" stroke-dasharray="3 14" opacity="0.05"/>
+        <line x1="100" y1="180" x2="340" y2="420" style="stroke:var(--td-color-primary)" stroke-width="0.8" stroke-dasharray="3 14" opacity="0.05"/>
+        <line x1="320" y1="100" x2="80" y2="340" style="stroke:var(--td-color-primary)" stroke-width="0.8" stroke-dasharray="3 14" opacity="0.05"/>
+        <line x1="400" y1="180" x2="160" y2="420" style="stroke:var(--td-color-primary)" stroke-width="0.8" stroke-dasharray="3 14" opacity="0.05"/>
+    </g>
+    <circle class="hero-ring-middle" cx="250" cy="250" r="165" fill="none" style="stroke:var(--td-color-primary)" stroke-width="2" opacity="0.12"/>
+    <circle cx="250" cy="250" r="100" fill="none" style="stroke:var(--td-color-accent, var(--td-color-primary))" stroke-width="1.5" opacity="0.08"/>
+    <g>
+        <circle cx="250" cy="250" r="50" fill="none" style="stroke:var(--td-color-border-dark, #B8AFA2)" stroke-width="3" opacity="0.12"/>
+        <circle class="hero-center-pulse" cx="250" cy="250" r="35" style="fill:var(--td-color-primary)" opacity="0.14"/>
+        <path d="M250,222 L232,268 L268,268 Z" style="fill:var(--td-color-accent, var(--td-color-primary))" opacity="0.25"/>
+        <line x1="250" y1="222" x2="250" y2="268" style="stroke:var(--td-color-primary)" stroke-width="0.8" opacity="0.15"/>
+        <circle cx="250" cy="222" r="3" style="fill:var(--td-color-primary)" opacity="0.3"/>
+    </g>
+</svg>
                 <div class="hero-photo-main">
                     <img src="../images/hero.jpeg" alt="Enawenê-Nawê">
                 </div>
@@ -841,7 +966,7 @@
                     <img src="../images/encyclopedia.jpeg" alt="" loading="lazy">
                 </div>
                 <div class="hero-photo-sat hero-photo-sat-3">
-                    <img src="../images/eyaokwa.jpeg" alt="" loading="lazy">
+                    <img src="../images/fauna-arara.jpg" alt="" loading="lazy">
                 </div>
                 <div class="hero-photo-sat hero-photo-sat-4">
                     <img src="../images/ethnobotany.jpg" alt="" loading="lazy">
@@ -852,65 +977,39 @@
     </section>
 
     <div class="hero-adugo-spine" aria-hidden="true">
-        <svg viewBox="0 0 1200 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0" y1="14" x2="1200" y2="14" stroke="var(--td-color-primary)" stroke-width="2" stroke-linecap="round" opacity="0.15"/>
-            <g stroke="var(--td-color-primary)" stroke-linecap="round" opacity="0.12">
-                <line x1="45" y1="5" x2="45" y2="23" stroke-width="2.5"/>
-                <line x1="68" y1="7" x2="68" y2="21" stroke-width="3.5"/>
-                <line x1="105" y1="3" x2="105" y2="25" stroke-width="2"/>
-                <line x1="120" y1="8" x2="120" y2="20" stroke-width="4"/>
-                <line x1="160" y1="6" x2="160" y2="22" stroke-width="2.8"/>
-                <line x1="195" y1="4" x2="195" y2="24" stroke-width="3.2"/>
-                <line x1="210" y1="9" x2="210" y2="19" stroke-width="2.2"/>
-                <line x1="265" y1="5" x2="265" y2="23" stroke-width="3"/>
-                <line x1="280" y1="7" x2="280" y2="21" stroke-width="2.4"/>
-                <line x1="298" y1="3" x2="298" y2="25" stroke-width="3.8"/>
-                <line x1="320" y1="6" x2="320" y2="22" stroke-width="2.6"/>
-                <line x1="335" y1="8" x2="335" y2="20" stroke-width="3.5"/>
-                <line x1="358" y1="4" x2="358" y2="24" stroke-width="2.2"/>
-                <line x1="372" y1="6" x2="372" y2="22" stroke-width="4"/>
-                <line x1="395" y1="2" x2="395" y2="26" stroke-width="2.8"/>
-                <line x1="408" y1="7" x2="408" y2="21" stroke-width="3.2"/>
-                <line x1="430" y1="5" x2="430" y2="23" stroke-width="2.5"/>
-                <line x1="468" y1="3" x2="468" y2="25" stroke-width="3.5"/>
-                <line x1="482" y1="6" x2="482" y2="22" stroke-width="2.8"/>
-                <line x1="498" y1="1" x2="498" y2="27" stroke-width="4.2"/>
-                <line x1="515" y1="5" x2="515" y2="23" stroke-width="2.4"/>
-                <line x1="528" y1="7" x2="528" y2="21" stroke-width="3.8"/>
-                <line x1="545" y1="4" x2="545" y2="24" stroke-width="2.6"/>
-                <line x1="558" y1="2" x2="558" y2="26" stroke-width="3.2"/>
-                <line x1="575" y1="6" x2="575" y2="22" stroke-width="4"/>
-                <line x1="590" y1="1" x2="590" y2="27" stroke-width="2.5"/>
-                <line x1="600" y1="5" x2="600" y2="23" stroke-width="3.6"/>
-                <line x1="615" y1="3" x2="615" y2="25" stroke-width="2.2"/>
-                <line x1="628" y1="7" x2="628" y2="21" stroke-width="4.2"/>
-                <line x1="645" y1="2" x2="645" y2="26" stroke-width="3"/>
-                <line x1="660" y1="5" x2="660" y2="23" stroke-width="2.8"/>
-                <line x1="672" y1="4" x2="672" y2="24" stroke-width="3.5"/>
-                <line x1="690" y1="6" x2="690" y2="22" stroke-width="2.4"/>
-                <line x1="705" y1="3" x2="705" y2="25" stroke-width="3.8"/>
-                <line x1="720" y1="7" x2="720" y2="21" stroke-width="2.6"/>
-                <line x1="738" y1="1" x2="738" y2="27" stroke-width="4"/>
-                <line x1="770" y1="5" x2="770" y2="23" stroke-width="3.2"/>
-                <line x1="790" y1="4" x2="790" y2="24" stroke-width="2.5"/>
-                <line x1="808" y1="7" x2="808" y2="21" stroke-width="3.8"/>
-                <line x1="828" y1="3" x2="828" y2="25" stroke-width="2.8"/>
-                <line x1="842" y1="6" x2="842" y2="22" stroke-width="3.5"/>
-                <line x1="865" y1="8" x2="865" y2="20" stroke-width="2.2"/>
-                <line x1="880" y1="4" x2="880" y2="24" stroke-width="4"/>
-                <line x1="900" y1="6" x2="900" y2="22" stroke-width="2.6"/>
-                <line x1="920" y1="5" x2="920" y2="23" stroke-width="3.2"/>
-                <line x1="938" y1="7" x2="938" y2="21" stroke-width="3"/>
-                <line x1="980" y1="4" x2="980" y2="24" stroke-width="3.5"/>
-                <line x1="1005" y1="8" x2="1005" y2="20" stroke-width="2.4"/>
-                <line x1="1040" y1="6" x2="1040" y2="22" stroke-width="3.8"/>
-                <line x1="1075" y1="3" x2="1075" y2="25" stroke-width="2.2"/>
-                <line x1="1095" y1="7" x2="1095" y2="21" stroke-width="3.5"/>
-                <line x1="1130" y1="5" x2="1130" y2="23" stroke-width="2.8"/>
-                <line x1="1160" y1="9" x2="1160" y2="19" stroke-width="4"/>
-            </g>
-        </svg>
-    </div>
+<svg viewBox="0 0 1200 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0,14 C100,6 200,22 300,14 C400,6 500,22 600,14 C700,6 800,22 900,14 C1000,6 1100,22 1200,14"
+          fill="none" stroke="var(--td-color-primary)" stroke-width="2" stroke-linecap="round" opacity="0.15"/>
+    <path d="M0,14 C100,9 200,19 300,14 C400,9 500,19 600,14 C700,9 800,19 900,14 C1000,9 1100,19 1200,14"
+          fill="none" stroke="var(--td-color-accent, var(--td-color-primary))" stroke-width="1.5" stroke-linecap="round" opacity="0.12"/>
+    <path d="M0,14 C150,10 250,18 400,14 C550,10 650,18 800,14 C950,10 1050,18 1200,14"
+          fill="none" stroke="var(--td-color-primary)" stroke-width="1" stroke-linecap="round" opacity="0.08"/>
+    <g stroke="var(--td-color-primary)" stroke-width="1.2" stroke-linecap="round" opacity="0.1">
+        <line x1="146" y1="10" x2="154" y2="18"/>
+        <line x1="154" y1="10" x2="146" y2="18"/>
+    </g>
+    <g stroke="var(--td-color-primary)" stroke-width="1.2" stroke-linecap="round" opacity="0.1">
+        <line x1="296" y1="10" x2="304" y2="18"/>
+        <line x1="304" y1="10" x2="296" y2="18"/>
+    </g>
+    <g stroke="var(--td-color-primary)" stroke-width="1.2" stroke-linecap="round" opacity="0.1">
+        <line x1="446" y1="10" x2="454" y2="18"/>
+        <line x1="454" y1="10" x2="446" y2="18"/>
+    </g>
+    <g stroke="var(--td-color-primary)" stroke-width="1.2" stroke-linecap="round" opacity="0.1">
+        <line x1="746" y1="10" x2="754" y2="18"/>
+        <line x1="754" y1="10" x2="746" y2="18"/>
+    </g>
+    <g stroke="var(--td-color-primary)" stroke-width="1.2" stroke-linecap="round" opacity="0.1">
+        <line x1="896" y1="10" x2="904" y2="18"/>
+        <line x1="904" y1="10" x2="896" y2="18"/>
+    </g>
+    <g stroke="var(--td-color-primary)" stroke-width="1.2" stroke-linecap="round" opacity="0.1">
+        <line x1="1046" y1="10" x2="1054" y2="18"/>
+        <line x1="1054" y1="10" x2="1046" y2="18"/>
+    </g>
+    <path d="M600,6 L594,18 L606,18 Z" fill="var(--td-color-accent, var(--td-color-primary))" opacity="0.15"/>
+</svg>    </div>
 
     <div class="sections-label" id="sections">
         <span class="sections-label-line"></span>
@@ -986,7 +1085,7 @@
 </div>
         <div class="teaser-card" data-section="fauna">
             <div class="teaser-card-image">
-                <img src="../images/eyaokwa.jpeg" alt="" loading="lazy">
+                <img src="../images/fauna-arara.jpg" alt="" loading="lazy">
             </div>
             <div class="teaser-card-body">
                 <div class="teaser-stat">
@@ -1081,41 +1180,39 @@
 
     <footer>
         <div class="footer-adugo-spine" aria-hidden="true">
-            <svg viewBox="0 0 1200 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="0" y1="14" x2="1200" y2="14" stroke="var(--td-color-primary)" stroke-width="2" stroke-linecap="round" opacity="0.15"/>
-                <g stroke="var(--td-color-primary)" stroke-linecap="round" opacity="0.12">
-                    <line x1="45" y1="5" x2="45" y2="23" stroke-width="2.5"/>
-                    <line x1="68" y1="7" x2="68" y2="21" stroke-width="3.5"/>
-                    <line x1="105" y1="3" x2="105" y2="25" stroke-width="2"/>
-                    <line x1="120" y1="8" x2="120" y2="20" stroke-width="4"/>
-                    <line x1="160" y1="6" x2="160" y2="22" stroke-width="2.8"/>
-                    <line x1="195" y1="4" x2="195" y2="24" stroke-width="3.2"/>
-                    <line x1="265" y1="5" x2="265" y2="23" stroke-width="3"/>
-                    <line x1="298" y1="3" x2="298" y2="25" stroke-width="3.8"/>
-                    <line x1="335" y1="8" x2="335" y2="20" stroke-width="3.5"/>
-                    <line x1="372" y1="6" x2="372" y2="22" stroke-width="4"/>
-                    <line x1="408" y1="7" x2="408" y2="21" stroke-width="3.2"/>
-                    <line x1="468" y1="3" x2="468" y2="25" stroke-width="3.5"/>
-                    <line x1="498" y1="1" x2="498" y2="27" stroke-width="4.2"/>
-                    <line x1="528" y1="7" x2="528" y2="21" stroke-width="3.8"/>
-                    <line x1="558" y1="2" x2="558" y2="26" stroke-width="3.2"/>
-                    <line x1="590" y1="1" x2="590" y2="27" stroke-width="2.5"/>
-                    <line x1="615" y1="3" x2="615" y2="25" stroke-width="2.2"/>
-                    <line x1="645" y1="2" x2="645" y2="26" stroke-width="3"/>
-                    <line x1="672" y1="4" x2="672" y2="24" stroke-width="3.5"/>
-                    <line x1="705" y1="3" x2="705" y2="25" stroke-width="3.8"/>
-                    <line x1="738" y1="1" x2="738" y2="27" stroke-width="4"/>
-                    <line x1="790" y1="4" x2="790" y2="24" stroke-width="2.5"/>
-                    <line x1="828" y1="3" x2="828" y2="25" stroke-width="2.8"/>
-                    <line x1="865" y1="8" x2="865" y2="20" stroke-width="2.2"/>
-                    <line x1="900" y1="6" x2="900" y2="22" stroke-width="2.6"/>
-                    <line x1="980" y1="4" x2="980" y2="24" stroke-width="3.5"/>
-                    <line x1="1040" y1="6" x2="1040" y2="22" stroke-width="3.8"/>
-                    <line x1="1095" y1="7" x2="1095" y2="21" stroke-width="3.5"/>
-                    <line x1="1160" y1="9" x2="1160" y2="19" stroke-width="4"/>
-                </g>
-            </svg>
-        </div>
+<svg viewBox="0 0 1200 28" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M0,14 C100,6 200,22 300,14 C400,6 500,22 600,14 C700,6 800,22 900,14 C1000,6 1100,22 1200,14"
+          fill="none" stroke="var(--td-color-primary)" stroke-width="2" stroke-linecap="round" opacity="0.15"/>
+    <path d="M0,14 C100,9 200,19 300,14 C400,9 500,19 600,14 C700,9 800,19 900,14 C1000,9 1100,19 1200,14"
+          fill="none" stroke="var(--td-color-accent, var(--td-color-primary))" stroke-width="1.5" stroke-linecap="round" opacity="0.12"/>
+    <path d="M0,14 C150,10 250,18 400,14 C550,10 650,18 800,14 C950,10 1050,18 1200,14"
+          fill="none" stroke="var(--td-color-primary)" stroke-width="1" stroke-linecap="round" opacity="0.08"/>
+    <g stroke="var(--td-color-primary)" stroke-width="1.2" stroke-linecap="round" opacity="0.1">
+        <line x1="146" y1="10" x2="154" y2="18"/>
+        <line x1="154" y1="10" x2="146" y2="18"/>
+    </g>
+    <g stroke="var(--td-color-primary)" stroke-width="1.2" stroke-linecap="round" opacity="0.1">
+        <line x1="296" y1="10" x2="304" y2="18"/>
+        <line x1="304" y1="10" x2="296" y2="18"/>
+    </g>
+    <g stroke="var(--td-color-primary)" stroke-width="1.2" stroke-linecap="round" opacity="0.1">
+        <line x1="446" y1="10" x2="454" y2="18"/>
+        <line x1="454" y1="10" x2="446" y2="18"/>
+    </g>
+    <g stroke="var(--td-color-primary)" stroke-width="1.2" stroke-linecap="round" opacity="0.1">
+        <line x1="746" y1="10" x2="754" y2="18"/>
+        <line x1="754" y1="10" x2="746" y2="18"/>
+    </g>
+    <g stroke="var(--td-color-primary)" stroke-width="1.2" stroke-linecap="round" opacity="0.1">
+        <line x1="896" y1="10" x2="904" y2="18"/>
+        <line x1="904" y1="10" x2="896" y2="18"/>
+    </g>
+    <g stroke="var(--td-color-primary)" stroke-width="1.2" stroke-linecap="round" opacity="0.1">
+        <line x1="1046" y1="10" x2="1054" y2="18"/>
+        <line x1="1054" y1="10" x2="1046" y2="18"/>
+    </g>
+    <path d="M600,6 L594,18 L606,18 Z" fill="var(--td-color-accent, var(--td-color-primary))" opacity="0.15"/>
+</svg>        </div>
         <div class="td-container">
             <div class="footer-grid">
                 <div class="footer-brand-col">
@@ -1134,6 +1231,7 @@
                         <li><a href="ethnobotany.html">Ethnobotany</a></li>
                         <li><a href="bibliography.html">Bibliography</a></li>
                         <li><a href="corpus.html">Corpus</a></li>
+                        <li><a href="about.html">About</a></li>
                     </ul>
                 </div>
                 <div>
