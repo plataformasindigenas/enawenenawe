@@ -22,3 +22,6 @@ docs/
 
 # Distribution
 *.egg-info/
+
+# terradoc export bundle (build intermediate)
+.terradoc/
