@@ -6,6 +6,7 @@ culture_name: "Enawenê-Nawê"
 meta_prefix: "enawenenawe"
 locales: ["pt", "en"]
 default_locale: "pt"
+base_url: "https://enawenenawe.terradoc.org"
 
 modules:
   dictionary: { enabled: true }
