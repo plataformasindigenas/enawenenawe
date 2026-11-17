@@ -6,9 +6,21 @@ de outro**.
 
 ## O padrão (`lattice`)
 
-A trama de linhas diagonais cruzadas (**waitiwina**) e o triângulo da **casa do Yãkwa** aparecem
-no fundo animado da página inicial, na moldura das fotos, no divisor, no selo ao lado dos
-títulos e na textura de fundo.
+Uma **trama de linhas diagonais cruzadas** e um **pequeno triângulo** aparecem no fundo animado
+da página inicial, na moldura das fotos, no divisor, no selo ao lado dos títulos e na textura de
+fundo.
+
+- **A trama (caminhos):** segundo o dossiê do IPHAN sobre o Yaokwa (p. 182), esteiras e cestos são
+  trançados por analogia com os caminhos: as palhas que se cruzam registram o território. A trama
+  do site é uma abstração disso, não a cópia de nenhum cesto em particular. (Notas antigas
+  chamavam a trama de "waitiwina"; o termo não aparece nas fontes. A barragem de pesca é *waiti*.)
+- **O triângulo:** a casa do Yãkwa guarda as flautas e é a casa dos clãs; além disso, é cônica, não
+  triangular. No redesenho do site o triângulo sai, e fica só a trama.
+
+**Fontes:** IPHAN/OPAN, *Dossiê Ritual Yaokwa*,
+<https://www.ipatrimonio.org/wp-content/uploads/2017/05/Dossie_Yaokwa.pdf.pdf>; ISA, *Povos
+Indígenas no Brasil*, "Enawenê-nawê", <https://pib.socioambiental.org/pt/Povo:Enawenê-nawê>;
+OPAN, relatório de pesca 2024 (termo *waiti*). Consultados em 2026-11-17.
 
 - **Onde está:** `config/templates/motifs/lattice/`; escolhido em `terradoc.yaml` (`theme`).
 - **Aprovação:** aprovado (registro do coordenador, 2026-11-14).
