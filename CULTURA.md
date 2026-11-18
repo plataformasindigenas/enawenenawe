@@ -53,6 +53,29 @@ a, d, e, h, i, k, l, m, n, ñ, o, r, s, t, w, x, y
 - **Aprovação:** proposta de 2026-11-18, aprovada pelo coordenador sob a aprovação geral da
   comunidade ao ser incorporada. A comunidade pode pedir mudanças a qualquer momento.
 
+## Padrões da versão 2 (rascunho)
+
+Para o novo modelo do site (versão 2) desenhamos dois elementos, em
+`config/templates/v2/motifs/enawene/` (fontes e aprovação também em `pack.yaml`). Não há
+emblema. Foram desenhados como rascunho em 2026-11-18, a partir da pesquisa publicada, e
+registrados como aprovados pelo coordenador sob a aprovação geral da comunidade. A comunidade
+pode pedir mudanças a qualquer momento. As cores são as da paleta do site.
+
+- **Faixa: fio com contas.** Um fio amarelo com contas redondas vermelhas, iguais e espaçadas,
+  sob o cabeçalho e entre as seções. Abstrai as faixas de algodão que as mulheres tecem e os
+  enfeites de contas do dia a dia (IPHAN, p. 148; ISA). As cores seguem o "urucum
+  amarelo-gualdo com traços destacados em vermelho-sangue" (Mendes dos Santos 2006, citado por
+  Barra 2010, p. 60). Não reproduz nenhum enfeite em particular, nem a jarreteira das mulheres
+  (*barese*).
+- **Textura: trama dos caminhos.** Fios diagonais muito claros que se cruzam por cima e por
+  baixo, no fundo da página. Abstrai a ideia, registrada no dossiê do IPHAN (p. 182), de que
+  esteiras e cestos são trançados por analogia com os caminhos. Não é um cesto nem a peneira:
+  as fontes não trazem nomes de padrões de trançado, e o trançado é especialidade de clã, por
+  isso a trama é genérica. Também não se chama "waitiwina".
+
+A casa do Yãkwa, as flautas e os Yakairiti ficam fora de todos os elementos. Pesquisa
+completa: `meta/domains/plataformas/research/2026-11-17-template-redesign/enawene.md`.
+
 ## Conhecimento restrito
 
 Este repositório e todas as prévias são **públicos**. Conhecimento restrito (rituais,

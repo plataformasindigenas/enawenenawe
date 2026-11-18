@@ -1,0 +1,20 @@
+people: Enawenê-Nawê
+elements:
+  band:
+    title: "Fio com contas"
+    description: "Um fio amarelo com contas redondas vermelhas, iguais e espaçadas, que abstrai as faixas de algodão e os enfeites de contas usados no dia a dia; as cores seguem o \"urucum amarelo-gualdo com traços destacados em vermelho-sangue\". Não reproduz nenhum enfeite em particular, nem a jarreteira das mulheres (barese)."
+    sources:
+      - "enawene.md §1, §2, §5 (item 6)"
+      - "IPHAN/OPAN, Dossiê Ritual Yaokwa, p. 148 (as mulheres tecem em algodão faixas de braço e tornozelo)"
+      - "Barra 2010, UFMG, PDF p. 60 (cores, citando Mendes dos Santos 2006: 53–54)"
+      - "ISA, Povos Indígenas no Brasil, \"Enawenê-nawê\""
+    drawn_by: "Claude (rascunho), 2026-11-18"
+    approved: {by_role: coordinator, date: 2026-11-18, note: "approved by the coordinator under the communities' general approval"}
+  texture:
+    title: "Trama dos caminhos"
+    description: "Fios diagonais que se cruzam por cima e por baixo, muito claros: uma abstração da ideia de que o trançado registra os caminhos e o território. Não é um cesto nem a peneira; as fontes não documentam nomes de padrões de trançado, e o trançado é especialidade de clã, por isso a trama é genérica."
+    sources:
+      - "enawene.md §1 (cestaria), §5 (item 1)"
+      - "IPHAN/OPAN, Dossiê Ritual Yaokwa, p. 182 (esteiras e cestos trançados por analogia com os caminhos)"
+    drawn_by: "Claude (rascunho), 2026-11-18"
+    approved: {by_role: coordinator, date: 2026-11-18, note: "approved by the coordinator under the communities' general approval"}
