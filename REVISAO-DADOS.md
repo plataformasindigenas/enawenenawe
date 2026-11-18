@@ -35,7 +35,28 @@ Se forem a mesma palavra, junte as definições numa linha e apague a outra.
 | yalawi | 439 | araruta |
 | yalawi | 440 | cego, cegar |
 
-## 2. Imagens sem crédito: Fauna (77)
+## 2. Palavras com letras fora do alfabeto (9)
+
+O alfabeto do dicionário está em `CULTURA.md`. Estas palavras usam outras letras: pode ser
+um empréstimo (tudo bem), um erro de digitação, ou uma palavra em português na coluna da
+palavra (troque as colunas).
+
+| id | palavra | letras | definição |
+|---|---|---|---|
+| 83 | awudali | u | saudável |
+| 84 | casa | c | hakolo |
+| 85 | cortar | c | erekiotene |
+| 86 | criança | c ç | diwa |
+| 134 | fechar | c f | aitowa |
+| 182 | huiratero | u | azul |
+| 290 | muñakalõ | u | virgem |
+| 347 | trabalhar | b | kiwakali |
+| 381 | wayakaJaiti | j | janela, espelho |
+
+Também com o português na coluna da palavra, embora só usem letras do alfabeto: **302** *olho*
+(definição *doseti*) e **332** *téwe* (definição *anta*; confira qual coluna é qual).
+
+## 3. Imagens sem crédito: Fauna (77)
 
 Estas imagens aparecem sem autor nem licença. Preencha em `data/fauna.yaml`, abaixo de `pic_link`:
 `pic_credit: "© Nome, CC BY-SA 4.0, via Wikimedia Commons"` e `pic_source: "https://..."`. Se a
@@ -124,7 +145,7 @@ que puderam ser comprovados já foram preenchidos.
 | 113 | kolohi (bico-doce (calango)) | *Ameiva ameiva* | `images/fauna_113_kolohi.jpg` |
 | 115 | kayali (pacu) | *Família: Myleinae* | `images/fauna_115_kayali.jpg` |
 
-## 3. Imagens sem crédito: Etnobotânica (22)
+## 4. Imagens sem crédito: Etnobotânica (22)
 
 Estas imagens aparecem sem autor nem licença. Preencha em `data/ethnobotany.yaml`, abaixo de `pic_link`:
 `pic_credit: "© Nome, CC BY-SA 4.0, via Wikimedia Commons"` e `pic_source: "https://..."`. Se a

@@ -69,3 +69,7 @@ theme:
     border_light: "#F0E8D8"
     success: "#4A7C59"
     error: "#A83220"
+
+# O alfabeto do dicionário (letras e ordem), proposto em 2026-11-18 a partir de fontes
+# publicadas; veja CULTURA.md. As vogais nasais ficam junto da vogal simples.
+alphabet: [a, d, e, h, i, k, l, m, n, ñ, o, r, s, t, w, x, y]

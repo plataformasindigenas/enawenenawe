@@ -28,6 +28,31 @@ OPAN, relatório de pesca 2024 (termo *waiti*). Consultados em 2026-11-17.
 As cores (`theme.colors`) e as fotos da página inicial (`theme.hero_images`) também fazem
 parte da identidade do site; os créditos das fotos ficam junto delas.
 
+## O alfabeto do dicionário
+
+O dicionário agrupa e ordena as palavras por este alfabeto:
+
+a, d, e, h, i, k, l, m, n, ñ, o, r, s, t, w, x, y
+
+- **ñ** é uma letra, depois de **n**. As vogais nasais **ã ẽ ĩ õ** ficam junto da vogal simples.
+  **kw** não tem aba própria (nenhuma palavra começa com kw).
+- **Fontes.** A tabela de letras de Mendes dos Santos (2006), reproduzida por Barra (2010,
+  UFMG, pp. 11–12); o dossiê do IPHAN sobre o Yaokwa ("Notas sobre a grafia enawene nawe",
+  p. 8), que diz que c, f, g, j, p, q, v, z e u não fazem parte da grafia e que l/r e b/w
+  variam. Todas as fontes dizem que a grafia muda desde os anos 1990 e segue o modo como os
+  próprios Enawenê-Nawê escrevem; a lista mais recente que encontrei é de 2006.
+- **r** fica, porque está na tabela de Barra e em 138 palavras dos dados, embora o IPHAN o
+  trate como variante de **l**. A busca deve tratar l/r e w/b como a mesma letra (no novo
+  modelo do site).
+- Ficam fora: **u** (3 palavras; o IPHAN e Zorthêa a tratam como variante de o), **b**, e as
+  letras que só aparecem em linhas com o português na coluna da palavra (veja
+  `REVISAO-DADOS.md`).
+- Vale perguntar à OPAN se há hoje um alfabeto usado na escola.
+- **Onde está:** `alphabet` em `terradoc.yaml`. Pesquisa completa:
+  `meta/domains/plataformas/research/2026-11-17-template-redesign/alphabets.md`.
+- **Aprovação:** proposta de 2026-11-18, aprovada pelo coordenador sob a aprovação geral da
+  comunidade ao ser incorporada. A comunidade pode pedir mudanças a qualquer momento.
+
 ## Conhecimento restrito
 
 Este repositório e todas as prévias são **públicos**. Conhecimento restrito (rituais,
