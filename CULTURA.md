@@ -53,6 +53,17 @@ a, d, e, h, i, k, l, m, n, ñ, o, r, s, t, w, x, y
 - **Aprovação:** proposta de 2026-11-18, aprovada pelo coordenador sob a aprovação geral da
   comunidade ao ser incorporada. A comunidade pode pedir mudanças a qualquer momento.
 
+## Cores da versão 2
+
+O novo modelo usa cinco cores com papéis fixos (`theme.palette` em `terradoc.yaml`), com o
+nome do material de onde vêm: o fundo é a **fibra de buriti** e o algodão; títulos, links e
+botões, o vermelho do **urucum** (*ahete*; Barra 2010, p. 113); faixas e destaques, o
+**amarelo do urucum** e das penas da tapiragem; o texto é um castanho escuro neutro (o preto do
+jenipapo é ritual e não vira cor do site). O dourado de hoje deixa de ser a cor dos links e
+títulos, porque não tinha contraste suficiente para leitura; fica só nas faixas. Todas as
+combinações usadas passam o contraste mínimo (4,5:1). Pesquisa:
+`research/2026-11-17-template-redesign/enawene.md` §2 e §5, e `palettes.md`.
+
 ## Padrões da versão 2 (rascunho)
 
 Para o novo modelo do site (versão 2) desenhamos dois elementos, em

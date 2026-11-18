@@ -26,11 +26,27 @@ module_labels:
   bibliography: "Bibliografia"
   corpus: "Corpus"
 
+# Código ISO 639-3 da língua (atributo lang no texto na língua).
+language_code: unk
+
 theme:
+  # Versão 2 dos modelos (terradoc >= 0.20; a v1 ignora estas chaves). As cores têm
+  # papéis e o nome do material de onde vêm (CULTURA.md).
+  templates: v2
+  pack: enawene
+  palette:
+    ground: {color: "#FAF3E8", material: "fibra de buriti, algodão"}
+    ink: {color: "#2C1810"}
+    primary: {color: "#A83220", material: "urucum (ahete)"}
+    fill: {color: "#D4A81E", material: "urucum amarelo, penas da tapiragem"}
+    muted: {color: "#6B5E4F"}
+  hero_people: false
+  hero_credit: ""
+  hero_alt: "Palmeiras na beira do rio"
   preset: "terra"
   logo: "images/logo.svg"
   favicon: "images/favicon.svg"
-  hero_image: "images/hero.jpeg"
+  hero_image: "images/ethnobotany.jpg"  # v2: paisagem, sem pessoas (D25)
   hero_images:
     - "images/dictionary.jpg"
     - "images/encyclopedia.jpeg"
