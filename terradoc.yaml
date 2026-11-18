@@ -29,6 +29,10 @@ module_labels:
 # Código ISO 639-3 da língua (atributo lang no texto na língua).
 language_code: unk
 
+# Pesquisa no dicionário (versão 2): letras que contam como a mesma, porque a escrita varia
+# (l/r, w/b; u e o), veja CULTURA.md. Acentos nunca contam.
+search_folds: {r: l, b: w, u: o}
+
 theme:
   # Versão 2 dos modelos (precisa do terradoc 0.20 ou mais novo). As cores têm papéis e o
   # nome do material de onde vêm (CULTURA.md).
