@@ -1,22 +1,48 @@
-# Imagens sem crédito
+# Revisão dos dados
 
-Estas imagens aparecem no site sem autor nem licença. Para cada uma, preencha no arquivo de dados,
-logo abaixo de `pic_link`:
+Questões encontradas na revisão dos dados de 2026-11 (fase 0 do novo modelo dos sites). Nada
+aqui foi alterado automaticamente: cada item precisa de alguém que conheça a língua ou a
+origem do material. Ao resolver um item, apague a linha.
 
-```yaml
-  pic_credit: "© Nome do autor, CC BY-SA 4.0, via Wikimedia Commons"
-  pic_source: "https://commons.wikimedia.org/wiki/File:..."
-```
+## 1. Palavras repetidas sem número de homônimo (11)
 
-Se a origem não puder ser encontrada, troque a imagem por uma de origem conhecida (Wikimedia
-Commons e iNaturalist mostram autor e licença em cada foto) ou apague a linha `pic_link`.
-Imagens da comunidade: `pic_credit: "Acervo da comunidade"` ou o nome de quem fotografou, se
-ela concordar.
+A mesma palavra aparece em mais de uma linha, sem número. Se forem palavras diferentes
+(homônimos), numere-as na coluna `homonym` (1, 2, …) para que apareçam como *kuri*¹, *kuri*².
+Se forem a mesma palavra, junte as definições numa linha e apague a outra.
 
-Os créditos que puderam ser comprovados (endereço original no histórico do repositório ou
-arquivo idêntico a outro já creditado) já foram preenchidos.
+| palavra | id | definição |
+|---|---|---|
+| ahotene | 14 | plantar |
+| ahotene | 15 | plantar, enterrar |
+| atoli | 64 | avô |
+| atoli | 65 | avô |
+| hokwa | 166 | ciúme |
+| hokwa | 167 | rede (de dormir) -- forma não possuída. |
+| horatero | 172 | maduro |
+| horatero | 173 | verde |
+| hotaka | 176 | desaparecer |
+| hotaka | 177 | perder |
+| kotaha | 265 | cagar |
+| kotaha | 266 | defecar |
+| one | 307 | água |
+| one | 308 | rio |
+| wase | 366 | cego, cegar |
+| wase | 367 | amendoim |
+| wata | 368 | calor |
+| wata | 369 | quente, esquentar |
+| wesera | 396 | beber |
+| wesera | 397 | beber |
+| yalawi | 439 | araruta |
+| yalawi | 440 | cego, cegar |
 
-## Fauna (`data/fauna.yaml`): 77
+## 2. Imagens sem crédito: Fauna (77)
+
+Estas imagens aparecem sem autor nem licença. Preencha em `data/fauna.yaml`, abaixo de `pic_link`:
+`pic_credit: "© Nome, CC BY-SA 4.0, via Wikimedia Commons"` e `pic_source: "https://..."`. Se a
+origem não puder ser encontrada, troque a imagem por uma de origem conhecida (Wikimedia Commons
+e iNaturalist mostram autor e licença) ou apague `pic_link`. Fotos da comunidade:
+`pic_credit: "Acervo da comunidade"`, ou o nome de quem fotografou, se ela concordar. Os créditos
+que puderam ser comprovados já foram preenchidos.
 
 | id | nome | nome científico | imagem |
 |---|---|---|---|
@@ -71,7 +97,7 @@ arquivo idêntico a outro já creditado) já foram preenchidos.
 | 79 | Okwamada (gavião-de-rabo-branco) | *Buteo albicaudatus (Vieillot, 1816)* | `images/fauna_079_okwamada.jpg` |
 | 80 | Kota (saúva) | *Atta cephalotes* | `images/fauna_080_kota.jpg` |
 | 81 | Waoli (borboleta) | *Ordem: Lepidoptera* | `images/fauna_081_waoli.jpg` |
-| 82 | Malaeta (Maranduvá) | ** | `images/fauna_082_malaeta.jpg` |
+| 82 | Malaeta (Maranduvá) |  | `images/fauna_082_malaeta.jpg` |
 | 83 | Hõi (Iguana verde) | *guana iguana* | `images/fauna_083_hõi.jpg` |
 | 84 | Akola (escorpião) | *Ordem: Scorpiones* | `images/fauna_084_akola.jpg` |
 | 85 | Kariri (cascavel) | *Família: Viperidae* | `images/fauna_085_kariri.jpg` |
@@ -98,7 +124,14 @@ arquivo idêntico a outro já creditado) já foram preenchidos.
 | 113 | kolohi (bico-doce (calango)) | *Ameiva ameiva* | `images/fauna_113_kolohi.jpg` |
 | 115 | kayali (pacu) | *Família: Myleinae* | `images/fauna_115_kayali.jpg` |
 
-## Etnobotânica (`data/ethnobotany.yaml`): 22
+## 3. Imagens sem crédito: Etnobotânica (22)
+
+Estas imagens aparecem sem autor nem licença. Preencha em `data/ethnobotany.yaml`, abaixo de `pic_link`:
+`pic_credit: "© Nome, CC BY-SA 4.0, via Wikimedia Commons"` e `pic_source: "https://..."`. Se a
+origem não puder ser encontrada, troque a imagem por uma de origem conhecida (Wikimedia Commons
+e iNaturalist mostram autor e licença) ou apague `pic_link`. Fotos da comunidade:
+`pic_credit: "Acervo da comunidade"`, ou o nome de quem fotografou, se ela concordar. Os créditos
+que puderam ser comprovados já foram preenchidos.
 
 | id | nome | nome científico | imagem |
 |---|---|---|---|
@@ -121,9 +154,6 @@ arquivo idêntico a outro já creditado) já foram preenchidos.
 | 25 | kowatase (feijão fava) | *Vicia faba* | `images/ethnobotany_025_kowatase.jpg` |
 | 29 | kalana (mauritiella armata) | *Mauritiella* | `images/ethnobotany_029_kalana.jpg` |
 | 31 | halata (inaja) | *Attalea maripa* | `images/ethnobotany_031_halata.jpg` |
-| 32 | katehe (cogumelo) | ** | `images/ethnobotany_032_katehe.jpg` |
+| 32 | katehe (cogumelo) |  | `images/ethnobotany_032_katehe.jpg` |
 | 34 | eyolo yokolali (Anona) | *Annona muricata (Graviola)* | `images/ethnobotany_034_eyolo_yokolali.jpg` |
-| 35 | eyolo yokolali (Annona squamosa
-Ateira) | *Annona squamosa
-Ateira* | `images/ethnobotany_035_eyolo_yokolali.jpg` |
-
+| 35 | eyolo yokolali (Annona squamosa Ateira) | *Annona squamosa Ateira* | `images/ethnobotany_035_eyolo_yokolali.jpg` |
