@@ -310,7 +310,7 @@ about_subtitle: "Digital platform for documentation and revitalization of the En
 about_mission_heading: "Mission"
 about_mission: >
   <p>This platform is an initiative of the
-  <a href="https://portal.plataformasindigenas.org">Indigenous Languages Platform</a>
+  <a href="https://plataformas.terradoc.org/">Indigenous Languages Platform</a>
   dedicated to the documentation, preservation, and revitalization of the language and
   culture of the Enawenê-Nawê people, speakers of an Arawak family language in
   northwestern Mato Grosso, Brazil.</p>
@@ -327,7 +327,7 @@ about_contact_heading: "Contact"
 about_contact: >
   <p>For more information about the project, collaborations, or contributions:</p>
   <p><strong>Email:</strong> <a href="mailto:info@plataformasindigenas.org">info@plataformasindigenas.org</a><br>
-  <strong>Portal:</strong> <a href="https://portal.plataformasindigenas.org">portal.plataformasindigenas.org</a></p>
+  <strong>Portal:</strong> <a href="https://plataformas.terradoc.org/">plataformas.terradoc.org</a></p>
 about_citation_heading: "How to Cite"
 about_citation: "Indigenous Languages Platform. Digital Platform of the Enawenê-Nawê Language and Culture. Available at: https://enawenenawe.terradoc.org. Accessed: 2026."
 about_tools_heading: "Technology"
