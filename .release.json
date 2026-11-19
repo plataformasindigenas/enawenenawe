@@ -1,0 +1,17 @@
+{
+  "project": "enawenenawe",
+  "terradoc_version": "0.24.0",
+  "source_commit": "f8ca6ebd5998f4a6de4fa64cd186a19b2ff7b527",
+  "source_ref": "master",
+  "files": 1801,
+  "bytes": 30295612,
+  "modules": {
+    "dictionary": 461,
+    "fauna": 115,
+    "ethnobotany": 38,
+    "encyclopedia": 25,
+    "bibliography": 33,
+    "corpus": 7
+  },
+  "owned_by_terradoc": true
+}
