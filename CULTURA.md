@@ -6,7 +6,7 @@ um povo **não são usados no site de outro**.
 
 ## Os elementos do site (versão 2)
 
-O novo modelo do site (versão 2, em prévia em <https://previews.terradoc.org/enawenenawe/v2/>)
+O modelo do site (versão 2, no ar desde 2026-11-19 em <https://enawenenawe.terradoc.org/>)
 tem três elementos visuais: as cores, uma faixa e uma textura de fundo. **Não há emblema.**
 Os elementos foram desenhados por nós a partir da pesquisa publicada, como abstrações: nenhum
 copia um objeto, um enfeite ou um trançado. O site também funciona e parece acabado só com as
@@ -96,9 +96,9 @@ a, d, e, h, i, k, l, m, n, ñ, o, r, s, t, w, x, y
 - **Aprovação:** proposta de 2026-11-18, aprovada pelo coordenador sob a aprovação geral da
   comunidade ao ser incorporada. A comunidade pode pedir mudanças a qualquer momento.
 
-## O site atual (versão 1, até a migração)
+## O modelo antigo (versão 1, até 2026-11-19)
 
-O site publicado hoje ainda usa o modelo antigo, com o padrão `lattice`: uma **trama de linhas
+Até 2026-11-19 o site usou o modelo antigo, com o padrão `lattice`: uma **trama de linhas
 diagonais cruzadas** e um **pequeno triângulo**, no fundo animado da página inicial, na
 moldura das fotos, no divisor, no selo ao lado dos títulos e na textura de fundo.
 
@@ -106,7 +106,8 @@ moldura das fotos, no divisor, no selo ao lado dos títulos e na textura de fund
 - O triângulo lembrava a casa do Yãkwa, que guarda as flautas e é a casa dos clãs (e é
   cônica, não triangular). Na versão 2 ele sai.
 - **Onde está:** `config/templates/motifs/lattice/`; cores em `theme.colors`, fotos em
-  `theme.hero_images`.
+  `theme.hero_images`. O site não usa mais esses arquivos e chaves; eles saem quando a versão 1
+  sair do terradoc.
 - **Aprovação:** aprovado (registro do coordenador, 2026-11-14).
 
 ## Fontes
