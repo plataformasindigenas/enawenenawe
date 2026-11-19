@@ -43,8 +43,7 @@ Cinco cores com papéis fixos, cada uma com o nome do material de onde vem.
 
 Um fio amarelo com contas redondas vermelhas, iguais e espaçadas, sob o cabeçalho e entre as
 seções. Abstrai as faixas de algodão que as mulheres tecem e os enfeites de contas do dia a dia
-(IPHAN, p. 148; ISA), nas cores do urucum. Não reproduz nenhum enfeite em particular, nem a
-jarreteira das mulheres (*barese*).
+(IPHAN, p. 148; ISA), nas cores do urucum. Não reproduz nenhum enfeite em particular.
 
 ### Textura: trama dos caminhos
 
@@ -59,8 +58,8 @@ analogia com os caminhos: as palhas que se cruzam registram o território.
 
 ### O que fica de fora, de propósito
 
-A casa do Yãkwa, as flautas, os Yakairiti e os *dakoti*, a tatuagem *ihota* e a jarreteira
-*barese*, e qualquer coisa ligada aos mortos. A casa do Yãkwa é pública e aparece nas fotos
+A casa do Yãkwa e as flautas, os seres espirituais, as marcas de iniciação, os adornos
+sujeitos a restrições e qualquer coisa ligada aos mortos. A casa do Yãkwa é pública e aparece nas fotos
 do IPHAN e da UNESCO, mas é a casa dos clãs e das flautas; usá-la como enfeite repetido
 trataria um centro ritual como decoração.
 
@@ -86,7 +85,8 @@ a, d, e, h, i, k, l, m, n, ñ, o, r, s, t, w, x, y
 - **r** fica, porque está na tabela de Barra e em 138 palavras dos dados, embora o IPHAN o
   trate como variante de **l**. A busca da versão 2 trata l/r e w/b como a mesma letra e
   procura u como o (`search_folds` em `terradoc.yaml`).
-- Ficam fora: **u** (3 palavras; o IPHAN e Zorthêa a tratam como variante de o), **b**, e as
+- Ficam fora: **u** (3 palavras; o IPHAN a exclui da grafia, e Zorthêa, que vi só pela Wikipédia, a trata
+  como variante de o), **b**, e as
   letras que só aparecem em linhas com o português na coluna da palavra (veja
   `REVISAO-DADOS.md`).
 - Vale perguntar à OPAN se há hoje um alfabeto usado na escola.
