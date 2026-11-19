@@ -1,3 +1,0 @@
-input: ../data/corpus.json
-template: templates/corpus.html.j2
-output: ../docs/corpus.html

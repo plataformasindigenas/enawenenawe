@@ -105,9 +105,9 @@ moldura das fotos, no divisor, no selo ao lado dos títulos e na textura de fund
 - A trama é a mesma ideia dos caminhos (IPHAN, p. 182), e continua na versão 2 como textura.
 - O triângulo lembrava a casa do Yãkwa, que guarda as flautas e é a casa dos clãs (e é
   cônica, não triangular). Na versão 2 ele sai.
-- **Onde está:** `config/templates/motifs/lattice/`; cores em `theme.colors`, fotos em
-  `theme.hero_images`. O site não usa mais esses arquivos e chaves; eles saem quando a versão 1
-  sair do terradoc.
+- **Onde estava:** `config/templates/motifs/lattice/`, com as cores em `theme.colors` e as fotos
+  em `theme.hero_images`. Esses arquivos e chaves foram removidos em 2026-11-19; ficam no
+  histórico do git.
 - **Aprovação:** aprovado (registro do coordenador, 2026-11-14).
 
 ## Fontes

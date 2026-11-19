@@ -47,48 +47,8 @@ theme:
   hero_people: false
   hero_credit: ""
   hero_alt: "Palmeiras na beira do rio"
-  preset: "terra"
-  logo: "images/logo.svg"
   favicon: "images/favicon.svg"
   hero_image: "images/ethnobotany.jpg"  # v2: paisagem, sem pessoas (D25)
-  hero_images:
-    - "images/dictionary.jpg"
-    - "images/encyclopedia.jpeg"
-    - "images/fauna-arara.jpg"
-    - "images/ethnobotany.jpg"
-    - "images/katoko.jpeg"
-    - "images/corpus.jpg"
-  hero_stats:
-    - dictionary
-    - encyclopedia
-    - fauna
-    - ethnobotany
-  hero_height: "large"
-  hero_background: "lattice"
-  hero_motif: "lattice"
-  hero_divider: "lattice"
-  page_badge: "lattice"
-  grain_pattern: "lattice"
-  colors:
-    primary: "#D4A81E"
-    accent: "#A83220"
-    accent_muted: "#8B2A1A"
-    accent_light: "#FDEAE6"
-    accent_ring: "rgba(184, 148, 26, 0.25)"
-    dark: "#2C1810"
-    bg: "#FAF3E8"
-    bg_light: "#F5ECD7"
-    bg_infobox: "#F8F1E4"
-    highlight: "#FFFAE5"
-    surface: "#FFFFFF"
-    text: "#2C1810"
-    text_muted: "#6B5E4F"
-    text_secondary: "#6B5E4F"
-    border: "#E8DCC8"
-    border_dark: "#C4B8A0"
-    border_light: "#F0E8D8"
-    success: "#4A7C59"
-    error: "#A83220"
 
 # O alfabeto do dicionário (letras e ordem), proposto em 2026-11-18 a partir de fontes
 # publicadas; veja CULTURA.md. As vogais nasais ficam junto da vogal simples.
