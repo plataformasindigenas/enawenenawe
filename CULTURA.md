@@ -16,7 +16,8 @@ cores, e qualquer elemento pode sair a qualquer momento sem quebrar nada.
   `config/templates/v2/motifs/enawene/` (desenhos em SVG, com fontes e aprovação repetidas em
   `pack.yaml`).
 - **Aprovação:** desenhados em 2026-11-18 e aprovados pelo coordenador sob a aprovação geral da
-  comunidade (2026-11-17). A comunidade pode pedir mudanças a qualquer momento.
+  comunidade (2026-11-17); os desenhos finais foram aceitos pelo coordenador em 2026-11-19.
+  A comunidade pode pedir mudanças a qualquer momento.
 
 ### Cores
 
@@ -66,8 +67,8 @@ trataria um centro ritual como decoração.
 ### Fotos
 
 A foto da página inicial é uma paisagem, sem pessoas (`theme.hero_people: false`), como
-decidido para este site. Falta o crédito (`theme.hero_credit`); a equipe deve preenchê-lo,
-e confirmar de onde é a foto, antes da migração. Qualquer foto pode ser retirada a pedido.
+decidido para este site. Falta o crédito (`theme.hero_credit`), e não se sabe
+onde a foto foi tirada: fica como pendência, a preencher quando a equipe souber a fonte. Qualquer foto pode ser retirada a pedido.
 
 ## O alfabeto do dicionário
 
