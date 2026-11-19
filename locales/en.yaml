@@ -335,3 +335,5 @@ about_tools: "<p>This platform was built with open-source tools developed specif
 about_tool_terradoc: "Site generation framework for indigenous language documentation"
 about_tool_aptoro: "Data conversion and processing pipeline"
 about_tool_kodudo: "Template rendering engine"
+# Home page sentence (v2). Proposed 2026-11-19; the team can rewrite it.
+home_sentence: "The Enawenê-Nawê language, of the Arawak family, in north-western Mato Grosso: words, names of animals and plants, and texts, for speakers, learners and researchers."

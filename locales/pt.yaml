@@ -334,3 +334,5 @@ about_tools: "<p>Esta plataforma foi construída com ferramentas de código aber
 about_tool_terradoc: "Framework de geração de sites para documentação linguística indígena"
 about_tool_aptoro: "Pipeline de conversão e processamento de dados"
 about_tool_kodudo: "Motor de renderização de templates"
+# Home page sentence (v2). Proposed 2026-11-19; the team can rewrite it.
+home_sentence: "A língua Enawenê-Nawê, da família Aruak, no noroeste de Mato Grosso: palavras, nomes de animais e plantas e textos, para quem fala, aprende ou pesquisa a língua."
